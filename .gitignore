@@ -1,0 +1,10 @@
+# IntelliJ IDEA
+*.iml
+.idea/
+
+# Gradle
+.gradle
+/build/
+!src//build/
+
+.java-version
