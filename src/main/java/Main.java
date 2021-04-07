@@ -41,13 +41,5 @@ public class Main extends Application {
     }
 
 
-    @FXML
-    Button BackButton;
 
-    public void switchToMain(MouseEvent event) throws Exception {
-
-        Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
-        window1 = (Stage)BackButton.getScene().getWindow();
-        window1.setScene(new Scene(root, 750,500));
-    }
 }
