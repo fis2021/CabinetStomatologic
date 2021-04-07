@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <children>
+      <Button layoutX="348.0" layoutY="299.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="137.0" text="Register">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+      <Label layoutX="127.0" layoutY="88.0" prefHeight="49.0" prefWidth="159.0" text="Username:">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="127.0" layoutY="149.0" text="Password:">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <TextField layoutX="276.0" layoutY="100.0" />
+      <PasswordField layoutX="276.0" layoutY="154.0" />
+      <ChoiceBox layoutX="275.0" layoutY="200.0" prefWidth="150.0" />
+      <Label alignment="CENTER" contentDisplay="RIGHT" layoutX="147.0" layoutY="195.0" prefHeight="25.0" prefWidth="120.0" text="Role:" textAlignment="CENTER">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="130.0" layoutY="25.0" prefHeight="36.0" prefWidth="390.0" text="Cabinet Stomatologic">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Button fx:id="BackButton" layoutX="113.0" layoutY="299.0" mnemonicParsing="false" onMouseClicked="#switchToMain" prefHeight="56.0" prefWidth="137.0" text="Back">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
