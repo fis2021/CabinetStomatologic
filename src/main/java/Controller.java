@@ -24,6 +24,9 @@ public class Controller {
 
         Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
         window1 = (Stage)BackButton.getScene().getWindow();
-        window1.setScene(new Scene(root, 750,500));
+        window1.setScene(new Scene(root));
     }
+
+
+
 }

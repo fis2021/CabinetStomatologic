@@ -39,5 +39,6 @@
             <Font size="23.0" />
          </font>
       </Button>
+      <Button layoutX="-63.0" layoutY="113.0" mnemonicParsing="false" text="Button" />
    </children>
 </AnchorPane>
