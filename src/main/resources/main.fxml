@@ -7,7 +7,7 @@
 
 <AnchorPane fx:id="scenePane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main">
    <children>
-      <Button fx:id="SignUpButton" layoutX="357.0" layoutY="287.0" mnemonicParsing="false" onMouseClicked="#switchToSignUp" prefHeight="65.0" prefWidth="185.0" text="Log in">
+      <Button fx:id="SignUpButton" layoutX="357.0" layoutY="287.0" mnemonicParsing="false" onMouseClicked="#switchToSignUp" prefHeight="65.0" prefWidth="185.0" text="Sign up">
          <font>
             <Font size="36.0" />
          </font></Button>
@@ -16,11 +16,16 @@
          <font>
             <Font size="36.0" />
          </font></Button>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1fd2ff00" height="122.0" layoutX="-4.0" layoutY="28.0" stroke="BLACK" strokeType="INSIDE" width="606.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1fd2ff00" height="122.0" layoutX="4.0" layoutY="28.0" stroke="BLACK" strokeType="INSIDE" width="592.0" />
       <Label alignment="CENTER" layoutX="10.0" layoutY="66.0" prefHeight="17.0" prefWidth="577.0" text="CABINET STOMATOLOGIC" textAlignment="CENTER">
          <font>
             <Font name="System Bold Italic" size="36.0" />
          </font>
       </Label>
+      <Button layoutX="356.0" layoutY="185.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="185.0" text="Log in">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

@@ -10,7 +10,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-import java.awt.event.ActionEvent;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 public class Main extends Application {
 
@@ -20,6 +21,10 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+
+        initDirectory();
+        UserService.initDatabase();
+
         Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
 
         Scene scene = new Scene(root);
@@ -59,8 +64,15 @@ public class Main extends Application {
         if(alert.showAndWait().get() == ButtonType.OK) {
 
             stage = (Stage) scenePane.getScene().getWindow();
-            System.out.println("exit!!!");
             stage.close();
         }
     }
+
+    private void initDirectory() {
+        Path applicationHomePath = FileSystemService.APPLICATION_HOME_PATH;
+         if (!Files.exists(applicationHomePath))
+           applicationHomePath.toFile().mkdirs();
+    }
+
+
 }
