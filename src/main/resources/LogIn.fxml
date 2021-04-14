@@ -22,5 +22,15 @@
       </Label>
       <PasswordField layoutX="324.0" layoutY="207.0" />
       <TextField layoutX="324.0" layoutY="152.0" />
+      <Button fx:id="BackFromLogInButton" alignment="CENTER" layoutX="26.0" layoutY="345.0" mnemonicParsing="false" onMouseClicked="#switchToMainFromLogIn" prefHeight="32.0" prefWidth="64.0" text="Back">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
+      <Label alignment="CENTER" layoutX="56.0" layoutY="34.0" prefHeight="64.0" prefWidth="499.0" text="Cabinet Stomatologic">
+         <font>
+            <Font size="37.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

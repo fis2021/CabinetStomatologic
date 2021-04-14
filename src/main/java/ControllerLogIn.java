@@ -28,6 +28,13 @@ public class ControllerLogIn{
         window1 = (Stage)LOGINButton.getScene().getWindow();
         window1.setScene(new Scene(root));
     }
+    @FXML
+    Button BackFromLogInButton;
 
+    public void switchToMainFromLogIn(MouseEvent event) throws Exception {
 
+        Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
+        window1 = (Stage)BackFromLogInButton.getScene().getWindow();
+        window1.setScene(new Scene(root));
+    }
 }
