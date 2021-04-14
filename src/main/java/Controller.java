@@ -54,4 +54,6 @@ public class Controller implements Initializable {
             registrationMessage.setText(e.getMessage());
         }
     }
+
+
 }

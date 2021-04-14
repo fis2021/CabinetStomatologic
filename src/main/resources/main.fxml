@@ -22,7 +22,7 @@
             <Font name="System Bold Italic" size="36.0" />
          </font>
       </Label>
-      <Button layoutX="356.0" layoutY="185.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="185.0" text="Log in">
+      <Button fx:id="LogInButton" layoutX="356.0" layoutY="185.0" mnemonicParsing="false" onMouseClicked="#switchToLogIn" prefHeight="68.0" prefWidth="185.0" text="Log in">
          <font>
             <Font size="36.0" />
          </font>
