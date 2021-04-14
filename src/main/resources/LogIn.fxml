@@ -3,9 +3,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerLogIn">
    <children>
-      <Button fx:id="LOGINButton" layoutX="276.0" layoutY="215.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="112.0" text="Log In" />
+      <Button fx:id="LOGINButton" layoutX="276.0" layoutY="215.0" mnemonicParsing="false" onMouseClicked="#switchToMainPage" prefHeight="46.0" prefWidth="112.0" text="Log In" />
    </children>
 </AnchorPane>
