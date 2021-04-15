@@ -17,6 +17,12 @@ public class ControllerLogIn{
     private Scene scene;
     private Parent root;
 
+    private String username,password;
+
+    @FXML
+     TextField LogInUsername;
+    @FXML
+     PasswordField LogInPassword;
 
 
     @FXML
@@ -24,10 +30,17 @@ public class ControllerLogIn{
 
     public void switchToMainPage(MouseEvent event) throws Exception {
 
+        username = LogInUsername.getText();
+        password = LogInPassword.getText();
+        System.out.println(username+" "+password);
+
         Parent root = FXMLLoader.load(getClass().getResource("MainPage.fxml"));
         window1 = (Stage)LOGINButton.getScene().getWindow();
         window1.setScene(new Scene(root));
+
+
     }
+
     @FXML
     Button BackFromLogInButton;
 
