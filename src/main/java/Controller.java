@@ -5,6 +5,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -30,11 +31,11 @@ public class Controller implements Initializable {
     private ChoiceBox<String> role;
     private String []tipuri = {"Pacient", "Medic"};
 
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
         role.getItems().addAll(tipuri);
+
     }
 
     @FXML
@@ -54,4 +55,16 @@ public class Controller implements Initializable {
             registrationMessage.setText(e.getMessage());
         }
     }
+
+    @FXML
+    Button LOGINButton;
+
+    public void switchToMainPage(MouseEvent event) throws Exception {
+
+        Parent root = FXMLLoader.load(getClass().getResource("MainPage.fxml"));
+        window1 = (Stage)LOGINButton.getScene().getWindow();
+        window1.setScene(new Scene(root));
+    }
+
+
 }

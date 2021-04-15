@@ -7,9 +7,10 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Objects;
 
 
+
 public class UserService {
 
-    private static ObjectRepository<User> userRepository;
+   public static ObjectRepository<User> userRepository;
 
     public static void initDatabase() {
         Nitrite database = Nitrite.builder()
@@ -31,7 +32,7 @@ public class UserService {
         }
     }
 
-    private static String encodePassword(String salt, String password) {
+    public static String encodePassword(String salt, String password) {
         MessageDigest md = getMessageDigest();
         md.update(salt.getBytes(StandardCharsets.UTF_8));
 

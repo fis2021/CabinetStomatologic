@@ -75,4 +75,17 @@ public class Main extends Application {
     }
 
 
+
+    @FXML
+    Button LogInButton;
+
+    public void switchToLogIn(MouseEvent event) throws Exception {
+
+        Parent root = FXMLLoader.load(getClass().getResource("LogIn.fxml"));
+        window1 = (Stage)LogInButton.getScene().getWindow();
+        window1.setScene(new Scene(root));
+    }
+
+
+
 }
