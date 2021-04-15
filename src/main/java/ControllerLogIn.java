@@ -28,6 +28,8 @@ public class ControllerLogIn{
 
     @FXML
     Button LOGINButton;
+    @FXML
+    Label FailedLogInMessage;
 
     private static int checkAccountInformation(String username, String password) {
         for (User user : UserService.userRepository.find()) {
@@ -48,12 +50,10 @@ public class ControllerLogIn{
             window1 = (Stage)LOGINButton.getScene().getWindow();
             window1.setScene(new Scene(root));
         }
-
-
-
-
-
-
+        else
+        {
+            FailedLogInMessage.setText("You did not sign in correctly!");
+        }
     }
 
     @FXML
