@@ -54,7 +54,11 @@ public class Controller implements Initializable {
              if(usernameField.getText().equals("")){
                 registrationMessage.setText("Username cannot be empty!");
             }
-            if(!passwordField.getText().equals("") && !usernameField.getText().equals("")) {
+
+             if(!passwordField.getText().equals("") && passwordField.getText().length()<5){
+                 registrationMessage.setText("Choose a password of at least 5 characters!");
+             }
+             else  if(!passwordField.getText().equals("") && !usernameField.getText().equals("")) {
                 UserService.addUser(usernameField.getText(), passwordField.getText(), (String) role.getValue());
                 registrationMessage.setText("Account created successfully!");
             }
