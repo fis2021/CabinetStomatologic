@@ -1,0 +1,4 @@
+.root{
+    -fx-background-image: url('cab.jpg');
+    -fx-background-size: cover;
+}

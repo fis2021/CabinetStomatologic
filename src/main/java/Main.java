@@ -49,6 +49,7 @@ public class Main extends Application {
     }
 
 
+
     @FXML
     private AnchorPane scenePane;
 
@@ -85,6 +86,8 @@ public class Main extends Application {
         window1 = (Stage)LogInButton.getScene().getWindow();
         window1.setScene(new Scene(root));
     }
+
+
 
 
 

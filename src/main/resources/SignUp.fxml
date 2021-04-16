@@ -4,39 +4,39 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <children>
-      <Button layoutX="348.0" layoutY="299.0" mnemonicParsing="false" onAction="#handleRegisterAction" prefHeight="56.0" prefWidth="137.0" text="Register">
+      <Button layoutX="275.0" layoutY="259.0" mnemonicParsing="false" onAction="#handleRegisterAction" prefHeight="44.0" prefWidth="149.0" text="Register" textFill="#ee0000">
          <font>
-            <Font size="23.0" />
+            <Font name="System Bold" size="20.0" />
          </font>
       </Button>
-      <Label layoutX="127.0" layoutY="88.0" prefHeight="49.0" prefWidth="159.0" text="Username:">
+      <Label layoutX="127.0" layoutY="88.0" prefHeight="49.0" prefWidth="159.0" text="Username:" textFill="#f00101">
          <font>
             <Font size="25.0" />
          </font>
       </Label>
-      <Label layoutX="127.0" layoutY="138.0" text=" Password:">
+      <Label layoutX="127.0" layoutY="138.0" text=" Password:" textFill="RED">
          <font>
             <Font size="25.0" />
          </font>
       </Label>
-      <TextField fx:id="usernameField" layoutX="276.0" layoutY="100.0" />
-      <PasswordField fx:id="passwordField" layoutX="276.0" layoutY="148.0" />
+      <TextField fx:id="usernameField" alignment="CENTER" layoutX="276.0" layoutY="100.0" promptText="username" />
+      <PasswordField fx:id="passwordField" alignment="CENTER" layoutX="276.0" layoutY="148.0" promptText="password" />
       <ChoiceBox fx:id="role" layoutX="275.0" layoutY="200.0" prefWidth="150.0" />
-      <Label alignment="CENTER" contentDisplay="RIGHT" layoutX="147.0" layoutY="195.0" prefHeight="25.0" prefWidth="120.0" text="   Role:" textAlignment="CENTER">
+      <Label alignment="CENTER" contentDisplay="RIGHT" layoutX="147.0" layoutY="195.0" prefHeight="25.0" prefWidth="120.0" text="   Role:" textAlignment="CENTER" textFill="#fe0202">
          <font>
             <Font size="25.0" />
          </font>
       </Label>
-      <Label layoutX="130.0" layoutY="25.0" prefHeight="36.0" prefWidth="390.0" text="Cabinet Stomatologic">
+      <Label layoutX="130.0" layoutY="25.0" prefHeight="36.0" prefWidth="390.0" text="Cabinet Stomatologic" textFill="#e51313">
          <font>
-            <Font size="36.0" />
+            <Font name="Times New Roman" size="40.0" />
          </font>
       </Label>
-      <Button fx:id="BackButton" layoutX="113.0" layoutY="299.0" mnemonicParsing="false" onMouseClicked="#switchToMain" prefHeight="56.0" prefWidth="137.0" text="Back">
+      <Button fx:id="BackButton" layoutX="22.0" layoutY="346.0" mnemonicParsing="false" onMouseClicked="#switchToMain" prefHeight="31.0" prefWidth="72.0" text="Back" textFill="#f70000">
          <font>
-            <Font size="23.0" />
+            <Font name="System Bold" size="15.0" />
          </font>
       </Button>
       <Button layoutX="-63.0" layoutY="113.0" mnemonicParsing="false" text="Button" />
