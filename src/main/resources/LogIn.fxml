@@ -4,9 +4,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerLogIn">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@style0.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerLogIn">
    <children>
-      <Button fx:id="LOGINButton" layoutX="324.0" layoutY="273.0" mnemonicParsing="false" onMouseClicked="#switchToMainPage" prefHeight="32.0" prefWidth="149.0" text="Log In" textFill="#e80d0d">
+      <Button fx:id="LOGINButton" layoutX="324.0" layoutY="293.0" mnemonicParsing="false" onMouseClicked="#switchToMainPage" prefHeight="32.0" prefWidth="149.0" text="Log In" textFill="#e80d0d">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Button>
@@ -27,11 +27,14 @@
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Button>
-      <Label alignment="CENTER" layoutX="56.0" layoutY="34.0" prefHeight="64.0" prefWidth="499.0" stylesheets="@style.css" text="Cabinet Stomatologic" textFill="#ec1616">
+      <Label alignment="CENTER" layoutX="56.0" layoutY="34.0" prefHeight="64.0" prefWidth="499.0" stylesheets="@style0.css" text="Cabinet Stomatologic" textFill="#ec1616">
          <font>
             <Font name="Times New Roman" size="40.0" />
          </font>
       </Label>
-      <Label fx:id="FailedLogInMessage" alignment="CENTER" layoutX="279.0" layoutY="243.0" prefHeight="19.0" prefWidth="240.0" />
+      <Label fx:id="FailedLogInMessage" alignment="CENTER" layoutX="279.0" layoutY="255.0" prefHeight="19.0" prefWidth="240.0" textFill="RED">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
    </children>
 </AnchorPane>
