@@ -5,7 +5,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -49,8 +48,16 @@ public class Controller implements Initializable {
     @FXML
     public void handleRegisterAction() {
         try {
-            UserService.addUser(usernameField.getText(), passwordField.getText(), (String) role.getValue());
-            registrationMessage.setText("Account created successfully!");
+            if(passwordField.getText().equals("")) {
+                registrationMessage.setText("Pasword cannot be empty!");
+            }
+             if(usernameField.getText().equals("")){
+                registrationMessage.setText("Username cannot be empty!");
+            }
+            if(!passwordField.getText().equals("") && !usernameField.getText().equals("")) {
+                UserService.addUser(usernameField.getText(), passwordField.getText(), (String) role.getValue());
+                registrationMessage.setText("Account created successfully!");
+            }
         } catch (UsernameAlreadyExistsException e) {
             registrationMessage.setText(e.getMessage());
         }

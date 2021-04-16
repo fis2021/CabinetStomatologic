@@ -35,9 +35,9 @@
             <Font name="Times New Roman" size="40.0" />
          </font>
       </Label>
-      <JFXButton fx:id="BackButton" layoutX="22.0" layoutY="346.0" mnemonicParsing="false" onMouseClicked="#switchToMain" prefHeight="31.0" prefWidth="72.0" text="Back" textFill="#f70000">
+      <JFXButton fx:id="BackButton" layoutX="22.0" layoutY="341.0" mnemonicParsing="false" onMouseClicked="#switchToMain" prefHeight="36.0" prefWidth="104.0" text="Back" textFill="#f70000">
          <font>
-            <Font name="System Bold" size="15.0" />
+            <Font name="System Bold" size="22.0" />
          </font>
       </JFXButton>
       <JFXButton layoutX="-63.0" layoutY="113.0" mnemonicParsing="false" text="Button" />
