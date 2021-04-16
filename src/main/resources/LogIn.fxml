@@ -1,37 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerLogIn">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@style0.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerLogIn">
    <children>
-      <Button fx:id="LOGINButton" layoutX="324.0" layoutY="273.0" mnemonicParsing="false" onMouseClicked="#switchToMainPage" prefHeight="32.0" prefWidth="149.0" text="Log In">
+      <JFXButton fx:id="LOGINButton" layoutX="324.0" layoutY="293.0" mnemonicParsing="false" onMouseClicked="#switchToMainPage" prefHeight="32.0" prefWidth="149.0" text="Log In" textFill="#e80d0d">
          <font>
-            <Font name="System Bold" size="14.0" />
-         </font></Button>
-      <Label alignment="CENTER" layoutX="127.0" layoutY="152.0" prefHeight="32.0" prefWidth="172.0" style="-fx-background-color: lightgrey;" text="Username:">
+            <Font name="System Bold" size="22.0" />
+         </font></JFXButton>
+      <Label alignment="CENTER" layoutX="127.0" layoutY="152.0" prefHeight="32.0" prefWidth="172.0" style="-fx-background-color: lightgrey;" text="Username:" textFill="#ea1414">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" layoutX="127.0" layoutY="203.0" prefHeight="32.0" prefWidth="172.0" style="-fx-background-color: lightgrey;" text="Password:">
+      <Label alignment="CENTER" layoutX="127.0" layoutY="203.0" prefHeight="32.0" prefWidth="172.0" style="-fx-background-color: lightgrey;" text="Password:" textFill="#e30d0d">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
       </Label>
-      <PasswordField fx:id="LogInPassword" layoutX="324.0" layoutY="207.0" />
-      <TextField fx:id="LogInUsername" layoutX="324.0" layoutY="152.0" />
-      <Button fx:id="BackFromLogInButton" alignment="CENTER" layoutX="26.0" layoutY="345.0" mnemonicParsing="false" onMouseClicked="#switchToMainFromLogIn" prefHeight="32.0" prefWidth="64.0" text="Back">
+      <PasswordField fx:id="LogInPassword" alignment="CENTER" layoutX="324.0" layoutY="207.0" promptText="password" />
+      <TextField fx:id="LogInUsername" alignment="CENTER" layoutX="324.0" layoutY="152.0" promptText="username" />
+      <JFXButton fx:id="BackFromLogInButton" alignment="CENTER" layoutX="26.0" layoutY="345.0" mnemonicParsing="false" onMouseClicked="#switchToMainFromLogIn" prefHeight="44.0" prefWidth="82.0" text="Back" textFill="#f50808">
          <font>
-            <Font name="System Bold Italic" size="15.0" />
+            <Font name="System Bold Italic" size="20.0" />
          </font>
-      </Button>
-      <Label alignment="CENTER" layoutX="56.0" layoutY="34.0" prefHeight="64.0" prefWidth="499.0" text="Cabinet Stomatologic">
+      </JFXButton>
+      <Label alignment="CENTER" layoutX="56.0" layoutY="34.0" prefHeight="64.0" prefWidth="499.0" stylesheets="@style0.css" text="Cabinet Stomatologic" textFill="#ec1616">
          <font>
-            <Font size="37.0" />
+            <Font name="Times New Roman" size="40.0" />
          </font>
       </Label>
-      <Label fx:id="FailedLogInMessage" alignment="CENTER" layoutX="279.0" layoutY="243.0" prefHeight="19.0" prefWidth="240.0" />
+      <Label fx:id="FailedLogInMessage" alignment="CENTER" layoutX="279.0" layoutY="255.0" prefHeight="19.0" prefWidth="240.0" textFill="RED">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
    </children>
 </AnchorPane>
