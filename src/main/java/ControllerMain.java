@@ -89,5 +89,25 @@ public class ControllerMain implements Initializable {
         window1.setScene(new Scene(root));
     }
 
+    @FXML
+    JFXButton DetailsButton1;
+
+    public void goDetails1(MouseEvent event) throws Exception {
+
+        Parent root = FXMLLoader.load(getClass().getResource("DetaliiClinica.fxml"));
+        window1 = (Stage)DetailsButton1.getScene().getWindow();
+        window1.setScene(new Scene(root));
+    }
+
+    @FXML
+    JFXButton BackFromDetailsButton;
+
+    public void goBackFromDetails(MouseEvent event) throws Exception {
+
+        Parent root = FXMLLoader.load(getClass().getResource("MainPage.fxml"));
+        window1 = (Stage)BackFromDetailsButton.getScene().getWindow();
+        window1.setScene(new Scene(root));
+    }
+
 
 }
