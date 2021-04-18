@@ -18,7 +18,7 @@
          </image>
       </ImageView>
       <ListView fx:id="list" layoutX="125.0" layoutY="110.0" prefHeight="200.0" prefWidth="295.0" />
-      <Label fx:id="lab" alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" prefHeight="58.0" prefWidth="600.0" style="-fx-background-color: White;" text="Label" textAlignment="CENTER">
+      <Label fx:id="lab" alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" prefHeight="58.0" prefWidth="600.0" style="-fx-background-color: White;" textAlignment="CENTER">
          <font>
             <Font size="33.0" />
          </font></Label>
