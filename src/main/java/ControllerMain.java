@@ -1,5 +1,7 @@
 import com.jfoenix.controls.JFXButton;
 import javafx.animation.TranslateTransition;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -27,10 +30,24 @@ public class ControllerMain implements Initializable {
     @FXML
     private AnchorPane slider=new AnchorPane();
 
+    @FXML
+    private ListView<String> list = new ListView<>();
+    @FXML
+    private Label lab;
+
+    String[] interventii = {"Extractie      40 Ron", "Carie           70 Ron", "Albire          90 Ron"};
+    String interventiaCurenta;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-
+        list.getItems().addAll(interventii);
+        list.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                interventiaCurenta = list.getSelectionModel().getSelectedItem();
+                lab.setText(interventiaCurenta);
+            }
+        });
         slider.setTranslateX(-176);
         Menu.setOnMouseClicked(event -> {
             TranslateTransition slide = new TranslateTransition();
@@ -158,4 +175,5 @@ public class ControllerMain implements Initializable {
         window1 = (Stage)lmButton.getScene().getWindow();
         window1.setScene(new Scene(root));
     }
+
 }
