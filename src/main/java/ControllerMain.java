@@ -109,5 +109,53 @@ public class ControllerMain implements Initializable {
         window1.setScene(new Scene(root));
     }
 
+    @FXML
+    JFXButton piButton;
 
+    public void gopi(MouseEvent event) throws Exception {
+
+        Parent root = FXMLLoader.load(getClass().getResource("PreturiInterventii.fxml"));
+        window1 = (Stage)BackFromDetailsButton.getScene().getWindow();
+        window1.setScene(new Scene(root));
+    }
+
+    @FXML
+    JFXButton backfrompiButton;
+
+    public void goBackfrompi(MouseEvent event) throws Exception {
+
+        Parent root = FXMLLoader.load(getClass().getResource("DetaliiClinica.fxml"));
+        window1 = (Stage)backfrompiButton.getScene().getWindow();
+        window1.setScene(new Scene(root));
+    }
+
+    @FXML
+    JFXButton icButton;
+
+    public void goic(MouseEvent event) throws Exception {
+
+        Parent root = FXMLLoader.load(getClass().getResource("IstoricClinica.fxml"));
+        window1 = (Stage)icButton.getScene().getWindow();
+        window1.setScene(new Scene(root));
+    }
+
+    @FXML
+    JFXButton backfromicButton;
+
+    public void goBackfromic(MouseEvent event) throws Exception {
+
+        Parent root = FXMLLoader.load(getClass().getResource("DetaliiClinica.fxml"));
+        window1 = (Stage)backfromicButton.getScene().getWindow();
+        window1.setScene(new Scene(root));
+    }
+
+    @FXML
+    JFXButton lmButton;
+
+    public void golm(MouseEvent event) throws Exception {
+
+        Parent root = FXMLLoader.load(getClass().getResource("ListaMedici.fxml"));
+        window1 = (Stage)lmButton.getScene().getWindow();
+        window1.setScene(new Scene(root));
+    }
 }
