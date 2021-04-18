@@ -10,6 +10,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -35,10 +37,48 @@ public class ControllerMain implements Initializable {
     @FXML
     private Label lab;
 
+    @FXML
+    private ListView<String> medList = new ListView<>();
+
+    @FXML
+    private Label medLab;
+
     String[] interventii = {"Extractie      40 Ron", "Carie           70 Ron", "Albire          90 Ron"};
     String interventiaCurenta;
+
+    String[] medici = {"Rusu Radu", "Rosa Flavius", "Bogosel Ovidiu"};
+    String[] poze = {"1.jpg", "2.jpg", "3.jpg"};
+    String medicCurent;
+
+    @FXML
+    ImageView medpic = new ImageView();
+
+    public String getpic(String med)
+    {
+        int i;
+
+        for(i = 0 ; i < medici.length; i++){
+            if(med.equals(medici[i])){
+                return poze[i];
+            }
+        }
+        return "";
+    }
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        medList.getItems().addAll(medici);
+        medList.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                medicCurent = medList.getSelectionModel().getSelectedItem();
+                medLab.setText(medicCurent);
+                Image img = new Image(getpic(medicCurent));
+                medpic.setImage(img);
+            }
+        });
 
         list.getItems().addAll(interventii);
         list.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
