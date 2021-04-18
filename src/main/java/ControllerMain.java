@@ -19,13 +19,13 @@ public class ControllerMain implements Initializable {
 
 
     @FXML
-    private Label Menu;
+    private Label Menu = new Label();
 
     @FXML
-    private Label MenuClose;
+    private Label MenuClose = new Label();
 
     @FXML
-    private AnchorPane slider;
+    private AnchorPane slider=new AnchorPane();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -78,4 +78,16 @@ public class ControllerMain implements Initializable {
         window1 = (Stage)BackButton.getScene().getWindow();
         window1.setScene(new Scene(root));
     }
+
+    @FXML
+    JFXButton DetailsButton;
+
+    public void goDetails(MouseEvent event) throws Exception {
+
+        Parent root = FXMLLoader.load(getClass().getResource("DetaliiClinica.fxml"));
+        window1 = (Stage)DetailsButton.getScene().getWindow();
+        window1.setScene(new Scene(root));
+    }
+
+
 }
