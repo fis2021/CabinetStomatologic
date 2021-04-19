@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@style0.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerMain">
+    <children>
+        <JFXButton fx:id="backfromicButton" layoutX="23.0" layoutY="342.0" mnemonicParsing="false" onMouseClicked="#goBackfromic" prefHeight="43.0" prefWidth="98.0" text="Back" textFill="RED">
+            <font>
+                <Font name="System Bold" size="19.0" />
+            </font></JFXButton>
+      <Label layoutX="134.0" layoutY="25.0" prefHeight="17.0" prefWidth="442.0" text="Zambetul este un lucru serios!" textFill="RED">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <TextArea layoutX="17.0" layoutY="78.0" prefHeight="251.0" prefWidth="566.0" text="Despre noi&#10;Clinica DRM România, coordonată de Dr. Alin Udeanu și-a asumat o misiune firească, aceea de a&#10; restabili zâmbetul a milioane de români – din țară și din străinătate – utilizând proceduri stomatologice&#10; avansate, înr-un cadru menit să sporească încrederea și respectul pacienților.&#10;&#10;Suntem singura clinică stomatologică din România care a manifestat o responsabilitate pentru&#10; bunăstarea românilor din Italia, prin faptul că am stabilit un parteneriat cu o renumită clinică din Italia&#10; – DRM – Clinica Dr Marcon.&#10;&#10;Acest parteneriat a început în urmă cu câțiva ani cu un program lung de învățare, mentorat și de schimb&#10; de experiență. Obiectivul nostru a fost acela de a oferi românilor oportunitatea de a se trata atât în&#10; România, cât și în Italia, în aceleași condiții financiare, fără a renunța la calitatea serviciilor stomatologice&#10; din afara țării." />
+    </children>
+</AnchorPane>

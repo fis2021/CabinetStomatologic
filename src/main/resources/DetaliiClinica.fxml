@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@style0.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerMain">
+   <children>
+      <JFXButton fx:id="BackFromDetailsButton" layoutX="14.0" layoutY="338.0" mnemonicParsing="false" onMouseClicked="#goBackFromDetails" stylesheets="@style0.css" text="Back" textFill="RED">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font></JFXButton>
+      <Label layoutX="130.0" layoutY="23.0" prefHeight="17.0" prefWidth="339.0" text="Alegeti ce doriti sa vedeti!" textAlignment="CENTER" textFill="RED">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="piButton" layoutX="161.0" layoutY="128.0" mnemonicParsing="false" onMouseClicked="#gopi" prefHeight="48.0" prefWidth="249.0" text="Preturile interventiilor" textFill="#fe0000">
+         <font>
+            <Font size="20.0" />
+         </font></JFXButton>
+      <JFXButton fx:id="lmButton" layoutX="210.0" layoutY="222.0" mnemonicParsing="false" onMouseClicked="#golm" text="Lista medicilor" textFill="#fc0000">
+         <font>
+            <Font size="20.0" />
+         </font></JFXButton>
+      <JFXButton fx:id="icButton" layoutX="205.0" layoutY="178.0" mnemonicParsing="false" onMouseClicked="#goic" text="Istoricul Clinicii" textFill="RED">
+         <font>
+            <Font size="20.0" />
+         </font></JFXButton>
+   </children>
+</AnchorPane>
