@@ -216,4 +216,24 @@ public class ControllerMain implements Initializable {
         window1.setScene(new Scene(root));
     }
 
+    @FXML
+    JFXButton progrButton;
+
+    public void goProgr(MouseEvent event) throws Exception {
+
+        Parent root = FXMLLoader.load(getClass().getResource("Programare.fxml"));
+        window1 = (Stage)progrButton.getScene().getWindow();
+        window1.setScene(new Scene(root));
+    }
+
+    @FXML
+    JFXButton progrButton1;
+
+    public void goProgr1(MouseEvent event) throws Exception {
+
+        Parent root = FXMLLoader.load(getClass().getResource("Programare.fxml"));
+        window1 = (Stage)progrButton1.getScene().getWindow();
+        window1.setScene(new Scene(root));
+    }
+
 }
