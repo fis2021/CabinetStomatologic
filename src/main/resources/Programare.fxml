@@ -20,7 +20,7 @@
       <Label alignment="CENTER" layoutX="99.0" layoutY="212.0" prefHeight="23.0" prefWidth="142.0" text="Numar telefon" textFill="WHITE" />
       <DatePicker fx:id="data" layoutX="272.0" layoutY="265.0" prefHeight="25.0" prefWidth="218.0" promptText="data" />
       <Label alignment="CENTER" layoutX="100.0" layoutY="266.0" prefHeight="23.0" prefWidth="142.0" text="Data" textFill="WHITE" />
-      <CheckBox layoutX="16.0" layoutY="357.0" mnemonicParsing="false" text="Am completat fisa medicala" textFill="WHITE" />
+      <CheckBox fx:id="checkButton" layoutX="16.0" layoutY="357.0" mnemonicParsing="false" text="Am completat fisa medicala" textFill="WHITE" />
       <Label layoutX="20.0" layoutY="321.0" prefHeight="23.0" prefWidth="142.0" text="Obligatoriu!" textFill="#ffffffe0" />
       <JFXButton fx:id="submitButton" layoutX="434.0" layoutY="345.0" mnemonicParsing="false" onMouseClicked="#goSubmit" prefHeight="25.0" prefWidth="109.0" style="-fx-border-radius: 50;" text="Submit">
          <font>
@@ -30,5 +30,6 @@
          <font>
             <Font name="System Bold" size="14.0" />
          </font></JFXButton>
+      <Label fx:id="lb" alignment="CENTER" layoutX="248.0" layoutY="313.0" prefHeight="17.0" prefWidth="265.0" textFill="WHITE" />
    </children>
 </AnchorPane>

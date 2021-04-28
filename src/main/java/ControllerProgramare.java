@@ -37,24 +37,46 @@ public class ControllerProgramare {
     public javafx.scene.control.DatePicker data;
     @FXML
     JFXButton submitButton;
+    @FXML
+    public javafx.scene.control.Label lb;
+    @FXML
+    public javafx.scene.control.CheckBox checkButton;
 
     public void goSubmit(MouseEvent event) throws Exception {
 
         String Nume = nume.getText();
         String Prenume = prenume.getText();
         String Nr = nr.getText();
-        String Data = data.getValue().format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+        String Data = "";
 
+        if(data.getValue() != null) {
+             Data = data.getValue().format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+        }
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("ListaPacienti.fxml"));
-        root = loader.load();
+        if(Nume.equals("") || Prenume.equals("") || Nr.equals("") || (data.getValue() == null))
+        {
+            lb.setText("Toate campurile trebuie completate!");
+        }
+        else if(nr.getLength() != 10)
+        {
+            lb.setText("Introduceti un numar de telefon valid!");
+        }
+        else if(!checkButton.isSelected()){
+            lb.setText("Trebuie sa aveti fisa medicala completata!");
+        }
+        else{
 
-        ControllerListaPacienti controllerListaPacienti = loader.getController();
-        controllerListaPacienti.setLabel(Data);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ListaPacienti.fxml"));
+            root = loader.load();
 
-        //Parent root = FXMLLoader.load(getClass().getResource("ListaPacienti.fxml"));
-        window1 = (Stage)submitButton.getScene().getWindow();
-        window1.setScene(new Scene(root, 600, 400));
+            ControllerListaPacienti controllerListaPacienti = loader.getController();
+
+            controllerListaPacienti.setFields(Nume, Prenume, Nr, Data);
+
+            //Parent root = FXMLLoader.load(getClass().getResource("ListaPacienti.fxml"));
+            window1 = (Stage) submitButton.getScene().getWindow();
+            window1.setScene(new Scene(root, 600, 400));
+        }
     }
 
 
