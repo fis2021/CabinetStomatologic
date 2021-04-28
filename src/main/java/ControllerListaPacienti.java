@@ -12,7 +12,9 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 
@@ -42,7 +44,13 @@ public class ControllerListaPacienti implements Initializable{
     private String data;
 
     public void setFields(String nume, String prenume, String nr, String data) {
-        label.setText(nume);
+
+        this.nume = nume;
+        this.prenume = prenume;
+        this.nr = nr;
+        this.data = data;
+
+        table.setItems(getPersoana());
     }
 
     @FXML
@@ -60,11 +68,20 @@ public class ControllerListaPacienti implements Initializable{
     @FXML
     TableColumn<Persoana, String> Data;
 
+
+
     ObservableList<Persoana> getPersoana() {
 
         ObservableList<Persoana> persoane = FXCollections.observableArrayList();
 
-        persoane.add(new Persoana(label.getText(), prenume, nr, data));
+        ArrayList<Persoana> list = new ArrayList<>();
+        list.add(new Persoana("Popa", "Alin", "0756189345", "03/07/2021"));
+        list.add(new Persoana("Moga", "Rares", "0718903761", "07/03/2021"));
+        list.add(new Persoana("Cioban", "Raul", "0741156892", "01/09/2021"));
+
+        list.add(new Persoana(this.nume, this.prenume, this.nr, this.data));
+
+        persoane.addAll(list);
 
         return  persoane;
     }
@@ -78,7 +95,7 @@ public class ControllerListaPacienti implements Initializable{
         Numar.setCellValueFactory(new PropertyValueFactory<Persoana, String>("nr"));
         Data.setCellValueFactory(new PropertyValueFactory<Persoana, String>("data"));
 
-        table.setItems(getPersoana());
+
     }
 }
 
