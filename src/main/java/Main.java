@@ -24,6 +24,7 @@ public class Main extends Application {
 
         initDirectory();
         UserService.initDatabase();
+        UserService.initDatabase1();
 
         Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
 

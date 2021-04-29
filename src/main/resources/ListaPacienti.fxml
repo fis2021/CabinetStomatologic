@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
 <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="676.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerListaPacienti">
   <content>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="660.0" prefWidth="600.0">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="660.0" prefWidth="600.0" style="-fx-background-color: #8A0808;">
          <children>
             <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" prefHeight="51.0" prefWidth="600.0" style="-fx-background-color: black;" text="Lista programari" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="28.0" />
                </font>
             </Label>
-            <TableView fx:id="table" layoutY="51.0" prefHeight="332.0" prefWidth="600.0">
+            <TableView fx:id="table" layoutY="51.0" prefHeight="332.0" prefWidth="600.0" style="-fx-background-color: #8A0808;">
               <columns>
                 <TableColumn fx:id="Nume" prefWidth="139.33334863185883" text="Nume" />
                 <TableColumn fx:id="Prenume" prefWidth="150.66664123535156" text="Prenume" />
@@ -21,8 +22,7 @@
                   <TableColumn fx:id="Data" minWidth="2.0" prefWidth="138.00009155273438" text="Data" />
               </columns>
             </TableView>
-            <JFXButton fx:id="backButton" layoutX="14.0" layoutY="621.0" mnemonicParsing="false" onMouseClicked="#goBack" prefHeight="25.0" prefWidth="77.0" text="Back" />
-            <Label fx:id="label" layoutX="105.0" layoutY="448.0" prefHeight="17.0" prefWidth="305.0" text="Label" />
+            <JFXButton fx:id="backButton" layoutX="14.0" layoutY="621.0" mnemonicParsing="false" onMouseClicked="#goBack" prefHeight="25.0" prefWidth="77.0" text="Back" textFill="WHITE" />
          </children></AnchorPane>
   </content>
 </ScrollPane>

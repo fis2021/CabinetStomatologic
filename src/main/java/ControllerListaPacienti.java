@@ -13,6 +13,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -43,7 +44,7 @@ public class ControllerListaPacienti implements Initializable{
     private String nr;
     private String data;
 
-    public void setFields(String nume, String prenume, String nr, String data) {
+    public void setFields (String nume, String prenume, String nr, String data) throws Exception{
 
         this.nume = nume;
         this.prenume = prenume;
@@ -70,16 +71,18 @@ public class ControllerListaPacienti implements Initializable{
 
 
 
-    ObservableList<Persoana> getPersoana() {
+    ObservableList<Persoana> getPersoana() throws IOException {
 
         ObservableList<Persoana> persoane = FXCollections.observableArrayList();
 
         ArrayList<Persoana> list = new ArrayList<>();
-        list.add(new Persoana("Popa", "Alin", "0756189345", "03/07/2021"));
-        list.add(new Persoana("Moga", "Rares", "0718903761", "07/03/2021"));
-        list.add(new Persoana("Cioban", "Raul", "0741156892", "01/09/2021"));
 
-        list.add(new Persoana(this.nume, this.prenume, this.nr, this.data));
+        UserService.addUser1(this.nume, this.prenume, this.nr, this.data);
+
+
+        for (Persoana p : UserService.userRepository1.find()) {
+                list.add(p);
+        }
 
         persoane.addAll(list);
 
@@ -94,7 +97,6 @@ public class ControllerListaPacienti implements Initializable{
         Prenume.setCellValueFactory(new PropertyValueFactory<Persoana, String>("prenume"));
         Numar.setCellValueFactory(new PropertyValueFactory<Persoana, String>("nr"));
         Data.setCellValueFactory(new PropertyValueFactory<Persoana, String>("data"));
-
 
     }
 }

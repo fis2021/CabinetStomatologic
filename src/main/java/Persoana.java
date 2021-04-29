@@ -11,6 +11,10 @@ public class Persoana {
         this.data = data;
     }
 
+    public Persoana(){
+
+    }
+
 
     public String getNume() {
         return nume;
