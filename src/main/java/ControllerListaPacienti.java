@@ -18,6 +18,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import static javax.swing.JOptionPane.showMessageDialog;
+
 
 public class ControllerListaPacienti implements Initializable{
 
@@ -77,7 +79,20 @@ public class ControllerListaPacienti implements Initializable{
 
         ArrayList<Persoana> list = new ArrayList<>();
 
-        UserService.addUser1(this.nume, this.prenume, this.nr, this.data);
+        int sw = 1;
+        for (Persoana p : UserService.userRepository1.find()) {
+            if(p.getNume().equals(this.nume)){
+                sw = 0;
+                break;
+            }
+        }
+
+        if(sw == 1) {
+            UserService.addUser1(this.nume, this.prenume, this.nr, this.data);
+        }
+        else{
+            showMessageDialog(null, "Exista deja o programare pe acest nume!");
+        }
 
 
         for (Persoana p : UserService.userRepository1.find()) {

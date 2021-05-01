@@ -4,27 +4,25 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="scenePane" prefHeight="400.0" prefWidth="600.0" stylesheets="@style0.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main">
+<AnchorPane fx:id="scenePane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #B40404;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main">
    <children>
-      <JFXButton fx:id="SignUpButton" layoutX="357.0" layoutY="287.0" mnemonicParsing="false" onMouseClicked="#switchToSignUp" prefHeight="65.0" prefWidth="185.0" text="Sign up" textFill="#e82727">
+      <JFXButton fx:id="SignUpButton" layoutX="356.0" layoutY="262.0" mnemonicParsing="false" onMouseClicked="#switchToSignUp" prefHeight="65.0" prefWidth="185.0" text="Sign up" textFill="WHITE">
          <font>
             <Font size="36.0" />
          </font></JFXButton>
       <Button layoutX="-82.0" layoutY="68.0" mnemonicParsing="false" text="Button" />
-      <JFXButton fx:id="closeButton" layoutX="31.0" layoutY="344.0" mnemonicParsing="false" onAction="#close" prefHeight="39.0" prefWidth="92.0" text="Exit" textFill="#ec3737">
+      <JFXButton fx:id="closeButton" layoutX="31.0" layoutY="344.0" mnemonicParsing="false" onAction="#close" prefHeight="39.0" prefWidth="92.0" text="Exit" textFill="WHITE">
          <font>
             <Font name="System Bold" size="26.0" />
          </font></JFXButton>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#df111b00" height="122.0" layoutX="4.0" layoutY="28.0" stroke="#ec0b0b" strokeType="INSIDE" strokeWidth="5.0" width="592.0" />
-      <Label alignment="CENTER" layoutX="10.0" layoutY="66.0" prefHeight="17.0" prefWidth="577.0" text="CABINET STOMATOLOGIC" textAlignment="CENTER" textFill="#d82525">
+      <Label alignment="CENTER" layoutY="-5.0" prefHeight="85.0" prefWidth="604.0" style="-fx-background-color: black;" text="CABINET STOMATOLOGIC" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Times New Roman" size="36.0" />
          </font>
       </Label>
-      <JFXButton fx:id="LogInButton" layoutX="356.0" layoutY="185.0" mnemonicParsing="false" onMouseClicked="#switchToLogIn" prefHeight="68.0" prefWidth="185.0" text="Log in" textFill="#f32525" textOverrun="CLIP">
+      <JFXButton fx:id="LogInButton" layoutX="356.0" layoutY="185.0" mnemonicParsing="false" onMouseClicked="#switchToLogIn" prefHeight="68.0" prefWidth="185.0" text="Log in" textFill="WHITE" textOverrun="CLIP">
          <font>
             <Font size="36.0" />
          </font>
