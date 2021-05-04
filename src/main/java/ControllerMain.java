@@ -236,4 +236,26 @@ public class ControllerMain implements Initializable {
         window1.setScene(new Scene(root));
     }
 
+    @FXML
+    JFXButton medFisButton;
+
+    public void goToMedFis(MouseEvent event) throws Exception {
+
+        Parent root = FXMLLoader.load(getClass().getResource("FisaMedicala.fxml"));
+        window1 = (Stage)medFisButton.getScene().getWindow();
+        window1.setScene(new Scene(root, 600, 500));
+        window1.resizableProperty().setValue(Boolean.FALSE);
+    }
+
+    @FXML
+    JFXButton MedFisButtonUp;
+
+    public void goToMedFisUP(MouseEvent event) throws Exception {
+
+        Parent root = FXMLLoader.load(getClass().getResource("FisaMedicala.fxml"));
+        window1 = (Stage)MedFisButtonUp.getScene().getWindow();
+        window1.setScene(new Scene(root, 600, 400));
+        window1.resizableProperty().setValue(Boolean.FALSE);
+    }
+
 }
