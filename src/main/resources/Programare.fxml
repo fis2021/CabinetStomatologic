@@ -22,13 +22,13 @@
       <Label alignment="CENTER" layoutX="100.0" layoutY="266.0" prefHeight="23.0" prefWidth="142.0" text="Data" textFill="WHITE" />
       <CheckBox fx:id="checkButton" layoutX="16.0" layoutY="357.0" mnemonicParsing="false" text="Am completat fisa medicala" textFill="WHITE" />
       <Label layoutX="20.0" layoutY="321.0" prefHeight="23.0" prefWidth="142.0" text="Obligatoriu!" textFill="#ffffffe0" />
-      <JFXButton fx:id="submitButton" layoutX="434.0" layoutY="345.0" mnemonicParsing="false" onMouseClicked="#goSubmit" prefHeight="25.0" prefWidth="109.0" style="-fx-border-radius: 50;" text="Submit">
+      <JFXButton fx:id="submitButton" layoutX="404.0" layoutY="347.0" mnemonicParsing="false" onMouseClicked="#goSubmit" prefHeight="25.0" prefWidth="109.0" style="-fx-border-radius: 50;" text="Submit" textFill="WHITE">
          <font>
             <Font name="System Bold" size="16.0" />
          </font></JFXButton>
-      <JFXButton fx:id="backButton" layoutX="20.0" layoutY="60.0" mnemonicParsing="false" onMouseClicked="#goBack" prefHeight="25.0" prefWidth="54.0" text="Back">
+      <JFXButton fx:id="backButton" layoutX="342.0" layoutY="347.0" mnemonicParsing="false" onMouseClicked="#goBack" prefHeight="25.0" prefWidth="63.0" text="Back" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="14.0" />
+            <Font name="System Bold" size="16.0" />
          </font></JFXButton>
       <Label fx:id="lb" alignment="CENTER" layoutX="248.0" layoutY="313.0" prefHeight="17.0" prefWidth="265.0" textFill="WHITE" />
    </children>

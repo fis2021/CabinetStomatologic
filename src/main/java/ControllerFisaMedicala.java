@@ -24,7 +24,7 @@ public class ControllerFisaMedicala {
     private String Numar="";
 
     @FXML
-    Button sumbitFisaMedicala;
+    JFXButton sumbitFisaMedicala;
 
     @FXML
     TextField nume,numar;
@@ -57,7 +57,7 @@ public class ControllerFisaMedicala {
         else if(numar.getLength()!=10)
         {
 
-            showMessageDialog(null, "Numar de telefon necorespunzator!");
+            showMessageDialog(null, "Numarul de telefon necorespunzator!");
 
         }
         else if(numar.getLength()==10)
@@ -103,7 +103,7 @@ public class ControllerFisaMedicala {
     }
 
     @FXML
-    Button BackFromMedFis;
+    JFXButton BackFromMedFis;
 
     public void switchToMainP(MouseEvent event) throws Exception {
 

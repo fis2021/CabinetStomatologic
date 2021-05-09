@@ -258,4 +258,39 @@ public class ControllerMain implements Initializable {
         window1.resizableProperty().setValue(Boolean.FALSE);
     }
 
+    @FXML
+    JFXButton programari;
+    @FXML
+    JFXButton programari1;
+
+    public void goProgramari(MouseEvent event) throws Exception {
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("ListaPacienti.fxml"));
+        root = loader.load();
+
+        ControllerListaPacienti controllerListaPacienti = loader.getController();
+        controllerListaPacienti.setItems1();
+        window1 = (Stage) programari.getScene().getWindow();
+        window1.setScene(new Scene(root, 600, 400));
+    }
+
+    public void goProgramari1(MouseEvent event) throws Exception {
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("ListaPacienti.fxml"));
+        root = loader.load();
+
+        ControllerListaPacienti controllerListaPacienti = loader.getController();
+        controllerListaPacienti.setItems1();
+        window1 = (Stage) programari1.getScene().getWindow();
+        window1.setScene(new Scene(root, 600, 400));
+    }
+
+
+
+
+
+
+
+
+
 }

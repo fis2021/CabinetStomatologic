@@ -1,3 +1,4 @@
+import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -17,7 +18,7 @@ public class Controller implements Initializable {
     private Parent root;
 
     @FXML
-    Button BackButton;
+    JFXButton BackButton;
 
     public void switchToMain(MouseEvent event) throws Exception {
 
@@ -68,7 +69,7 @@ public class Controller implements Initializable {
     }
 
     @FXML
-    Button LOGINButton;
+    JFXButton LOGINButton;
 
     public void switchToMainPage(MouseEvent event) throws Exception {
 

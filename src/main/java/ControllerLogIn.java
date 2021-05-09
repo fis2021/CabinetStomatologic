@@ -1,3 +1,4 @@
+import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -25,7 +26,7 @@ public class ControllerLogIn {
 
 
     @FXML
-    Button LOGINButton;
+    JFXButton LOGINButton;
     @FXML
     Label FailedLogInMessage;
 
@@ -68,7 +69,7 @@ public class ControllerLogIn {
     }
 
     @FXML
-    Button BackFromLogInButton;
+    JFXButton BackFromLogInButton;
 
     public void switchToMainFromLogIn(MouseEvent event) throws Exception {
 
