@@ -23,6 +23,9 @@ public class FisaMedicala {
         this.q10 = q10;
     }
 
+    public FisaMedicala() {
+    }
+
     public String getNume() {
         return nume;
     }

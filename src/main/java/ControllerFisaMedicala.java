@@ -80,11 +80,24 @@ public class ControllerFisaMedicala {
             }
             else
             {
-                UserService.addFisa(nume.getText(), numar.getText(), Data, da1.isSelected(), da2.isSelected(), da3.isSelected(), da4.isSelected(), da5.isSelected() ,da6.isSelected(), da7.isSelected(), da8.isSelected(), da9.isSelected(), da10.isSelected());
-                showMessageDialog(null, "Fisa medicala a fost salvata!");
-                Parent root = FXMLLoader.load(getClass().getResource("MainPage.fxml"));
-                window1 = (Stage)sumbitFisaMedicala.getScene().getWindow();
-                window1.setScene(new Scene(root));
+                sw = 1;
+                for (FisaMedicala p : UserService.userRepository2.find()) {
+                    if(p.getNume().equals(nume.getText())){
+                        sw = 0;
+                        break;
+                    }
+                }
+
+                if(sw == 1) {
+                    UserService.addFisa(nume.getText(), numar.getText(), Data, da1.isSelected(), da2.isSelected(), da3.isSelected(), da4.isSelected(), da5.isSelected() ,da6.isSelected(), da7.isSelected(), da8.isSelected(), da9.isSelected(), da10.isSelected());
+                    showMessageDialog(null, "Fisa medicala a fost salvata!");
+                    Parent root = FXMLLoader.load(getClass().getResource("MainPage.fxml"));
+                    window1 = (Stage)sumbitFisaMedicala.getScene().getWindow();
+                    window1.setScene(new Scene(root));
+                }
+                else{
+                    showMessageDialog(null, "Exista deja o programare pe acest nume!");
+                }
             }
         }
     }
