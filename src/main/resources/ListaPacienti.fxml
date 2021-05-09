@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
-
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="676.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerListaPacienti">
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="676.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerListaPacienti">
   <content>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="660.0" prefWidth="600.0" style="-fx-background-color: #8A0808;">
          <children>
@@ -14,7 +13,7 @@
                   <Font name="System Bold" size="28.0" />
                </font>
             </Label>
-            <TableView fx:id="table" layoutY="51.0" prefHeight="332.0" prefWidth="600.0" style="-fx-background-color: #8A0808;">
+            <TableView fx:id="table" layoutY="49.0" prefHeight="463.0" prefWidth="600.0" style="-fx-background-color: #8A0808;">
               <columns>
                 <TableColumn fx:id="Nume" prefWidth="139.33334863185883" text="Nume" />
                 <TableColumn fx:id="Prenume" prefWidth="150.66664123535156" text="Prenume" />

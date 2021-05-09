@@ -23,6 +23,7 @@ import static javax.swing.JOptionPane.showMessageDialog;
 
 public class ControllerListaPacienti implements Initializable{
 
+    private static int ok = 0;
 
     private Stage window1;
     private Scene scene;
@@ -33,9 +34,17 @@ public class ControllerListaPacienti implements Initializable{
 
     public void goBack(MouseEvent event) throws Exception {
 
-        Parent root = FXMLLoader.load(getClass().getResource("Programare.fxml"));
-        window1 = (Stage)backButton.getScene().getWindow();
-        window1.setScene(new Scene(root));
+        if(ok == 0) {
+            Parent root = FXMLLoader.load(getClass().getResource("Programare.fxml"));
+            window1 = (Stage)backButton.getScene().getWindow();
+            window1.setScene(new Scene(root));
+        }
+        else {
+            Parent root = FXMLLoader.load(getClass().getResource("MainPageMedic.fxml"));
+            window1 = (Stage)backButton.getScene().getWindow();
+            window1.setScene(new Scene(root));
+        }
+
     }
 
     @FXML
@@ -55,6 +64,12 @@ public class ControllerListaPacienti implements Initializable{
 
         table.setItems(getPersoana());
     }
+
+    public void setItems () throws Exception{
+        ok = 1;
+        table.setItems(getPersoana());
+    }
+
 
     @FXML
     TableView<Persoana> table;
@@ -81,17 +96,19 @@ public class ControllerListaPacienti implements Initializable{
 
         int sw = 1;
         for (Persoana p : UserService.userRepository1.find()) {
-            if(p.getNume().equals(this.nume)){
-                sw = 0;
-                break;
-            }
+                if (p.getNume().equals(this.nume)) {
+                    sw = 0;
+                    break;
+                }
+
         }
 
-        if(sw == 1) {
-            UserService.addUser1(this.nume, this.prenume, this.nr, this.data);
-        }
-        else{
-            showMessageDialog(null, "Exista deja o programare pe acest nume!");
+        if(ok == 0) {
+            if (sw == 1) {
+                UserService.addUser1(this.nume, this.prenume, this.nr, this.data);
+            } else {
+                showMessageDialog(null, "Exista deja o programare pe acest nume!");
+            }
         }
 
 
@@ -107,6 +124,8 @@ public class ControllerListaPacienti implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        ok = 0;
 
         Nume.setCellValueFactory(new PropertyValueFactory<Persoana, String>("nume"));
         Prenume.setCellValueFactory(new PropertyValueFactory<Persoana, String>("prenume"));
