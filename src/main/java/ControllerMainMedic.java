@@ -37,4 +37,20 @@ public class ControllerMainMedic {
         window1.setScene(new Scene(root, 600, 400));
     }
 
+    @FXML
+    JFXButton vpButton1;
+
+    public void vp1(MouseEvent event) throws Exception {
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("ListaPacienti.fxml"));
+        root = loader.load();
+
+        ControllerListaPacienti controllerListaPacienti = loader.getController();
+        controllerListaPacienti.setItems();
+
+        //Parent root = FXMLLoader.load(getClass().getResource("ListaPacienti.fxml"));
+        window1 = (Stage) vpButton1.getScene().getWindow();
+        window1.setScene(new Scene(root, 600, 400));
+    }
+
 }
