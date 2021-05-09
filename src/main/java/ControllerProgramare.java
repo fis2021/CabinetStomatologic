@@ -8,6 +8,8 @@ import javafx.stage.Stage;
 
 import java.time.format.DateTimeFormatter;
 
+import static javax.swing.JOptionPane.showMessageDialog;
+
 public class ControllerProgramare {
 
 
@@ -64,19 +66,31 @@ public class ControllerProgramare {
         else if(!checkButton.isSelected()){
             lb.setText("Trebuie sa aveti fisa medicala completata!");
         }
-        else{
+        else if(nr.getLength()==10) {
+            int i, sw = 0;
+            for (i = 0; i < Nr.length() && sw == 0; i++) {
+                if (Nr.charAt(i) < '0' || Nr.charAt(i) > '9') {
+                    sw = 1;
+                }
+            }
+            if (sw == 1) {
+                lb.setText("Numarul trebuie sa contina doar cifre!");
+            }
+            else
+            {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("ListaPacienti.fxml"));
+                root = loader.load();
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("ListaPacienti.fxml"));
-            root = loader.load();
+                ControllerListaPacienti controllerListaPacienti = loader.getController();
 
-            ControllerListaPacienti controllerListaPacienti = loader.getController();
+                controllerListaPacienti.setFields(Nume, Prenume, Nr, Data);
 
-            controllerListaPacienti.setFields(Nume, Prenume, Nr, Data);
-
-            //Parent root = FXMLLoader.load(getClass().getResource("ListaPacienti.fxml"));
-            window1 = (Stage) submitButton.getScene().getWindow();
-            window1.setScene(new Scene(root, 600, 400));
+                //Parent root = FXMLLoader.load(getClass().getResource("ListaPacienti.fxml"));
+                window1 = (Stage) submitButton.getScene().getWindow();
+                window1.setScene(new Scene(root, 600, 400));
+            }
         }
+
     }
 
 

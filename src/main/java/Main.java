@@ -1,3 +1,4 @@
+import com.jfoenix.controls.JFXButton;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -41,7 +42,7 @@ public class Main extends Application {
     private Parent root;
 
     @FXML
-    Button SignUpButton;
+    JFXButton SignUpButton;
 
     public void switchToSignUp(MouseEvent event) throws Exception {
 
@@ -80,7 +81,7 @@ public class Main extends Application {
 
 
     @FXML
-    Button LogInButton;
+    JFXButton LogInButton;
 
     public void switchToLogIn(MouseEvent event) throws Exception {
 
