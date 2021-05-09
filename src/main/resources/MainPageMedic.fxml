@@ -33,7 +33,7 @@
                                         </ImageView>
                                     </graphic>
                                 </JFXButton>
-                                <JFXButton prefHeight="38.0" prefWidth="136.0" styleClass="menuItem" text="Programeaza-te">
+                                <JFXButton fx:id="vpButton" onMouseClicked="#vp" prefHeight="38.0" prefWidth="136.0" styleClass="menuItem" text="Vezi programari">
                                     <graphic>
                                         <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
@@ -109,7 +109,7 @@
                                         </ImageView>
                                     </graphic>
                                 </JFXButton>
-                                <JFXButton alignment="BASELINE_LEFT" prefHeight="38.0" prefWidth="176.0" styleClass="sidebarItem" text="Programeaza-te" textFill="WHITE">
+                                <JFXButton alignment="BASELINE_LEFT" prefHeight="38.0" prefWidth="176.0" styleClass="sidebarItem" text="Vezi programari" textFill="WHITE">
                                     <font>
                                         <Font name="System Bold" size="15.0" />
                                     </font>

@@ -23,6 +23,7 @@ import static javax.swing.JOptionPane.showMessageDialog;
 
 public class ControllerListaPacienti implements Initializable{
 
+    private static int ok = 0;
 
     private Stage window1;
     private Scene scene;
@@ -56,6 +57,12 @@ public class ControllerListaPacienti implements Initializable{
         table.setItems(getPersoana());
     }
 
+    public void setItems () throws Exception{
+        ok = 1;
+        table.setItems(getPersoana());
+    }
+
+
     @FXML
     TableView<Persoana> table;
 
@@ -81,17 +88,19 @@ public class ControllerListaPacienti implements Initializable{
 
         int sw = 1;
         for (Persoana p : UserService.userRepository1.find()) {
-            if(p.getNume().equals(this.nume)){
-                sw = 0;
-                break;
-            }
+                if (p.getNume().equals(this.nume)) {
+                    sw = 0;
+                    break;
+                }
+
         }
 
-        if(sw == 1) {
-            UserService.addUser1(this.nume, this.prenume, this.nr, this.data);
-        }
-        else{
-            showMessageDialog(null, "Exista deja o programare pe acest nume!");
+        if(ok == 0) {
+            if (sw == 1) {
+                UserService.addUser1(this.nume, this.prenume, this.nr, this.data);
+            } else {
+                showMessageDialog(null, "Exista deja o programare pe acest nume!");
+            }
         }
 
 
