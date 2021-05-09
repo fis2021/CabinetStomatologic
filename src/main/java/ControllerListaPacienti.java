@@ -34,9 +34,17 @@ public class ControllerListaPacienti implements Initializable{
 
     public void goBack(MouseEvent event) throws Exception {
 
-        Parent root = FXMLLoader.load(getClass().getResource("Programare.fxml"));
-        window1 = (Stage)backButton.getScene().getWindow();
-        window1.setScene(new Scene(root));
+        if(ok == 0) {
+            Parent root = FXMLLoader.load(getClass().getResource("Programare.fxml"));
+            window1 = (Stage)backButton.getScene().getWindow();
+            window1.setScene(new Scene(root));
+        }
+        else {
+            Parent root = FXMLLoader.load(getClass().getResource("MainPageMedic.fxml"));
+            window1 = (Stage)backButton.getScene().getWindow();
+            window1.setScene(new Scene(root));
+        }
+
     }
 
     @FXML
@@ -116,6 +124,8 @@ public class ControllerListaPacienti implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        ok = 0;
 
         Nume.setCellValueFactory(new PropertyValueFactory<Persoana, String>("nume"));
         Prenume.setCellValueFactory(new PropertyValueFactory<Persoana, String>("prenume"));
