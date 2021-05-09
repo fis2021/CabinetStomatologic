@@ -39,8 +39,14 @@ public class ControllerListaPacienti implements Initializable{
             window1 = (Stage)backButton.getScene().getWindow();
             window1.setScene(new Scene(root));
         }
-        else {
+        else if(ok==1) {
             Parent root = FXMLLoader.load(getClass().getResource("MainPageMedic.fxml"));
+            window1 = (Stage)backButton.getScene().getWindow();
+            window1.setScene(new Scene(root));
+        }
+        else
+        {
+            Parent root = FXMLLoader.load(getClass().getResource("MainPage.fxml"));
             window1 = (Stage)backButton.getScene().getWindow();
             window1.setScene(new Scene(root));
         }
@@ -66,7 +72,12 @@ public class ControllerListaPacienti implements Initializable{
     }
 
     public void setItems () throws Exception{
-        ok = 1;
+        ok = 1;  //pentru medic
+        table.setItems(getPersoana());
+    }
+
+    public void setItems1 () throws Exception{
+        ok = -1;  //pentru pacient
         table.setItems(getPersoana());
     }
 
@@ -103,7 +114,7 @@ public class ControllerListaPacienti implements Initializable{
 
         }
 
-        if(ok == 0) {
+        if(ok == 0) {   //daca este pacient
             if (sw == 1) {
                 UserService.addUser1(this.nume, this.prenume, this.nr, this.data);
             } else {

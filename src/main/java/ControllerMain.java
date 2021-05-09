@@ -265,16 +265,24 @@ public class ControllerMain implements Initializable {
 
     public void goProgramari(MouseEvent event) throws Exception {
 
-        Parent root = FXMLLoader.load(getClass().getResource("ListaPacienti.fxml"));
-        window1 = (Stage)programari.getScene().getWindow();
-        window1.setScene(new Scene(root));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("ListaPacienti.fxml"));
+        root = loader.load();
+
+        ControllerListaPacienti controllerListaPacienti = loader.getController();
+        controllerListaPacienti.setItems1();
+        window1 = (Stage) programari.getScene().getWindow();
+        window1.setScene(new Scene(root, 600, 400));
     }
 
     public void goProgramari1(MouseEvent event) throws Exception {
 
-        Parent root = FXMLLoader.load(getClass().getResource("ListaPacienti.fxml"));
-        window1 = (Stage)programari1.getScene().getWindow();
-        window1.setScene(new Scene(root));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("ListaPacienti.fxml"));
+        root = loader.load();
+
+        ControllerListaPacienti controllerListaPacienti = loader.getController();
+        controllerListaPacienti.setItems1();
+        window1 = (Stage) programari1.getScene().getWindow();
+        window1.setScene(new Scene(root, 600, 400));
     }
 
 
