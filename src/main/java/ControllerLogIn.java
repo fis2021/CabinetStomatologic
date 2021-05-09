@@ -16,13 +16,13 @@ public class ControllerLogIn {
     private Stage window1;
     private Scene scene;
     private Parent root;
-
     private String username,password,encryptedPassword;
 
     @FXML
      TextField LogInUsername;
     @FXML
      PasswordField LogInPassword;
+
 
     @FXML
     Button LOGINButton;
@@ -31,8 +31,15 @@ public class ControllerLogIn {
 
     private static int checkAccountInformation(String username, String password) {
         for (User user : UserService.userRepository.find()) {
-            if (Objects.equals(username, user.getUsername()) && Objects.equals(password, user.getPassword()) )
-                return 1;
+            if (Objects.equals(username, user.getUsername()) && Objects.equals(password, user.getPassword())) {
+               if(user.getRole().equals("Pacient"))
+               {
+                   return 1;
+               }
+               else {
+                   return 2;
+               }
+            }
         }
         return 0;
     }
@@ -41,10 +48,16 @@ public class ControllerLogIn {
 
         username = LogInUsername.getText();
         password = LogInPassword.getText();
+
         encryptedPassword=UserService.encodePassword(username,password);
-        if(checkAccountInformation(username,encryptedPassword)==1)
+        if(checkAccountInformation(username,encryptedPassword)==1 )
         {
             Parent root = FXMLLoader.load(getClass().getResource("MainPage.fxml"));
+            window1 = (Stage)LOGINButton.getScene().getWindow();
+            window1.setScene(new Scene(root));
+        }
+        else if(checkAccountInformation(username,encryptedPassword)==2){
+            Parent root = FXMLLoader.load(getClass().getResource("MainPageMedic.fxml"));
             window1 = (Stage)LOGINButton.getScene().getWindow();
             window1.setScene(new Scene(root));
         }

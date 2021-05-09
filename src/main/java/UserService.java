@@ -12,6 +12,7 @@ public class UserService {
 
    public static ObjectRepository<User> userRepository;
     public static ObjectRepository<Persoana> userRepository1;
+    public static ObjectRepository<FisaMedicala> userRepository2;
 
     public static void initDatabase() {
         Nitrite database = Nitrite.builder()
@@ -29,6 +30,14 @@ public class UserService {
         userRepository1 = database.getRepository(Persoana.class);
     }
 
+    public static void initDatabase2() {
+        Nitrite database = Nitrite.builder()
+                .filePath(FileSystemService.getPathToFile("fisa-medicala.db").toFile())
+                .openOrCreate("test", "test");
+
+        userRepository2 = database.getRepository(FisaMedicala.class);
+    }
+
     public static void addUser(String username, String password, String role) throws UsernameAlreadyExistsException {
         checkUserDoesNotAlreadyExist(username);
         userRepository.insert(new User(username, encodePassword(username, password), role));
@@ -36,6 +45,11 @@ public class UserService {
 
     public static void addUser1(String nume, String prenume, String nr, String data)  {
         userRepository1.insert(new Persoana(nume, prenume, nr, data));
+    }
+
+    public static void addFisa(String nume, String numarTelefon, String data, boolean q1, boolean q2, boolean q3, boolean q4, boolean q5, boolean q6, boolean q7, boolean q8, boolean q9, boolean q10) {
+        userRepository2.insert(new FisaMedicala(nume, numarTelefon, data, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10));
+
     }
 
     private static void checkUserDoesNotAlreadyExist(String username) throws UsernameAlreadyExistsException {

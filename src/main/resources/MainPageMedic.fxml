@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="700.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerMain">
+<AnchorPane prefHeight="400.0" prefWidth="700.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerMainMedic">
     <children>
         <BorderPane layoutX="114.0" layoutY="54.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <top>
@@ -15,7 +15,7 @@
                         <Pane layoutX="102.0" layoutY="20.0" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: #B40404;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                         <HBox layoutX="239.0" layoutY="1.0" prefHeight="43.0" prefWidth="525.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
                             <children>
-                                <JFXButton fx:id="DetailsButton1" onMouseClicked="#goDetails1" prefHeight="38.0" prefWidth="136.0" styleClass="menuItem" text="Detalii Clinică">
+                                <JFXButton prefHeight="38.0" prefWidth="136.0" styleClass="menuItem" text="Detalii Clinică">
                                     <graphic>
                                         <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
@@ -24,7 +24,7 @@
                                         </ImageView>
                                     </graphic>
                                 </JFXButton>
-                                <JFXButton fx:id="medFisButton" onMouseClicked="#goToMedFis" prefHeight="38.0" prefWidth="136.0" styleClass="menuItem" text="FisaMedicala">
+                                <JFXButton prefHeight="38.0" prefWidth="136.0" styleClass="menuItem" text="FisaMedicala">
                                     <graphic>
                                         <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
@@ -33,7 +33,7 @@
                                         </ImageView>
                                     </graphic>
                                 </JFXButton>
-                                <JFXButton fx:id="progrButton" onMouseClicked="#goProgr" prefHeight="38.0" prefWidth="136.0" styleClass="menuItem" text="Programeaza-te">
+                                <JFXButton prefHeight="38.0" prefWidth="136.0" styleClass="menuItem" text="Programeaza-te">
                                     <graphic>
                                         <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
@@ -85,7 +85,7 @@
                     <children>
                         <VBox layoutX="14.0" layoutY="35.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="53.0">
                             <children>
-                                <JFXButton fx:id="DetailsButton" alignment="BASELINE_LEFT" onMouseClicked="#goDetails" prefHeight="38.0" prefWidth="176.0" styleClass="sidebarItem" text="Detalii clinică" textFill="WHITE">
+                                <JFXButton alignment="BASELINE_LEFT" prefHeight="38.0" prefWidth="176.0" styleClass="sidebarItem" text="Detalii clinică" textFill="WHITE">
                                     <font>
                                         <Font name="System Bold" size="15.0" />
                                     </font>
@@ -97,7 +97,7 @@
                                         </ImageView>
                                     </graphic>
                                 </JFXButton>
-                                <JFXButton fx:id="MedFisButtonUp" alignment="BASELINE_LEFT" onMouseClicked="#goToMedFisUP" prefHeight="38.0" prefWidth="176.0" styleClass="sidebarItem" text="FisaMedicala" textFill="WHITE">
+                                <JFXButton alignment="BASELINE_LEFT" prefHeight="38.0" prefWidth="176.0" styleClass="sidebarItem" text="FisaMedicala" textFill="WHITE">
                                     <font>
                                         <Font name="System Bold" size="15.0" />
                                     </font>
@@ -109,7 +109,7 @@
                                         </ImageView>
                                     </graphic>
                                 </JFXButton>
-                                <JFXButton fx:id="progrButton1" alignment="BASELINE_LEFT" onMouseClicked="#goProgr1" prefHeight="38.0" prefWidth="176.0" styleClass="sidebarItem" text="Programeaza-te" textFill="WHITE">
+                                <JFXButton alignment="BASELINE_LEFT" prefHeight="38.0" prefWidth="176.0" styleClass="sidebarItem" text="Programeaza-te" textFill="WHITE">
                                     <font>
                                         <Font name="System Bold" size="15.0" />
                                     </font>
@@ -133,24 +133,24 @@
                                         </ImageView>
                                     </graphic>
                                 </JFXButton>
-                        <JFXButton fx:id="BackButton" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="124.0" onMouseClicked="#goBack" prefHeight="38.0" prefWidth="176.0" styleClass="sidebarItem" text="GoBack" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="15.0" />
-                           </font>
-                           <graphic>
-                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@Images/data.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </JFXButton>
+                                <JFXButton fx:id="BackButtonMedic" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="124.0" onMouseClicked="#goBackMedic" prefHeight="38.0" prefWidth="176.0" styleClass="sidebarItem" text="GoBack" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                    <graphic>
+                                        <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@Images/data.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </JFXButton>
                             </children>
                         </VBox>
                     </children>
                 </AnchorPane>
             </left>
         </BorderPane>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" stylesheets="@style0.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="176.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="66.0" />
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" stylesheets="@style0.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="176.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="66.0" />
     </children>
 </AnchorPane>
