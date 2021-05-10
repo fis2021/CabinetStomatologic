@@ -133,9 +133,7 @@ public class ControllerListaPacienti implements Initializable{
     }
 
     @FXML
-    public javafx.scene.control.TextField lastName;
-    @FXML
-    public javafx.scene.control.TextField firstName;
+    public javafx.scene.control.TextField name;
     @FXML
     public javafx.scene.control.Button showFisButton;
 
@@ -155,11 +153,34 @@ public class ControllerListaPacienti implements Initializable{
 
     public void show(MouseEvent event) throws Exception {
 
-        if(!firstName.getText().equals("") && !lastName.getText().equals("")) {
+        if(!name.getText().equals("")) {
 
-            Parent root = FXMLLoader.load(getClass().getResource("FisaPrecompletata.fxml"));
-            window1 = (Stage)showFisButton.getScene().getWindow();
-            window1.setScene(new Scene(root, 600, 400));
+            //Parent root = FXMLLoader.load(getClass().getResource("FisaPrecompletata.fxml"));
+            //window1 = (Stage)showFisButton.getScene().getWindow();
+            //window1.setScene(new Scene(root, 600, 400));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("FisaPrecompletata.fxml"));
+            root = loader.load();
+            ControllerFisaPrecompletata controllerFisaPrecompletata = loader.getController();
+
+            int sw = 1;
+            ///caut in baza de date
+            for (FisaMedicala p : UserService.userRepository2.find()) {
+                if(p.getNume().equals(name.getText())){
+                    controllerFisaPrecompletata.setFis(p.getNume(), p.getData(), p.getNumarTelefon());
+                    sw = 0;
+                    break;
+                }
+            }
+
+            if(sw == 1){
+                showMessageDialog(null, "Pacientul " + name.getText() + " nu a completat fisa medicala");
+            }
+            else {
+                //Parent root = FXMLLoader.load(getClass().getResource("ListaPacienti.fxml"));
+                window1 = (Stage) showFisButton.getScene().getWindow();
+                window1.setScene(new Scene(root, 600, 400));
+            }
+
 
         }
         else{
