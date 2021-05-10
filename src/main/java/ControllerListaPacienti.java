@@ -132,18 +132,43 @@ public class ControllerListaPacienti implements Initializable{
         return  persoane;
     }
 
+    @FXML
+    public javafx.scene.control.TextField lastName;
+    @FXML
+    public javafx.scene.control.TextField firstName;
+    @FXML
+    public javafx.scene.control.Button showFisButton;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
         ok = 0;
-
         Nume.setCellValueFactory(new PropertyValueFactory<Persoana, String>("nume"));
         Prenume.setCellValueFactory(new PropertyValueFactory<Persoana, String>("prenume"));
         Numar.setCellValueFactory(new PropertyValueFactory<Persoana, String>("nr"));
         Data.setCellValueFactory(new PropertyValueFactory<Persoana, String>("data"));
 
     }
+
+
+
+
+    public void show(MouseEvent event) throws Exception {
+
+        if(!firstName.getText().equals("") && !lastName.getText().equals("")) {
+
+            Parent root = FXMLLoader.load(getClass().getResource("FisaPrecompletata.fxml"));
+            window1 = (Stage)showFisButton.getScene().getWindow();
+            window1.setScene(new Scene(root, 600, 400));
+
+        }
+        else{
+            showMessageDialog(null, "Trebuie sa completati campurile de nume si prenume!");
+        }
+    }
+
+
+
 }
 
 
