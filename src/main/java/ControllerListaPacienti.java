@@ -166,7 +166,7 @@ public class ControllerListaPacienti implements Initializable{
             ///caut in baza de date
             for (FisaMedicala p : UserService.userRepository2.find()) {
                 if(p.getNume().equals(name.getText())){
-                    controllerFisaPrecompletata.setFis(p.getNume(), p.getData(), p.getNumarTelefon());
+                    controllerFisaPrecompletata.setFis(p.getNume(), p.getData(), p.getNumarTelefon(), p.isQ1(), p.isQ2(), p.isQ3(), p.isQ4(), p.isQ5(), p.isQ6(), p.isQ7(), p.isQ8(), p.isQ9(), p.isQ10());
                     sw = 0;
                     break;
                 }
