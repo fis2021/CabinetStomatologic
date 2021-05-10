@@ -81,6 +81,13 @@ public class ControllerListaPacienti implements Initializable{
         table.setItems(getPersoana());
     }
 
+    public void setRole (int k) throws Exception{
+        if(k == 0){
+            name.setVisible(false);
+            showFisButton.setVisible(false);
+        }
+    }
+
 
     @FXML
     TableView<Persoana> table;
