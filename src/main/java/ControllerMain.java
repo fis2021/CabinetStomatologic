@@ -269,7 +269,11 @@ public class ControllerMain implements Initializable {
         root = loader.load();
 
         ControllerListaPacienti controllerListaPacienti = loader.getController();
+
         controllerListaPacienti.setItems1();
+
+        controllerListaPacienti.setRole(0);
+
         window1 = (Stage) programari.getScene().getWindow();
         window1.setScene(new Scene(root, 600, 400));
     }
