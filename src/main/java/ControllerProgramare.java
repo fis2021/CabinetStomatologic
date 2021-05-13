@@ -84,6 +84,7 @@ public class ControllerProgramare {
                 ControllerListaPacienti controllerListaPacienti = loader.getController();
 
                 controllerListaPacienti.setFields(Nume, Prenume, Nr, Data);
+                controllerListaPacienti.setRole(0);
 
                 //Parent root = FXMLLoader.load(getClass().getResource("ListaPacienti.fxml"));
                 window1 = (Stage) submitButton.getScene().getWindow();

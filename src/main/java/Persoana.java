@@ -1,4 +1,7 @@
+import org.dizitart.no2.objects.Id;
+
 public class Persoana {
+    @Id
     private String nume;
     private String prenume;
     private String nr;
