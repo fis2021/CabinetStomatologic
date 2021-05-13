@@ -91,7 +91,7 @@ public class ControllerMain implements Initializable {
         slider.setTranslateX(-176);
         Menu.setOnMouseClicked(event -> {
             TranslateTransition slide = new TranslateTransition();
-            slide.setDuration(Duration.seconds(0.4));
+            slide.setDuration(Duration.seconds(0.2));
             slide.setNode(slider);
 
             slide.setToX(0);
@@ -107,7 +107,7 @@ public class ControllerMain implements Initializable {
 
         MenuClose.setOnMouseClicked(event -> {
             TranslateTransition slide = new TranslateTransition();
-            slide.setDuration(Duration.seconds(0.4));
+            slide.setDuration(Duration.seconds(0.2));
             slide.setNode(slider);
 
             slide.setToX(-176);

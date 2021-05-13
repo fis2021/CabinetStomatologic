@@ -1,32 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="scenePane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #B40404;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main">
+<AnchorPane fx:id="scenePane" prefHeight="288.0" prefWidth="330.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main">
    <children>
-      <JFXButton fx:id="SignUpButton" layoutX="356.0" layoutY="262.0" mnemonicParsing="false" onMouseClicked="#switchToSignUp" prefHeight="65.0" prefWidth="185.0" text="Sign up" textFill="WHITE">
-         <font>
-            <Font size="36.0" />
-         </font></JFXButton>
-      <Button layoutX="-82.0" layoutY="68.0" mnemonicParsing="false" text="Button" />
-      <JFXButton fx:id="closeButton" layoutX="35.0" layoutY="330.0" mnemonicParsing="false" onAction="#close" prefHeight="39.0" prefWidth="92.0" text="Exit" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="26.0" />
-         </font></JFXButton>
-      <Label alignment="CENTER" layoutY="-5.0" prefHeight="85.0" prefWidth="604.0" style="-fx-background-color: black;" text="CABINET STOMATOLOGIC" textAlignment="CENTER" textFill="WHITE">
-         <font>
-            <Font name="Times New Roman" size="36.0" />
-         </font>
-      </Label>
-      <JFXButton fx:id="LogInButton" layoutX="356.0" layoutY="185.0" mnemonicParsing="false" onMouseClicked="#switchToLogIn" prefHeight="68.0" prefWidth="185.0" text="Log in" textFill="WHITE" textOverrun="CLIP">
-         <font>
-            <Font size="36.0" />
-         </font>
-      </JFXButton>
+      <JFXButton visible="false" />
+      <AnchorPane layoutX="-2.0" layoutY="217.0" prefHeight="118.0" prefWidth="393.0" style="-fx-background-color: #237575;">
+         <children>
+            <JFXButton fx:id="SignUpButton" blendMode="SRC_ATOP" buttonType="RAISED" focusTraversable="false" layoutX="29.0" layoutY="43.0" mnemonicParsing="false" onMouseClicked="#switchToSignUp" prefHeight="51.0" prefWidth="140.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Inregistrare">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="LogInButton" buttonType="RAISED" focusTraversable="false" layoutX="233.0" layoutY="43.0" mnemonicParsing="false" onMouseClicked="#switchToLogIn" prefHeight="51.0" prefWidth="140.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Conectare">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="159.0" fitWidth="430.0" layoutX="9.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/Logo1.PNG" />
+         </image></ImageView>
+      <ImageView fx:id="closeButton" fitHeight="29.0" fitWidth="22.0" layoutX="366.0" layoutY="4.0" onMouseClicked="#close" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../Pictures/Poze/images.png" />
+         </image>
+      </ImageView>
    </children>
    <effect>
       <Blend />

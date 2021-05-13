@@ -10,6 +10,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -27,6 +28,8 @@ public class Main extends Application {
         UserService.initDatabase();
         UserService.initDatabase1();
         UserService.initDatabase2();
+
+        primaryStage.initStyle(StageStyle.UNDECORATED);
 
         Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
 
@@ -59,7 +62,7 @@ public class Main extends Application {
     Stage stage;
 
 
-    public void close(javafx.event.ActionEvent actionEvent) {
+    public void close(MouseEvent event) {
 
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Close Program");
