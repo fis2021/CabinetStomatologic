@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -85,6 +86,7 @@ public class ControllerListaPacienti implements Initializable{
         if(k == 0){
             name.setVisible(false);
             showFisButton.setVisible(false);
+            deleteButton.setVisible(false);
         }
     }
 
@@ -194,7 +196,29 @@ public class ControllerListaPacienti implements Initializable{
             showMessageDialog(null, "Trebuie sa completati campurile de nume si prenume!");
         }
     }
+    @FXML
+    public javafx.scene.control.Button deleteButton;
 
+    public void delete(MouseEvent event) throws Exception {
+
+
+        for (Persoana p: UserService.userRepository1.find()) {
+            String s=p.getNume()+" "+p.getPrenume();
+            if(s.equals(name.getText()))
+            {
+                System.out.println("A fost gasit!");
+                UserService.userRepository1.remove(p);
+                break;
+            }
+
+        }
+
+        showMessageDialog(null,"Programarea a fost stearsa!");
+
+        Parent root = FXMLLoader.load(getClass().getResource("MainPageMedic.fxml"));
+        window1 = (Stage)deleteButton.getScene().getWindow();
+        window1.setScene(new Scene(root));
+    }
 
 
 }

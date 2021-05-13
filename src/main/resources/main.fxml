@@ -13,7 +13,7 @@
             <Font size="36.0" />
          </font></JFXButton>
       <Button layoutX="-82.0" layoutY="68.0" mnemonicParsing="false" text="Button" />
-      <JFXButton fx:id="closeButton" layoutX="31.0" layoutY="344.0" mnemonicParsing="false" onAction="#close" prefHeight="39.0" prefWidth="92.0" text="Exit" textFill="WHITE">
+      <JFXButton fx:id="closeButton" layoutX="35.0" layoutY="330.0" mnemonicParsing="false" onAction="#close" prefHeight="39.0" prefWidth="92.0" text="Exit" textFill="WHITE">
          <font>
             <Font name="System Bold" size="26.0" />
          </font></JFXButton>
