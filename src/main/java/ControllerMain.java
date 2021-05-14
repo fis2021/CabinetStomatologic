@@ -309,6 +309,58 @@ public class ControllerMain implements Initializable {
         }
     }
 
+    @FXML
+    private BorderPane scenePane4;
+
+    Stage stage2;
+    public void close1(MouseEvent event) {
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Inchide aplicatia");
+        alert.setHeaderText("Sunteti sigur ca doriti sa parasiti aplicatia?");
+
+        if(alert.showAndWait().get() == ButtonType.OK) {
+
+            stage2 = (Stage) scenePane4.getScene().getWindow();
+            stage2.close();
+        }
+    }
+
+    @FXML
+    private BorderPane scenePane5;
+
+    Stage stage3;
+    public void close2(MouseEvent event) {
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Inchide aplicatia");
+        alert.setHeaderText("Sunteti sigur ca doriti sa parasiti aplicatia?");
+
+        if(alert.showAndWait().get() == ButtonType.OK) {
+
+            stage3 = (Stage) scenePane5.getScene().getWindow();
+            stage3.close();
+        }
+    }
+
+    @FXML
+    private BorderPane scenePane6;
+
+    Stage stage4;
+    public void close3(MouseEvent event) {
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Inchide aplicatia");
+        alert.setHeaderText("Sunteti sigur ca doriti sa parasiti aplicatia?");
+
+        if(alert.showAndWait().get() == ButtonType.OK) {
+
+            stage4 = (Stage) scenePane6.getScene().getWindow();
+            stage4.close();
+        }
+    }
+
+
 
 
 
