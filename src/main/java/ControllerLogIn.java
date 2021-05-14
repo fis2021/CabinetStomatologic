@@ -3,11 +3,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.util.Objects;
@@ -64,7 +62,7 @@ public class ControllerLogIn {
         }
         else
         {
-            FailedLogInMessage.setText("You did not sign in correctly!");
+            FailedLogInMessage.setText("Nu v-ati logat corect!!");
         }
     }
 
@@ -77,6 +75,24 @@ public class ControllerLogIn {
         window1 = (Stage)BackFromLogInButton.getScene().getWindow();
         window1.setScene(new Scene(root));
     }
+
+    @FXML
+    private BorderPane scenePane2;
+
+    Stage stage1;
+    public void close(MouseEvent event) {
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Close Program");
+        alert.setHeaderText("Are you sure you want to close?");
+
+        if(alert.showAndWait().get() == ButtonType.OK) {
+
+            stage1 = (Stage) scenePane2.getScene().getWindow();
+            stage1.close();
+        }
+    }
+
 
 
 

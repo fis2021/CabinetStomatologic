@@ -2,18 +2,18 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.Blend?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="scenePane" prefHeight="288.0" prefWidth="330.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main">
+<AnchorPane fx:id="scenePane" prefHeight="440.0" prefWidth="454.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main">
    <children>
-      <JFXButton visible="false" />
-      <AnchorPane layoutX="-2.0" layoutY="217.0" prefHeight="118.0" prefWidth="393.0" style="-fx-background-color: #237575;">
+      <AnchorPane layoutX="238.0" prefHeight="440.0" prefWidth="329.0" style="-fx-background-color: #237575;">
          <children>
-            <JFXButton fx:id="SignUpButton" blendMode="SRC_ATOP" buttonType="RAISED" focusTraversable="false" layoutX="29.0" layoutY="43.0" mnemonicParsing="false" onMouseClicked="#switchToSignUp" prefHeight="51.0" prefWidth="140.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Inregistrare">
+            <JFXButton fx:id="LogInButton" buttonType="RAISED" focusTraversable="false" layoutX="104.0" layoutY="350.0" mnemonicParsing="false" onMouseClicked="#switchToLogIn" prefHeight="51.0" prefWidth="140.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Conectare" textFill="#237575">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
@@ -21,25 +21,41 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton fx:id="LogInButton" buttonType="RAISED" focusTraversable="false" layoutX="233.0" layoutY="43.0" mnemonicParsing="false" onMouseClicked="#switchToLogIn" prefHeight="51.0" prefWidth="140.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Conectare">
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </JFXButton>
+            <ImageView fitHeight="219.0" fitWidth="420.0" layoutX="-72.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/1.PNG" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="closeButton" blendMode="MULTIPLY" fitHeight="24.0" fitWidth="23.0" layoutX="323.0" layoutY="4.0" onMouseClicked="#close" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../Pictures/Poze/images.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
-      <ImageView fitHeight="159.0" fitWidth="430.0" layoutX="9.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Images/Logo1.PNG" />
-         </image></ImageView>
-      <ImageView fx:id="closeButton" fitHeight="29.0" fitWidth="22.0" layoutX="366.0" layoutY="4.0" onMouseClicked="#close" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../../Pictures/Poze/images.png" />
-         </image>
-      </ImageView>
+      <JFXButton fx:id="SignUpButton" blendMode="SRC_ATOP" buttonType="RAISED" focusTraversable="false" layoutX="52.0" layoutY="352.0" mnemonicParsing="false" onMouseClicked="#switchToSignUp" prefHeight="51.0" prefWidth="140.0" style="-fx-background-color: #237575; -fx-background-radius: 10;" text="Inregistrare" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label alignment="CENTER" layoutY="20.0" prefHeight="178.0" prefWidth="260.0" text="  Castiga &#10;&#9;  zambetul&#10;&#9;&#9;succesului!&#10;" textFill="#237575">
+         <font>
+            <Font name="System Bold Italic" size="26.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="-226.0" layoutY="109.0" prefHeight="26.0" prefWidth="140.0" text="zambetul " textFill="#237575">
+         <font>
+            <Font name="System Bold Italic" size="26.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="-234.0" layoutY="182.0" prefHeight="26.0" prefWidth="140.0" text="succesului!" textFill="#237575">
+         <font>
+            <Font name="System Bold Italic" size="26.0" />
+         </font>
+      </Label>
    </children>
    <effect>
       <Blend />

@@ -12,8 +12,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane fx:id="scenePane1" prefHeight="437.0" prefWidth="476.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+<BorderPane fx:id="scenePane1" prefHeight="429.0" prefWidth="510.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <center>
       <AnchorPane prefHeight="344.0" prefWidth="477.0" style="-fx-background-color: #237575;">
          <children>
@@ -46,7 +45,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Label>
-            <JFXButton alignment="CENTER" buttonType="RAISED" focusTraversable="false" layoutX="269.0" layoutY="259.0" mnemonicParsing="false" onAction="#handleRegisterAction" onMouseClicked="#switchToMainPage" prefHeight="36.0" prefWidth="118.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Inregistrare" textFill="#237575">
+            <JFXButton alignment="CENTER" buttonType="RAISED" focusTraversable="false" layoutX="269.0" layoutY="259.0" mnemonicParsing="false" onAction="#handleRegisterAction" prefHeight="36.0" prefWidth="118.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Inregistrare" textFill="#237575">
                <font>
                   <Font name="System Bold" size="15.0" />
                </font>
