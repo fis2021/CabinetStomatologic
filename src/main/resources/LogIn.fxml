@@ -11,14 +11,13 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane fx:id="scenePane2" prefHeight="431.0" prefWidth="469.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerLogIn">
    <center>
       <AnchorPane prefHeight="297.0" prefWidth="475.0" style="-fx-background-color: #237575;">
          <children>
-            <PasswordField fx:id="LogInPassword" alignment="CENTER" layoutX="246.0" layoutY="176.0" promptText="password" style="-fx-background-radius: 50;" />
+            <PasswordField fx:id="LogInPassword" alignment="CENTER" focusTraversable="false" layoutX="246.0" layoutY="176.0" promptText="password" style="-fx-background-radius: 50;" />
             <TextField fx:id="LogInUsername" alignment="CENTER" layoutX="246.0" layoutY="120.0" promptText="username" style="-fx-background-radius: 50;" />
-            <JFXButton fx:id="BackFromLogInButton" alignment="CENTER" buttonType="RAISED" layoutX="14.0" layoutY="305.0" mnemonicParsing="false" onMouseClicked="#switchToMainFromLogIn" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Inapoi" textFill="#237575">
+            <JFXButton fx:id="BackFromLogInButton" alignment="CENTER" buttonType="RAISED" focusTraversable="false" layoutX="14.0" layoutY="305.0" mnemonicParsing="false" onMouseClicked="#switchToMainFromLogIn" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Inapoi" textFill="#237575">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>

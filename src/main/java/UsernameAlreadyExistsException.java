@@ -3,7 +3,7 @@ public class UsernameAlreadyExistsException extends Exception {
     private String username;
 
     public UsernameAlreadyExistsException(String username) {
-        super(String.format("An account with the username %s already exists!", username));
+        super(String.format("Un cont cu numele de utilizator %s deja exista!", username));
         this.username = username;
     }
 

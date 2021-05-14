@@ -6,9 +6,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -114,5 +117,22 @@ public class ControllerMainMedic implements Initializable {
                 MenuClose1.setVisible(false);
             });
         });
+    }
+
+    @FXML
+    private AnchorPane scenePane4;
+
+    Stage stage1;
+    public void close(MouseEvent event) {
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Inchide aplicatia");
+        alert.setHeaderText("Sunteti sigur ca doriti sa parasiti aplicatia?");
+
+        if(alert.showAndWait().get() == ButtonType.OK) {
+
+            stage1 = (Stage) scenePane4.getScene().getWindow();
+            stage1.close();
+        }
     }
 }

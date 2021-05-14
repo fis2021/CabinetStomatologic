@@ -14,7 +14,7 @@
 
 <BorderPane fx:id="scenePane1" prefHeight="429.0" prefWidth="510.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <center>
-      <AnchorPane prefHeight="344.0" prefWidth="477.0" style="-fx-background-color: #237575;">
+      <AnchorPane prefHeight="334.0" prefWidth="519.0" style="-fx-background-color: #237575;">
          <children>
             <Label layoutX="115.0" layoutY="90.0" prefHeight="37.0" prefWidth="109.0" text="Username:" textFill="WHITE">
                <font>
@@ -59,7 +59,7 @@
    <top>
       <AnchorPane BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="95.0" fitWidth="265.0" layoutX="127.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="92.0" fitWidth="265.0" layoutX="127.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/LogoMare.PNG" />
                </image>

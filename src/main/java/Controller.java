@@ -19,15 +19,6 @@ public class Controller implements Initializable {
     private Scene scene;
     private Parent root;
 
-    @FXML
-    JFXButton BackButton;
-
-    public void switchToMain(MouseEvent event) throws Exception {
-
-        Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
-        window1 = (Stage)BackButton.getScene().getWindow();
-        window1.setScene(new Scene(root));
-    }
 
     @FXML
     private ChoiceBox<String> role;
@@ -37,6 +28,7 @@ public class Controller implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
         role.getItems().addAll(tipuri);
+        role.setValue("Pacient");
 
     }
 
@@ -50,20 +42,20 @@ public class Controller implements Initializable {
 
     @FXML
     public void handleRegisterAction() {
-        try {
-            if(passwordField.getText().equals("")) {
-                registrationMessage.setText("Pasword cannot be empty!");
-            }
-             if(usernameField.getText().equals("")){
-                registrationMessage.setText("Username cannot be empty!");
-            }
 
+        try {
+            if(usernameField.getText().equals("")){
+                registrationMessage.setText("Numele utilizatorului nu este completat!");
+            }
+            if(passwordField.getText().equals("")) {
+                registrationMessage.setText("Parola nu este completata!");
+            }
              if(!passwordField.getText().equals("") && passwordField.getText().length()<5){
-                 registrationMessage.setText("Choose a password of at least 5 characters!");
+                 registrationMessage.setText("Parola trebuie sa contina minim 5 caractere!");
              }
              else  if(!passwordField.getText().equals("") && !usernameField.getText().equals("")) {
                 UserService.addUser(usernameField.getText(), passwordField.getText(), (String) role.getValue());
-                registrationMessage.setText("Account created successfully!");
+                registrationMessage.setText("Contul s-a creat cu succes!");
             }
         } catch (UsernameAlreadyExistsException e) {
             registrationMessage.setText(e.getMessage());
@@ -81,14 +73,24 @@ public class Controller implements Initializable {
     }
 
     @FXML
+    JFXButton BackButton;
+
+    public void switchToMain(MouseEvent event) throws Exception {
+
+        Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
+        window1 = (Stage)BackButton.getScene().getWindow();
+        window1.setScene(new Scene(root));
+    }
+
+    @FXML
     private BorderPane scenePane1;
 
     Stage stage1;
     public void close(MouseEvent event) {
 
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Close Program");
-        alert.setHeaderText("Are you sure you want to close?");
+        alert.setTitle("Inchide aplicatia");
+        alert.setHeaderText("Sunteti sigur ca doriti sa parasiti aplicatia?");
 
         if(alert.showAndWait().get() == ButtonType.OK) {
 

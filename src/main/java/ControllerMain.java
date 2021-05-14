@@ -8,12 +8,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -287,6 +290,23 @@ public class ControllerMain implements Initializable {
         controllerListaPacienti.setItems1();
         window1 = (Stage) programari1.getScene().getWindow();
         window1.setScene(new Scene(root, 600, 400));
+    }
+
+    @FXML
+    private AnchorPane scenePane3;
+
+    Stage stage1;
+    public void close(MouseEvent event) {
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Inchide aplicatia");
+        alert.setHeaderText("Sunteti sigur ca doriti sa parasiti aplicatia?");
+
+        if(alert.showAndWait().get() == ButtonType.OK) {
+
+            stage1 = (Stage) scenePane3.getScene().getWindow();
+            stage1.close();
+        }
     }
 
 

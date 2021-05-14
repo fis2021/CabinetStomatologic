@@ -65,8 +65,8 @@ public class Main extends Application {
     public void close(MouseEvent event) {
 
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Close Program");
-        alert.setHeaderText("Are you sure you want to close?");
+        alert.setTitle("Inchide aplicatia");
+        alert.setHeaderText("Sunteti sigur ca doriti sa parasiti aplicatia?");
 
         if(alert.showAndWait().get() == ButtonType.OK) {
 
