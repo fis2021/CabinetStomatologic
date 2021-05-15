@@ -27,7 +27,7 @@
             </ImageView>
             <ImageView fx:id="closeButton" blendMode="MULTIPLY" fitHeight="24.0" fitWidth="23.0" layoutX="323.0" layoutY="4.0" onMouseClicked="#close" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../Pictures/Poze/images.png" />
+                  <Image url="@Images/images.png" />
                </image>
             </ImageView>
          </children>

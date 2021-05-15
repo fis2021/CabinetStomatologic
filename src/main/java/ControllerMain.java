@@ -37,14 +37,10 @@ public class ControllerMain implements Initializable {
 
     @FXML
     private ListView<String> list = new ListView<>();
-    @FXML
-    private Label lab;
 
     @FXML
     private ListView<String> medList = new ListView<>();
 
-    @FXML
-    private Label medLab;
 
     String[] interventii = {"Extractie      40 Ron", "Carie           70 Ron", "Albire          90 Ron"};
     String interventiaCurenta;
@@ -77,7 +73,6 @@ public class ControllerMain implements Initializable {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 medicCurent = medList.getSelectionModel().getSelectedItem();
-                medLab.setText(medicCurent);
                 Image img = new Image(getpic(medicCurent));
                 medpic.setImage(img);
             }
@@ -88,7 +83,6 @@ public class ControllerMain implements Initializable {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 interventiaCurenta = list.getSelectionModel().getSelectedItem();
-                lab.setText(interventiaCurenta);
             }
         });
         slider.setTranslateX(-176);

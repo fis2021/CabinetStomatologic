@@ -52,8 +52,6 @@ public class ControllerListaPacienti implements Initializable{
 
     }
 
-    @FXML
-    Label label;
 
     private String nume;
     private String prenume;
@@ -204,7 +202,6 @@ public class ControllerListaPacienti implements Initializable{
             String s=p.getNume()+" "+p.getPrenume();
             if(s.equals(name.getText()))
             {
-                System.out.println("A fost gasit!");
                 UserService.userRepository1.remove(p);
                 break;
             }

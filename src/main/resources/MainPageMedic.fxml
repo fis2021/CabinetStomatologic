@@ -11,39 +11,39 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="scenePane4" prefHeight="400.0" prefWidth="700.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerMainMedic">
+<AnchorPane fx:id="scenePane4" prefHeight="440.0" prefWidth="724.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerMainMedic">
     <children>
-        <BorderPane layoutX="114.0" layoutY="54.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <BorderPane layoutX="114.0" layoutY="54.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <top>
                 <AnchorPane prefHeight="65.0" prefWidth="200.0" style="-fx-background-color: WHITE;" BorderPane.alignment="CENTER">
                     <children>
                         <Pane layoutX="102.0" layoutY="20.0" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: #237575;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <ImageView fx:id="closeButton" blendMode="MULTIPLY" fitHeight="29.0" fitWidth="22.0" layoutX="678.0" layoutY="3.0" onMouseClicked="#close" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="closeButton" blendMode="MULTIPLY" fitHeight="29.0" fitWidth="22.0" layoutX="702.0" layoutY="3.0" onMouseClicked="#close" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../Pictures/Poze/images.png" />
+                              <Image url="@Images/images.png" />
                            </image>
                         </ImageView>
                      </children></Pane>
                         <HBox layoutX="239.0" layoutY="1.0" prefHeight="43.0" prefWidth="525.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
                             <children>
                                 <JFXButton fx:id="vpButton" onMouseClicked="#vp" prefHeight="38.0" prefWidth="136.0" styleClass="menuItem" text="Vezi programari">
-                                    <graphic>
-                                        <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
-                                            <image>
-                                                <Image url="@Images/report1.png" />
-                                            </image>
-                                        </ImageView>
-                                    </graphic>
-                                </JFXButton>
-                                <JFXButton fx:id="BackButtonMedic1" onMouseClicked="#goBackMedic1" prefHeight="38.0" prefWidth="136.0" styleClass="menuItem" text="GoBack">
-                                    <graphic>
-                                        <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                           <graphic>
+                                        <ImageView blendMode="EXCLUSION" fitHeight="21.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
                                                 <Image url="@Images/data1.png" />
                                             </image>
                                         </ImageView>
-                                    </graphic>
+                           </graphic>
+                                </JFXButton>
+                                <JFXButton fx:id="BackButtonMedic1" onMouseClicked="#goBackMedic1" prefHeight="38.0" prefWidth="136.0" styleClass="menuItem" text="Inapoi">
+                           <graphic>
+                              <ImageView fitHeight="21.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Images/outline_arrow_back_black_24dp.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
                                 </JFXButton>
                             </children>
                         </HBox>
@@ -61,7 +61,7 @@
                         </Label>
                         <Label fx:id="MenuClose1" ellipsisString="" layoutX="14.0" layoutY="36.0" prefHeight="22.0" prefWidth="92.0" text="MENU" textFill="#949292" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="594.0" AnchorPane.topAnchor="36.0">
                             <graphic>
-                                <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                <ImageView blendMode="EXCLUSION" fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
                                         <Image url="@Images/menu1.png" />
                                     </image>
@@ -74,7 +74,7 @@
                     </children>
                 </AnchorPane>
             </top>
-            <left>
+         <left>
                 <AnchorPane fx:id="slider1" prefHeight="362.0" prefWidth="176.0" style="-fx-background-color: #237575;" BorderPane.alignment="CENTER">
                     <children>
                         <VBox layoutX="14.0" layoutY="35.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="53.0">
@@ -83,32 +83,39 @@
                                     <font>
                                         <Font name="System Bold" size="15.0" />
                                     </font>
-                                    <graphic>
-                                        <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
-                                            <image>
-                                                <Image url="@Images/report.png" />
-                                            </image>
-                                        </ImageView>
-                                    </graphic>
-                                </JFXButton>
-                                <JFXButton fx:id="BackButtonMedic" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="124.0" onMouseClicked="#goBackMedic" prefHeight="38.0" prefWidth="176.0" styleClass="sidebarItem" text="GoBack" textFill="WHITE">
-                                    <font>
-                                        <Font name="System Bold" size="15.0" />
-                                    </font>
-                                    <graphic>
-                                        <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                           <graphic>
+                                        <ImageView fitHeight="21.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
                                                 <Image url="@Images/data.png" />
                                             </image>
                                         </ImageView>
-                                    </graphic>
+                           </graphic>
+                                </JFXButton>
+                                <JFXButton fx:id="BackButtonMedic" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="124.0" onMouseClicked="#goBackMedic" prefHeight="38.0" prefWidth="176.0" styleClass="sidebarItem" text="Inapoi" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                           <graphic>
+                              <ImageView fitHeight="21.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@Images/outline_arrow_back_white_24dp.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
                                 </JFXButton>
                             </children>
                         </VBox>
                     </children>
                 </AnchorPane>
-            </left>
+         </left>
         </BorderPane>
-        <AnchorPane prefHeight="200.0" prefWidth="200.0" stylesheets="@style0.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="176.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="66.0" />
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" stylesheets="@style0.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="176.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="66.0">
+         <children>
+            <ImageView fitHeight="301.0" fitWidth="415.0" layoutX="55.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/LogoMain.PNG" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
     </children>
 </AnchorPane>

@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-
-<BorderPane fx:id="scenePane4" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerMain">
+<BorderPane fx:id="scenePane4" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerMain">
    <center>
       <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #237575;">
          <children>
@@ -51,7 +48,7 @@
             </ImageView>
             <ImageView fx:id="closeButton" fitHeight="29.0" fitWidth="22.0" layoutX="578.0" layoutY="4.0" onMouseClicked="#close1" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../Pictures/Poze/images.png" />
+                  <Image url="@Images/images.png" />
                </image>
             </ImageView>
          </children>
