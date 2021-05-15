@@ -5,14 +5,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-
-import java.nio.file.Files;
-import java.nio.file.Path;
 
 public class Main extends Application {
 
@@ -23,7 +19,6 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        initDirectory();
         UserService.initDatabase();
         UserService.initDatabase1();
         UserService.initDatabase2();
@@ -72,11 +67,7 @@ public class Main extends Application {
         }
     }
 
-    private void initDirectory() {
-        Path applicationHomePath = FileSystemService.APPLICATION_HOME_PATH;
-         if (!Files.exists(applicationHomePath))
-           applicationHomePath.toFile().mkdirs();
-    }
+
 
 
 
