@@ -360,6 +360,23 @@ public class ControllerMain implements Initializable {
         }
     }
 
+    @FXML
+    private BorderPane scenePane7;
+
+    Stage stage5;
+    public void close4(MouseEvent event) {
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Inchide aplicatia");
+        alert.setHeaderText("Sunteti sigur ca doriti sa parasiti aplicatia?");
+
+        if(alert.showAndWait().get() == ButtonType.OK) {
+
+            stage5 = (Stage) scenePane6.getScene().getWindow();
+            stage5.close();
+        }
+    }
+
 
 
 

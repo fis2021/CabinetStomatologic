@@ -1,31 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="676.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerListaPacienti">
+<ScrollPane fx:id="scenePane" hbarPolicy="NEVER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="676.0" prefWidth="600.0" style="-fx-background-color: #237575;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerListaPacienti">
   <content>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="660.0" prefWidth="600.0" style="-fx-background-color: #8A0808;">
-         <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" prefHeight="51.0" prefWidth="600.0" style="-fx-background-color: black;" text="Lista programari" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="28.0" />
-               </font>
-            </Label>
-            <TableView fx:id="table" layoutY="148.0" prefHeight="381.0" prefWidth="600.0" style="-fx-background-color: #8A0808;">
-              <columns>
-                <TableColumn fx:id="Nume" prefWidth="139.33334863185883" text="Nume" />
-                <TableColumn fx:id="Prenume" prefWidth="150.66664123535156" text="Prenume" />
-                  <TableColumn fx:id="Numar" prefWidth="152.66668701171875" text="Numar de telefon" />
-                  <TableColumn fx:id="Data" minWidth="2.0" prefWidth="138.00009155273438" text="Data" />
-              </columns>
-            </TableView>
-            <JFXButton fx:id="backButton" layoutX="14.0" layoutY="621.0" mnemonicParsing="false" onMouseClicked="#goBack" prefHeight="25.0" prefWidth="77.0" text="Back" textFill="WHITE" />
-            <TextField fx:id="name" alignment="CENTER" layoutX="35.0" layoutY="72.0" prefHeight="32.0" prefWidth="260.0" promptText="Nume si prenume" />
-            <Button fx:id="showFisButton" layoutX="408.0" layoutY="60.0" mnemonicParsing="false" onMouseClicked="#show" prefHeight="25.0" prefWidth="141.0" text="Fisa medicala" />
-            <Button fx:id="deleteButton" layoutX="408.0" layoutY="104.0" mnemonicParsing="false" onMouseClicked="#delete" prefHeight="25.0" prefWidth="141.0" text="Sterge programare" />
-         </children></AnchorPane>
+      <BorderPane style="-fx-background-color: white;">
+         <top>
+            <AnchorPane BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="81.0" fitWidth="282.0" layoutX="163.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/LogoMare.PNG" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="closeButton" fitHeight="29.0" fitWidth="22.0" layoutX="564.0" layoutY="4.0" onMouseClicked="#close" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../Pictures/Poze/images.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </top>
+         <bottom>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="595.0" prefWidth="600.0" style="-fx-background-color: #237575;" BorderPane.alignment="CENTER">
+               <children>
+                  <TableView fx:id="table" focusTraversable="false" layoutX="38.0" layoutY="186.0" prefHeight="324.0" prefWidth="523.0" style="-fx-background-color: white; -fx-background-radius: 5;">
+                    <columns>
+                      <TableColumn fx:id="Nume" prefWidth="139.33334863185883" text="Nume" />
+                      <TableColumn fx:id="Prenume" prefWidth="150.66664123535156" text="Prenume" />
+                        <TableColumn fx:id="Numar" prefWidth="152.66668701171875" text="Numar de telefon" />
+                        <TableColumn fx:id="Data" minWidth="2.0" prefWidth="138.00009155273438" text="Data" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+                  <TextField fx:id="name" alignment="CENTER" focusTraversable="false" layoutX="89.0" layoutY="66.0" prefHeight="32.0" prefWidth="260.0" promptText="Nume si prenume" style="-fx-background-radius: 50;" />
+                  <Button fx:id="showFisButton" focusTraversable="false" layoutX="408.0" layoutY="43.0" mnemonicParsing="false" onMouseClicked="#show" prefHeight="30.0" prefWidth="141.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Fisa medicala" textFill="#237575">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="deleteButton" focusTraversable="false" layoutX="408.0" layoutY="105.0" mnemonicParsing="false" onMouseClicked="#delete" prefHeight="30.0" prefWidth="141.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Sterge programare" textFill="#237575" />
+                  <JFXButton fx:id="backButton" alignment="CENTER" buttonType="RAISED" focusTraversable="false" layoutX="8.0" layoutY="556.0" mnemonicParsing="false" onMouseClicked="#goBack" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Inapoi" textFill="#237575">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+         </bottom>
+      </BorderPane>
   </content>
 </ScrollPane>
