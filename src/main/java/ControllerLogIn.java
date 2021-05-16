@@ -3,10 +3,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.util.Objects;
@@ -29,42 +28,41 @@ public class ControllerLogIn {
     @FXML
     Label FailedLogInMessage;
 
-    private static int checkAccountInformation(String username, String password) {
-        for (User user : UserService.userRepository.find()) {
-            if (Objects.equals(username, user.getUsername()) && Objects.equals(password, user.getPassword())) {
-               if(user.getRole().equals("Pacient"))
-               {
-                   return 1;
-               }
-               else {
-                   return 2;
-               }
-            }
-        }
-        return 0;
-    }
 
     public void switchToMainPage(MouseEvent event) throws Exception {
 
         username = LogInUsername.getText();
         password = LogInPassword.getText();
 
-        encryptedPassword=UserService.encodePassword(username,password);
-        if(checkAccountInformation(username,encryptedPassword)==1 )
+
+        try{
+            int aux=UserService.checkAccountInformation(username,password);
+            if(aux==1)
+            {
+                Parent root = FXMLLoader.load(getClass().getResource("MainPage.fxml"));
+                window1 = (Stage)LOGINButton.getScene().getWindow();
+                window1.setScene(new Scene(root));
+            }
+            else if(aux==2)
+            {
+                Parent root = FXMLLoader.load(getClass().getResource("MainPageMedic.fxml"));
+                window1 = (Stage)LOGINButton.getScene().getWindow();
+                window1.setScene(new Scene(root));
+            }
+
+        }catch (NullUsernameException e)
         {
-            Parent root = FXMLLoader.load(getClass().getResource("MainPage.fxml"));
-            window1 = (Stage)LOGINButton.getScene().getWindow();
-            window1.setScene(new Scene(root));
+            FailedLogInMessage.setText(e.getMessage());
         }
-        else if(checkAccountInformation(username,encryptedPassword)==2){
-            Parent root = FXMLLoader.load(getClass().getResource("MainPageMedic.fxml"));
-            window1 = (Stage)LOGINButton.getScene().getWindow();
-            window1.setScene(new Scene(root));
-        }
-        else
+        catch (NullPasswordException e)
         {
-            FailedLogInMessage.setText("You did not sign in correctly!");
+            FailedLogInMessage.setText(e.getMessage());
         }
+        catch (LogInException e)
+        {
+            FailedLogInMessage.setText((e.getMessage()));
+        }
+
     }
 
     @FXML
@@ -75,6 +73,23 @@ public class ControllerLogIn {
         Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
         window1 = (Stage)BackFromLogInButton.getScene().getWindow();
         window1.setScene(new Scene(root));
+    }
+
+    @FXML
+    private BorderPane scenePane2;
+
+    Stage stage1;
+    public void close(MouseEvent event) {
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Inchide aplicatia");
+        alert.setHeaderText("Sunteti sigur ca doriti sa parasiti aplicatia?");
+
+        if(alert.showAndWait().get() == ButtonType.OK) {
+
+            stage1 = (Stage) scenePane2.getScene().getWindow();
+            stage1.close();
+        }
     }
 
 

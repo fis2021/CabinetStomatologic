@@ -8,12 +8,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -74,7 +77,6 @@ public class ControllerMain implements Initializable {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 medicCurent = medList.getSelectionModel().getSelectedItem();
-                medLab.setText(medicCurent);
                 Image img = new Image(getpic(medicCurent));
                 medpic.setImage(img);
             }
@@ -85,7 +87,6 @@ public class ControllerMain implements Initializable {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 interventiaCurenta = list.getSelectionModel().getSelectedItem();
-                lab.setText(interventiaCurenta);
             }
         });
         slider.setTranslateX(-176);
@@ -287,6 +288,91 @@ public class ControllerMain implements Initializable {
         controllerListaPacienti.setItems1();
         window1 = (Stage) programari1.getScene().getWindow();
         window1.setScene(new Scene(root, 600, 400));
+    }
+
+    @FXML
+    private AnchorPane scenePane3;
+
+    Stage stage1;
+    public void close(MouseEvent event) {
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Inchide aplicatia");
+        alert.setHeaderText("Sunteti sigur ca doriti sa parasiti aplicatia?");
+
+        if(alert.showAndWait().get() == ButtonType.OK) {
+
+            stage1 = (Stage) scenePane3.getScene().getWindow();
+            stage1.close();
+        }
+    }
+
+    @FXML
+    private BorderPane scenePane4;
+
+    Stage stage2;
+    public void close1(MouseEvent event) {
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Inchide aplicatia");
+        alert.setHeaderText("Sunteti sigur ca doriti sa parasiti aplicatia?");
+
+        if(alert.showAndWait().get() == ButtonType.OK) {
+
+            stage2 = (Stage) scenePane4.getScene().getWindow();
+            stage2.close();
+        }
+    }
+
+    @FXML
+    private BorderPane scenePane5;
+
+    Stage stage3;
+    public void close2(MouseEvent event) {
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Inchide aplicatia");
+        alert.setHeaderText("Sunteti sigur ca doriti sa parasiti aplicatia?");
+
+        if(alert.showAndWait().get() == ButtonType.OK) {
+
+            stage3 = (Stage) scenePane5.getScene().getWindow();
+            stage3.close();
+        }
+    }
+
+    @FXML
+    private BorderPane scenePane6;
+
+    Stage stage4;
+    public void close3(MouseEvent event) {
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Inchide aplicatia");
+        alert.setHeaderText("Sunteti sigur ca doriti sa parasiti aplicatia?");
+
+        if(alert.showAndWait().get() == ButtonType.OK) {
+
+            stage4 = (Stage) scenePane6.getScene().getWindow();
+            stage4.close();
+        }
+    }
+
+    @FXML
+    private BorderPane scenePane7;
+
+    Stage stage5;
+    public void close4(MouseEvent event) {
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Inchide aplicatia");
+        alert.setHeaderText("Sunteti sigur ca doriti sa parasiti aplicatia?");
+
+        if(alert.showAndWait().get() == ButtonType.OK) {
+
+            stage5 = (Stage) scenePane7.getScene().getWindow();
+            stage5.close();
+        }
     }
 
 

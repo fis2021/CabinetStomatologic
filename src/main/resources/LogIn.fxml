@@ -1,41 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #B40404;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerLogIn">
-   <children>
-      <JFXButton fx:id="LOGINButton" layoutX="324.0" layoutY="293.0" mnemonicParsing="false" onMouseClicked="#switchToMainPage" prefHeight="32.0" prefWidth="149.0" text="Log In" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="22.0" />
-         </font></JFXButton>
-      <Label alignment="CENTER" layoutX="127.0" layoutY="152.0" prefHeight="32.0" prefWidth="172.0" style="-fx-background-color: lightgrey;" text="Username:">
-         <font>
-            <Font name="System Bold" size="22.0" />
-         </font>
-      </Label>
-      <Label alignment="CENTER" layoutX="127.0" layoutY="203.0" prefHeight="32.0" prefWidth="172.0" style="-fx-background-color: lightgrey;" text="Password:">
-         <font>
-            <Font name="System Bold" size="22.0" />
-         </font>
-      </Label>
-      <PasswordField fx:id="LogInPassword" alignment="CENTER" layoutX="324.0" layoutY="207.0" promptText="password" />
-      <TextField fx:id="LogInUsername" alignment="CENTER" layoutX="324.0" layoutY="152.0" promptText="username" />
-      <JFXButton fx:id="BackFromLogInButton" alignment="CENTER" layoutX="26.0" layoutY="345.0" mnemonicParsing="false" onMouseClicked="#switchToMainFromLogIn" prefHeight="44.0" prefWidth="82.0" text="Back" textFill="WHITE">
-         <font>
-            <Font name="System Bold Italic" size="20.0" />
-         </font>
-      </JFXButton>
-      <Label alignment="CENTER" prefHeight="72.0" prefWidth="600.0" style="-fx-background-color: black;" text="Cabinet Stomatologic" textFill="WHITE">
-         <font>
-            <Font name="Times New Roman" size="40.0" />
-         </font>
-      </Label>
-      <Label fx:id="FailedLogInMessage" alignment="CENTER" layoutX="279.0" layoutY="255.0" prefHeight="19.0" prefWidth="240.0" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="15.0" />
-         </font></Label>
-   </children>
-</AnchorPane>
+<BorderPane fx:id="scenePane2" prefHeight="431.0" prefWidth="469.0" style="-fx-background-color: white;"
+            xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerLogIn">
+    <center>
+        <AnchorPane prefHeight="297.0" prefWidth="475.0" style="-fx-background-color: #237575;">
+            <children>
+                <PasswordField fx:id="LogInPassword" alignment="CENTER" focusTraversable="false" layoutX="246.0"
+                               layoutY="176.0" promptText="password" style="-fx-background-radius: 50;"/>
+                <TextField fx:id="LogInUsername" alignment="CENTER" layoutX="246.0" layoutY="120.0"
+                           promptText="username" style="-fx-background-radius: 50;"/>
+                <JFXButton fx:id="BackFromLogInButton" alignment="CENTER" buttonType="RAISED" focusTraversable="false"
+                           layoutX="14.0" layoutY="305.0" mnemonicParsing="false"
+                           onMouseClicked="#switchToMainFromLogIn" prefHeight="25.0" prefWidth="60.0"
+                           style="-fx-background-color: white; -fx-background-radius: 10;" text="Inapoi"
+                           textFill="#237575">
+                    <font>
+                        <Font name="System Bold" size="13.0"/>
+                    </font>
+                </JFXButton>
+                <Label fx:id="FailedLogInMessage" alignment="CENTER" layoutX="201.0" layoutY="284.0" prefHeight="19.0"
+                       prefWidth="240.0" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="13.0"/>
+                    </font>
+                </Label>
+                <JFXButton fx:id="LOGINButton" buttonType="RAISED" focusTraversable="false" layoutX="269.0"
+                           layoutY="230.0" mnemonicParsing="false" onMouseClicked="#switchToMainPage" prefHeight="36.0"
+                           prefWidth="104.0" style="-fx-background-color: white; -fx-background-radius: 10;"
+                           text="Conectare" textFill="#237575">
+                    <font>
+                        <Font name="System Bold" size="15.0"/>
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </JFXButton>
+                <Label layoutX="110.0" layoutY="113.0" prefHeight="37.0" prefWidth="124.0" text="Username:"
+                       textFill="WHITE">
+                    <font>
+                        <Font size="24.0"/>
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="138.0" layoutY="172.0" prefHeight="34.0" prefWidth="92.0"
+                       text="Parola:" textFill="WHITE">
+                    <font>
+                        <Font size="24.0"/>
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+    </center>
+    <top>
+        <AnchorPane prefHeight="59.0" prefWidth="494.0">
+            <children>
+                <ImageView fitHeight="81.0" fitWidth="282.0" layoutX="121.0" layoutY="4.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+                        <Image url="@Images/LogoMare.PNG"/>
+                    </image>
+                </ImageView>
+                <ImageView fx:id="closeButton" fitHeight="29.0" fitWidth="22.0" layoutX="494.0" layoutY="4.0"
+                           onMouseClicked="#close" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Images/images.png"/>
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </top>
+</BorderPane>

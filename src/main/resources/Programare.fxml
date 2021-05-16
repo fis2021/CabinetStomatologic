@@ -2,34 +2,90 @@
 
 <?import com.jfoenix.controls.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #B40404;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerProgramare">
-   <children>
-      <TextField fx:id="nume" layoutX="271.0" layoutY="109.0" prefHeight="32.0" prefWidth="218.0" promptText="nume" style="-fx-border-radius: 20;" />
-      <TextField fx:id="prenume" layoutX="270.0" layoutY="157.0" prefHeight="32.0" prefWidth="218.0" promptText="prenume" style="-fx-border-radius: 20;" />
-      <Label alignment="CENTER" layoutX="100.0" layoutY="113.0" prefHeight="25.0" prefWidth="142.0" text="Nume" textFill="WHITE" />
-      <Label alignment="CENTER" layoutX="99.0" layoutY="161.0" prefHeight="23.0" prefWidth="142.0" text="Prenume" textFill="WHITE" />
-      <Label alignment="CENTER" layoutX="-1.0" prefHeight="49.0" prefWidth="608.0" style="-fx-background-color: black;" text="Programeaza-te" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="26.0" />
-         </font>
-      </Label>
-      <TextField fx:id="nr" layoutX="270.0" layoutY="208.0" prefHeight="32.0" prefWidth="218.0" promptText="numar telefon" style="-fx-border-radius: 20;" />
-      <Label alignment="CENTER" layoutX="99.0" layoutY="212.0" prefHeight="23.0" prefWidth="142.0" text="Numar telefon" textFill="WHITE" />
-      <DatePicker fx:id="data" layoutX="272.0" layoutY="265.0" prefHeight="25.0" prefWidth="218.0" promptText="data" />
-      <Label alignment="CENTER" layoutX="100.0" layoutY="266.0" prefHeight="23.0" prefWidth="142.0" text="Data" textFill="WHITE" />
-      <CheckBox fx:id="checkButton" layoutX="16.0" layoutY="357.0" mnemonicParsing="false" text="Am completat fisa medicala" textFill="WHITE" />
-      <Label layoutX="20.0" layoutY="321.0" prefHeight="23.0" prefWidth="142.0" text="Obligatoriu!" textFill="#ffffffe0" />
-      <JFXButton fx:id="submitButton" layoutX="404.0" layoutY="347.0" mnemonicParsing="false" onMouseClicked="#goSubmit" prefHeight="25.0" prefWidth="109.0" style="-fx-border-radius: 50;" text="Submit" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="16.0" />
-         </font></JFXButton>
-      <JFXButton fx:id="backButton" layoutX="342.0" layoutY="347.0" mnemonicParsing="false" onMouseClicked="#goBack" prefHeight="25.0" prefWidth="63.0" text="Back" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="16.0" />
-         </font></JFXButton>
-      <Label fx:id="lb" alignment="CENTER" layoutX="248.0" layoutY="313.0" prefHeight="17.0" prefWidth="265.0" textFill="WHITE" />
-   </children>
-</AnchorPane>
+<BorderPane fx:id="scenePane" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerProgramare">
+    <center>
+        <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #237575;">
+            <children>
+                <TextField fx:id="nume" alignment="CENTER" layoutX="271.0" layoutY="117.0" prefHeight="24.0"
+                           prefWidth="210.0" promptText="nume"
+                           style="-fx-background-color: white; -fx-background-radius: 50;"/>
+                <TextField fx:id="prenume" alignment="CENTER" layoutX="270.0" layoutY="163.0" prefHeight="26.0"
+                           prefWidth="210.0" promptText="prenume"
+                           style="-fx-background-color: white; -fx-background-radius: 50;"/>
+                <Label alignment="CENTER" layoutX="114.0" layoutY="111.0" prefHeight="25.0" prefWidth="142.0"
+                       text="Nume:" textFill="WHITE">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="113.0" layoutY="159.0" prefHeight="23.0" prefWidth="142.0"
+                       text="Prenume:" textFill="WHITE">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </Label>
+                <TextField fx:id="nr" alignment="CENTER" layoutX="270.0" layoutY="212.0" prefHeight="28.0"
+                           prefWidth="210.0" promptText="numar telefon"
+                           style="-fx-background-color: white; -fx-background-radius: 50;"/>
+                <Label alignment="CENTER" layoutX="113.0" layoutY="210.0" prefHeight="23.0" prefWidth="142.0"
+                       text="Numar telefon:" textFill="WHITE">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </Label>
+                <DatePicker fx:id="data" layoutX="272.0" layoutY="264.0" prefHeight="28.0" prefWidth="210.0"
+                            style="-fx-background-color: white; -fx-background-radius: 5;"/>
+                <Label alignment="CENTER" layoutX="114.0" layoutY="264.0" prefHeight="23.0" prefWidth="142.0"
+                       text="Data:" textFill="WHITE">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </Label>
+                <CheckBox fx:id="checkButton" layoutX="14.0" layoutY="366.0" mnemonicParsing="false"
+                          text="Am completat fisa medicala" textFill="WHITE"/>
+                <Label layoutX="18.0" layoutY="330.0" prefHeight="23.0" prefWidth="142.0" text="Obligatoriu!"
+                       textFill="#ffffffe0"/>
+                <JFXButton fx:id="submitButton" layoutX="386.0" layoutY="358.0" mnemonicParsing="false"
+                           onMouseClicked="#goSubmit" prefHeight="34.0" prefWidth="74.0"
+                           style="-fx-background-radius: 10; -fx-background-color: white;" text="Salveaza"
+                           textFill="#237575">
+                    <font>
+                        <Font name="System Bold" size="13.0"/>
+                    </font>
+                </JFXButton>
+                <JFXButton fx:id="backButton" layoutX="301.0" layoutY="358.0" mnemonicParsing="false"
+                           onMouseClicked="#goBack" prefHeight="34.0" prefWidth="74.0"
+                           style="-fx-background-radius: 10; -fx-background-color: white;" text="Inapoi"
+                           textFill="#237575">
+                    <font>
+                        <Font name="System Bold" size="13.0"/>
+                    </font>
+                </JFXButton>
+                <Label fx:id="lb" alignment="CENTER" layoutX="248.0" layoutY="313.0" prefHeight="17.0" prefWidth="265.0"
+                       textFill="WHITE"/>
+            </children>
+        </AnchorPane>
+    </center>
+    <top>
+        <AnchorPane BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="76.0" fitWidth="268.0" layoutX="172.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Images/LogoMare.PNG"/>
+                    </image>
+                </ImageView>
+                <ImageView fx:id="closeButton" fitHeight="26.0" fitWidth="22.0" layoutX="575.0" layoutY="4.0"
+                           onMouseClicked="#close" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Images/images.png"/>
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </top>
+</BorderPane>

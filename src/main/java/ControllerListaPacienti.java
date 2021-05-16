@@ -6,10 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -22,7 +19,7 @@ import java.util.ResourceBundle;
 import static javax.swing.JOptionPane.showMessageDialog;
 
 
-public class ControllerListaPacienti implements Initializable{
+public class ControllerListaPacienti implements Initializable {
 
     private static int ok = 0;
 
@@ -35,20 +32,17 @@ public class ControllerListaPacienti implements Initializable{
 
     public void goBack(MouseEvent event) throws Exception {
 
-        if(ok == 0) {
+        if (ok == 0) {
             Parent root = FXMLLoader.load(getClass().getResource("Programare.fxml"));
-            window1 = (Stage)backButton.getScene().getWindow();
+            window1 = (Stage) backButton.getScene().getWindow();
             window1.setScene(new Scene(root));
-        }
-        else if(ok==1) {
+        } else if (ok == 1) {
             Parent root = FXMLLoader.load(getClass().getResource("MainPageMedic.fxml"));
-            window1 = (Stage)backButton.getScene().getWindow();
+            window1 = (Stage) backButton.getScene().getWindow();
             window1.setScene(new Scene(root));
-        }
-        else
-        {
+        } else {
             Parent root = FXMLLoader.load(getClass().getResource("MainPage.fxml"));
-            window1 = (Stage)backButton.getScene().getWindow();
+            window1 = (Stage) backButton.getScene().getWindow();
             window1.setScene(new Scene(root));
         }
 
@@ -62,7 +56,7 @@ public class ControllerListaPacienti implements Initializable{
     private String nr;
     private String data;
 
-    public void setFields (String nume, String prenume, String nr, String data) throws Exception{
+    public void setFields(String nume, String prenume, String nr, String data) throws Exception {
 
         this.nume = nume;
         this.prenume = prenume;
@@ -72,18 +66,18 @@ public class ControllerListaPacienti implements Initializable{
         table.setItems(getPersoana());
     }
 
-    public void setItems () throws Exception{
+    public void setItems() throws Exception {
         ok = 1;  //pentru medic
         table.setItems(getPersoana());
     }
 
-    public void setItems1 () throws Exception{
+    public void setItems1() throws Exception {
         ok = -1;  //pentru pacient
         table.setItems(getPersoana());
     }
 
-    public void setRole (int k) throws Exception{
-        if(k == 0){
+    public void setRole(int k) throws Exception {
+        if (k == 0) {
             name.setVisible(false);
             showFisButton.setVisible(false);
             deleteButton.setVisible(false);
@@ -107,7 +101,6 @@ public class ControllerListaPacienti implements Initializable{
     TableColumn<Persoana, String> Data;
 
 
-
     ObservableList<Persoana> getPersoana() throws IOException {
 
         ObservableList<Persoana> persoane = FXCollections.observableArrayList();
@@ -116,14 +109,14 @@ public class ControllerListaPacienti implements Initializable{
 
         int sw = 1;
         for (Persoana p : UserService.userRepository1.find()) {
-                if (p.getNume().equals(this.nume)) {
-                    sw = 0;
-                    break;
-                }
+            if (p.getNume().equals(this.nume)) {
+                sw = 0;
+                break;
+            }
 
         }
 
-        if(ok == 0) {   //daca este pacient
+        if (ok == 0) {   //daca este pacient
             if (sw == 1) {
                 UserService.addUser1(this.nume, this.prenume, this.nr, this.data);
             } else {
@@ -133,12 +126,12 @@ public class ControllerListaPacienti implements Initializable{
 
 
         for (Persoana p : UserService.userRepository1.find()) {
-                list.add(p);
+            list.add(p);
         }
 
         persoane.addAll(list);
 
-        return  persoane;
+        return persoane;
     }
 
     @FXML
@@ -158,66 +151,71 @@ public class ControllerListaPacienti implements Initializable{
     }
 
 
-
-
     public void show(MouseEvent event) throws Exception {
 
-        if(!name.getText().equals("")) {
 
-            //Parent root = FXMLLoader.load(getClass().getResource("FisaPrecompletata.fxml"));
-            //window1 = (Stage)showFisButton.getScene().getWindow();
-            //window1.setScene(new Scene(root, 600, 400));
+
+        try {
+            UserService.checkNameInDataBaseFisaMedicala(name.getText());
             FXMLLoader loader = new FXMLLoader(getClass().getResource("FisaPrecompletata.fxml"));
             root = loader.load();
             ControllerFisaPrecompletata controllerFisaPrecompletata = loader.getController();
-
-            int sw = 1;
-            ///caut in baza de date
             for (FisaMedicala p : UserService.userRepository2.find()) {
-                if(p.getNume().equals(name.getText())){
+                if (p.getNume().equals(name.getText())) {
                     controllerFisaPrecompletata.setFis(p.getNume(), p.getData(), p.getNumarTelefon(), p.isQ1(), p.isQ2(), p.isQ3(), p.isQ4(), p.isQ5(), p.isQ6(), p.isQ7(), p.isQ8(), p.isQ9(), p.isQ10());
-                    sw = 0;
                     break;
                 }
             }
+            window1 = (Stage) showFisButton.getScene().getWindow();
+            window1.setScene(new Scene(root, 600, 400));
 
-            if(sw == 1){
-                showMessageDialog(null, "Pacientul " + name.getText() + " nu a completat fisa medicala");
-            }
-            else {
-                //Parent root = FXMLLoader.load(getClass().getResource("ListaPacienti.fxml"));
-                window1 = (Stage) showFisButton.getScene().getWindow();
-                window1.setScene(new Scene(root, 600, 400));
-            }
-
-
+        } catch (NoCompleteFisaException e) {
+            showMessageDialog(null, e.getMessage());
+        } catch (NullUsernameException e) {
+            showMessageDialog(null, e.getMessage());
         }
-        else{
-            showMessageDialog(null, "Trebuie sa completati campurile de nume si prenume!");
-        }
+
+
     }
+
     @FXML
     public javafx.scene.control.Button deleteButton;
 
     public void delete(MouseEvent event) throws Exception {
 
 
-        for (Persoana p: UserService.userRepository1.find()) {
-            String s=p.getNume()+" "+p.getPrenume();
-            if(s.equals(name.getText()))
-            {
-                System.out.println("A fost gasit!");
+        for (Persoana p : UserService.userRepository1.find()) {
+            String s = p.getNume() + " " + p.getPrenume();
+            if (s.equals(name.getText())) {
                 UserService.userRepository1.remove(p);
                 break;
             }
 
         }
 
-        showMessageDialog(null,"Programarea a fost stearsa!");
+        showMessageDialog(null, "Programarea a fost stearsa!");
 
         Parent root = FXMLLoader.load(getClass().getResource("MainPageMedic.fxml"));
-        window1 = (Stage)deleteButton.getScene().getWindow();
+        window1 = (Stage) deleteButton.getScene().getWindow();
         window1.setScene(new Scene(root));
+    }
+
+    @FXML
+    private ScrollPane scenePane;
+
+    Stage stage;
+
+    public void close(MouseEvent event) {
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Inchide aplicatia");
+        alert.setHeaderText("Sunteti sigur ca doriti sa parasiti aplicatia?");
+
+        if (alert.showAndWait().get() == ButtonType.OK) {
+
+            stage = (Stage) scenePane.getScene().getWindow();
+            stage.close();
+        }
     }
 
 

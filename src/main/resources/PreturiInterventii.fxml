@@ -1,26 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #B40404;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerMain">
-   <children>
-      <JFXButton fx:id="backfrompiButton" layoutX="23.0" layoutY="342.0" mnemonicParsing="false" onMouseClicked="#goBackfrompi" prefHeight="43.0" prefWidth="98.0" text="Back" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="19.0" />
-         </font></JFXButton>
-      <ImageView fitHeight="69.0" fitWidth="70.0" layoutX="525.0" layoutY="329.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@teeth.jpg" />
-         </image>
-      </ImageView>
-      <ListView fx:id="list" layoutX="125.0" layoutY="110.0" prefHeight="200.0" prefWidth="295.0" />
-      <Label fx:id="lab" alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" prefHeight="58.0" prefWidth="600.0" style="-fx-background-color: black;" textAlignment="CENTER" textFill="WHITE">
-         <font>
-            <Font size="33.0" />
-         </font></Label>
-   </children>
-</AnchorPane>
+<BorderPane fx:id="scenePane5" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/16"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerMain">
+    <center>
+        <AnchorPane prefHeight="362.0" prefWidth="566.0" style="-fx-background-color: #237575;">
+            <children>
+                <ListView fx:id="list" layoutX="131.0" layoutY="81.0" prefHeight="200.0" prefWidth="338.0"
+                          style="-fx-background-radius: 10;"/>
+                <JFXButton fx:id="backfrompiButton" alignment="CENTER" buttonType="RAISED" focusTraversable="false"
+                           layoutX="14.0" layoutY="321.0" mnemonicParsing="false" onMouseClicked="#goBackfrompi"
+                           prefHeight="25.0" prefWidth="60.0"
+                           style="-fx-background-color: white; -fx-background-radius: 10;" text="Inapoi"
+                           textFill="#237575">
+                    <font>
+                        <Font name="System Bold" size="13.0"/>
+                    </font>
+                </JFXButton>
+            </children>
+        </AnchorPane>
+    </center>
+    <top>
+        <AnchorPane BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="81.0" fitWidth="282.0" layoutX="163.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Images/LogoMare.PNG"/>
+                    </image>
+                </ImageView>
+                <ImageView fx:id="closeButton" fitHeight="29.0" fitWidth="22.0" layoutX="577.0" layoutY="4.0"
+                           onMouseClicked="#close2" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Images/images.png"/>
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </top>
+</BorderPane>
