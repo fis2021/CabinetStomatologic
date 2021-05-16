@@ -12,9 +12,9 @@
     <center>
         <AnchorPane prefHeight="297.0" prefWidth="475.0" style="-fx-background-color: #237575;">
             <children>
-                <PasswordField fx:id="LogInPassword" alignment="CENTER" focusTraversable="false" layoutX="246.0"
+                <PasswordField fx:id="LogInPassword" id="LogInPassword" alignment="CENTER" focusTraversable="false" layoutX="246.0"
                                layoutY="176.0" promptText="password" style="-fx-background-radius: 50;"/>
-                <TextField fx:id="LogInUsername" alignment="CENTER" layoutX="246.0" layoutY="120.0"
+                <TextField fx:id="LogInUsername" id="LogInUsername" alignment="CENTER" layoutX="246.0" layoutY="120.0"
                            promptText="username" style="-fx-background-radius: 50;"/>
                 <JFXButton fx:id="BackFromLogInButton" alignment="CENTER" buttonType="RAISED" focusTraversable="false"
                            layoutX="14.0" layoutY="305.0" mnemonicParsing="false"
@@ -31,7 +31,7 @@
                         <Font name="System Bold" size="13.0"/>
                     </font>
                 </Label>
-                <JFXButton fx:id="LOGINButton" buttonType="RAISED" focusTraversable="false" layoutX="269.0"
+                <JFXButton fx:id="LOGINButton" id="LOGINButton" buttonType="RAISED" focusTraversable="false" layoutX="269.0"
                            layoutY="230.0" mnemonicParsing="false" onMouseClicked="#switchToMainPage" prefHeight="36.0"
                            prefWidth="104.0" style="-fx-background-color: white; -fx-background-radius: 10;"
                            text="Conectare" textFill="#237575">
