@@ -148,7 +148,9 @@ class UserServiceTest {
     @Test
     @DisplayName("User is succsessfully persisted to UserRepository1")
     void testUserIsAddedToUserRepository1() {
+
         UserService.addUser1(ROSA, FLAVIUS, "0724562189", "05.04.2004");
+
         org.assertj.core.api.Assertions.assertThat(UserService.getAllUsers1()).size().isEqualTo(1);
         Persoana persoana = UserService.getAllUsers1().get(0);
         assertThat(persoana).isNotNull();
@@ -173,6 +175,8 @@ class UserServiceTest {
             UserService.checkProgramare(ROSA, "", DATA, NR, true);
         });
     }
+
+
 
     @Test
     @DisplayName("Data cannot be empty when appointment")
@@ -252,6 +256,7 @@ class UserServiceTest {
         assertThat(fisaMedicala.isQ9()).isEqualTo(true);
         assertThat(fisaMedicala.isQ10()).isEqualTo(false);
     }
+
 
     @Test
     @DisplayName("Username cannot be empty when medical file")
@@ -352,7 +357,6 @@ class UserServiceTest {
             UserService.checkNameInDataBaseFisaMedicala("Rosa Flavius");
         });
     }
-
 
 
 
