@@ -155,41 +155,67 @@ public class ControllerListaPacienti implements Initializable{
     }
 
 
+    private static int checkNameInDataBase(TextField name) {
+        for (FisaMedicala p : UserService.userRepository2.find()) {
+            if (p.getNume().equals(name.getText())) {
 
+                return 1;
+            }
+        }
+        return 0;
+    }
+
+    private static void checkName(TextField name) throws NullUsernameException
+    {
+        if(name.getText().equals(""))
+        {
+            throw new NullUsernameException();
+        }
+    }
+    private static void check(TextField name) throws NoCompleteFisaException
+    {
+        if(checkNameInDataBase(name)==0)
+        {
+            throw new NoCompleteFisaException();
+        }
+    }
 
     public void show(MouseEvent event) throws Exception {
 
-        if(!name.getText().equals("")) {
 
-
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("FisaPrecompletata.fxml"));
-            root = loader.load();
-            ControllerFisaPrecompletata controllerFisaPrecompletata = loader.getController();
-
-            int sw = 1;
-            ///caut in baza de date
-            for (FisaMedicala p : UserService.userRepository2.find()) {
-                if(p.getNume().equals(name.getText())){
-                    controllerFisaPrecompletata.setFis(p.getNume(), p.getData(), p.getNumarTelefon(), p.isQ1(), p.isQ2(), p.isQ3(), p.isQ4(), p.isQ5(), p.isQ6(), p.isQ7(), p.isQ8(), p.isQ9(), p.isQ10());
-                    sw = 0;
-                    break;
+            try{
+                checkName(name);
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("FisaPrecompletata.fxml"));
+                root = loader.load();
+                ControllerFisaPrecompletata controllerFisaPrecompletata = loader.getController();
+                try{
+                    check(name);
+                    for (FisaMedicala p : UserService.userRepository2.find()) {
+                        if (p.getNume().equals(name.getText())) {
+                            controllerFisaPrecompletata.setFis(p.getNume(), p.getData(), p.getNumarTelefon(), p.isQ1(), p.isQ2(), p.isQ3(), p.isQ4(), p.isQ5(), p.isQ6(), p.isQ7(), p.isQ8(), p.isQ9(), p.isQ10());
+                            break;
+                        }
                 }
-            }
+                    window1 = (Stage) showFisButton.getScene().getWindow();
+                    window1.setScene(new Scene(root, 600, 400));
 
-            if(sw == 1){
-                showMessageDialog(null, "Pacientul " + name.getText() + " nu a completat fisa medicala");
-            }
-            else {
+            }catch (NoCompleteFisaException e)
+                {
+                    showMessageDialog(null, e.getMessage());
+                }
+
                 //Parent root = FXMLLoader.load(getClass().getResource("ListaPacienti.fxml"));
-                window1 = (Stage) showFisButton.getScene().getWindow();
-                window1.setScene(new Scene(root, 600, 400));
+
+
+
+
+        }catch (NullUsernameException e)
+            {
+                showMessageDialog(null, e.getMessage());
             }
 
 
-        }
-        else{
-            showMessageDialog(null, "Trebuie sa completati campurile de nume si prenume!");
-        }
+
     }
     @FXML
     public javafx.scene.control.Button deleteButton;

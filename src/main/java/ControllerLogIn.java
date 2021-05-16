@@ -28,7 +28,7 @@ public class ControllerLogIn {
     @FXML
     Label FailedLogInMessage;
 
-    public static void check(String USERNAME, String PASSWORD) throws NullUsernameException, NullPasswordException
+    public static void check(String USERNAME, String PASSWORD) throws NullUsernameException, NullPasswordException, LogInException
     {
         if(USERNAME.equals(""))
         {
@@ -38,6 +38,10 @@ public class ControllerLogIn {
         {
             throw new NullPasswordException();
         }
+        else if(checkAccountInformation(USERNAME,PASSWORD)==0){
+            throw new LogInException();
+        }
+
     }
 
     private static int checkAccountInformation(String username, String password) {
@@ -74,11 +78,6 @@ public class ControllerLogIn {
                 window1 = (Stage)LOGINButton.getScene().getWindow();
                 window1.setScene(new Scene(root));
             }
-            else
-            {
-                FailedLogInMessage.setText("You did not sign in correctly!");
-            }
-
         }catch (NullUsernameException e)
         {
             FailedLogInMessage.setText(e.getMessage());
@@ -86,6 +85,10 @@ public class ControllerLogIn {
         catch (NullPasswordException e)
         {
             FailedLogInMessage.setText(e.getMessage());
+        }
+        catch (LogInException e)
+        {
+            FailedLogInMessage.setText((e.getMessage()));
         }
 
     }
