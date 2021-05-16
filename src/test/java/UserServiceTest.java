@@ -2,6 +2,7 @@ import org.apache.commons.io.FileUtils;
 import org.dizitart.no2.Nitrite;
 import org.junit.jupiter.api.*;
 
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.testfx.assertions.api.Assertions.assertThat;
 
@@ -109,7 +110,7 @@ class UserServiceTest {
 
     @Test
     @DisplayName("User is succsessfully persisted to UserRepository1")
-    void testUserIsAddedToUserRepository1()  {
+    void testUserIsAddedToUserRepository1() {
         UserService.addUser1("Rosa", "Flavius", "0724562189", "05.04.2004");
         org.assertj.core.api.Assertions.assertThat(UserService.getAllUsers1()).size().isEqualTo(1);
         Persoana persoana = UserService.getAllUsers1().get(0);
@@ -119,6 +120,8 @@ class UserServiceTest {
         assertThat(persoana.getNr()).isEqualTo("0724562189");
         assertThat(persoana.getData()).isEqualTo("05.04.2004");
     }
+
+
 
 
 
@@ -150,4 +153,9 @@ class UserServiceTest {
         assertThat(fisaMedicala.isQ9()).isEqualTo(true);
         assertThat(fisaMedicala.isQ10()).isEqualTo(false);
     }
+
+
+
+
+
 }

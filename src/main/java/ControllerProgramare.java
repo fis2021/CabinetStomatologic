@@ -53,7 +53,7 @@ public class ControllerProgramare {
         String Prenume = prenume.getText();
         String Nr = nr.getText();
         String Data = "";
-        Boolean checkB = checkButton.isSelected();
+        boolean checkB = checkButton.isSelected();
 
         try {
             if (data.getValue() != null) {
