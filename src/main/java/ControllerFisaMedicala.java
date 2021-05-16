@@ -60,7 +60,7 @@ public class ControllerFisaMedicala {
             if (data.getValue() != null) {
                 Data = data.getValue().format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
             }
-            UserService.checkFisaMedicala(nume, Numar, Data, da1, da2, da3, da4, da5, da6, da7, da8, da9, da10, nu1, nu2, nu3, nu4, nu5, nu6, nu7, nu8, nu9, nu10);
+            UserService.checkFisaMedicala(nume.getText(), Numar, Data, da1.isSelected(), da2.isSelected(), da3.isSelected(), da4.isSelected(), da5.isSelected(), da6.isSelected(), da7.isSelected(), da8.isSelected(), da9.isSelected(), da10.isSelected(), nu1.isSelected(), nu2.isSelected(), nu3.isSelected(), nu4.isSelected(), nu5.isSelected(), nu6.isSelected(), nu7.isSelected(), nu8.isSelected(), nu9.isSelected(), nu10.isSelected());
             UserService.addFisa(nume.getText(), numar.getText(), Data, da1.isSelected(), da2.isSelected(), da3.isSelected(), da4.isSelected(), da5.isSelected(), da6.isSelected(), da7.isSelected(), da8.isSelected(), da9.isSelected(), da10.isSelected());
             showMessageDialog(null, "Fisa medicala a fost salvata!");
             Parent root = FXMLLoader.load(getClass().getResource("MainPage.fxml"));

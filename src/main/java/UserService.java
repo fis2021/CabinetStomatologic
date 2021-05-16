@@ -135,7 +135,7 @@ public class UserService {
     }
 
 
-    private static void checkEmptyFieldsProgramare(String lastName, String firstName, String data, String nr, Boolean buton) throws NullDataException, NullCheckButtonException, NullFirstNameException, NullLastNameException, NullNumberException {
+    private static void checkEmptyFieldsProgramare(String lastName, String firstName, String data, String nr, boolean buton) throws NullDataException, NullCheckButtonException, NullFirstNameException, NullLastNameException, NullNumberException {
         if (lastName.equals("")) {
             throw new NullLastNameException();
 
@@ -145,7 +145,7 @@ public class UserService {
             throw new NullNumberException();
         } else if (data.equals("")) {
             throw new NullDataException();
-        } else if (buton.equals(false)) {
+        } else if (buton==false) {
             throw new NullCheckButtonException();
         }
     }
@@ -167,7 +167,7 @@ public class UserService {
         return true;
     }
 
-    public static void checkProgramare(String Nume, String Prenume, String data, String nr, Boolean checkButton) throws NullNumberException, WrongNumberException, NullDataException, NullFirstNameException, NullCheckButtonException, NullLastNameException {
+    public static void checkProgramare(String Nume, String Prenume, String data, String nr, boolean checkButton) throws NullNumberException, WrongNumberException, NullDataException, NullFirstNameException, NullCheckButtonException, NullLastNameException {
         checkEmptyFieldsProgramare(Nume, Prenume, data, nr, checkButton);
         if (!isNumberValid(nr)) {
             throw new WrongNumberException();
@@ -175,8 +175,8 @@ public class UserService {
     }
 
 
-    public static void checkFisaMedicala(TextField name, String number, String data, RadioButton da1, RadioButton da2, RadioButton da3, RadioButton da4, RadioButton da5, RadioButton da6, RadioButton da7, RadioButton da8, RadioButton da9, RadioButton da10, RadioButton nu1, RadioButton nu2, RadioButton nu3, RadioButton nu4, RadioButton nu5, RadioButton nu6, RadioButton nu7, RadioButton nu8, RadioButton nu9, RadioButton nu10) throws NullDataException, NullUsernameException, Null1OfChoicesException, AlreadyExistAppointmentException, NullNumberException, WrongNumberException {
-        if (name.getText().equals("")) {
+    public static void checkFisaMedicala(String name, String number, String data, boolean da1, boolean da2, boolean da3, boolean da4, boolean da5, boolean da6, boolean da7, boolean da8, boolean da9, boolean da10, boolean nu1, boolean nu2, boolean nu3, boolean nu4, boolean nu5, boolean nu6, boolean nu7, boolean nu8, boolean nu9, boolean nu10) throws NullDataException, NullUsernameException, Null1OfChoicesException, AlreadyExistAppointmentException, NullNumberException, WrongNumberException {
+        if (name.equals("")) {
             throw new NullUsernameException();
 
         } else if (checkNameFisaMedicala(name) == 1) {
@@ -187,15 +187,15 @@ public class UserService {
             throw new NullNumberException();
         } else if (checkNumberFisaMedicala(number) == 2) {
             throw new WrongNumberException();
-        } else if (da1.isSelected() == nu1.isSelected() || da2.isSelected() == nu2.isSelected() || da3.isSelected() == nu3.isSelected() || da4.isSelected() == nu4.isSelected() || da5.isSelected() == nu5.isSelected() || da6.isSelected() == nu6.isSelected() || da7.isSelected() == nu7.isSelected() || da8.isSelected() == nu8.isSelected() || da9.isSelected() == nu9.isSelected() || da10.isSelected() == nu10.isSelected()) {
+        } else if (da1== nu1|| da2== nu2 || da3== nu3 || da4 == nu4|| da5== nu5 || da6 == nu6|| da7 == nu7 || da8 == nu8 || da9== nu9|| da10 == nu10) {
             throw new Null1OfChoicesException();
 
         }
     }
 
-    private static int checkNameFisaMedicala(TextField nume) {
+    private static int checkNameFisaMedicala(String nume) {
         for (FisaMedicala p : UserService.userRepository2.find()) {
-            if (p.getNume().equals(nume.getText())) {
+            if (p.getNume().equals(nume)) {
                 return 1;
             }
         }
