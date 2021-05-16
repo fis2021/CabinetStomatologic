@@ -8,33 +8,40 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="scenePane5" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerMain">
-   <center>
-      <AnchorPane prefHeight="362.0" prefWidth="566.0" style="-fx-background-color: #237575;">
-         <children>
-            <ListView fx:id="list" layoutX="131.0" layoutY="81.0" prefHeight="200.0" prefWidth="338.0" style="-fx-background-radius: 10;" />
-            <JFXButton fx:id="backfrompiButton" alignment="CENTER" buttonType="RAISED" focusTraversable="false" layoutX="14.0" layoutY="321.0" mnemonicParsing="false" onMouseClicked="#goBackfrompi" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Inapoi" textFill="#237575">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
-            </JFXButton>
-         </children>
-      </AnchorPane>
-   </center>
-   <top>
-      <AnchorPane BorderPane.alignment="CENTER">
-         <children>
-            <ImageView fitHeight="81.0" fitWidth="282.0" layoutX="163.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Images/LogoMare.PNG" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="closeButton" fitHeight="29.0" fitWidth="22.0" layoutX="577.0" layoutY="4.0" onMouseClicked="#close2" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Images/images.png" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
-   </top>
+<BorderPane fx:id="scenePane5" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/16"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerMain">
+    <center>
+        <AnchorPane prefHeight="362.0" prefWidth="566.0" style="-fx-background-color: #237575;">
+            <children>
+                <ListView fx:id="list" layoutX="131.0" layoutY="81.0" prefHeight="200.0" prefWidth="338.0"
+                          style="-fx-background-radius: 10;"/>
+                <JFXButton fx:id="backfrompiButton" alignment="CENTER" buttonType="RAISED" focusTraversable="false"
+                           layoutX="14.0" layoutY="321.0" mnemonicParsing="false" onMouseClicked="#goBackfrompi"
+                           prefHeight="25.0" prefWidth="60.0"
+                           style="-fx-background-color: white; -fx-background-radius: 10;" text="Inapoi"
+                           textFill="#237575">
+                    <font>
+                        <Font name="System Bold" size="13.0"/>
+                    </font>
+                </JFXButton>
+            </children>
+        </AnchorPane>
+    </center>
+    <top>
+        <AnchorPane BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="81.0" fitWidth="282.0" layoutX="163.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Images/LogoMare.PNG"/>
+                    </image>
+                </ImageView>
+                <ImageView fx:id="closeButton" fitHeight="29.0" fitWidth="22.0" layoutX="577.0" layoutY="4.0"
+                           onMouseClicked="#close2" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Images/images.png"/>
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </top>
 </BorderPane>

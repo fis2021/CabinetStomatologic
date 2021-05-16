@@ -7,64 +7,78 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane fx:id="scenePane1" prefHeight="429.0" prefWidth="510.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
-   <center>
-      <AnchorPane prefHeight="334.0" prefWidth="519.0" style="-fx-background-color: #237575;">
-         <children>
-            <Label layoutX="115.0" layoutY="90.0" prefHeight="37.0" prefWidth="109.0" text="Username:" textFill="WHITE">
-               <font>
-                  <Font size="22.0" />
-               </font>
-            </Label>
-            <Label alignment="CENTER" layoutX="153.0" layoutY="141.0" text="Parola:" textFill="WHITE">
-               <font>
-                  <Font size="22.0" />
-               </font>
-            </Label>
-            <TextField fx:id="usernameField" alignment="CENTER" focusTraversable="false" layoutX="253.0" layoutY="96.0" promptText="username" style="-fx-background-radius: 50;" />
-            <PasswordField fx:id="passwordField" alignment="CENTER" focusTraversable="false" layoutX="253.0" layoutY="144.0" promptText="parola" style="-fx-background-radius: 50;" />
-            <ChoiceBox fx:id="role" focusTraversable="false" layoutX="252.0" layoutY="196.0" prefWidth="150.0" style="-fx-background-radius: 50; -fx-background-color: white;" />
-            <Label alignment="CENTER" contentDisplay="RIGHT" layoutX="162.0" layoutY="193.0" prefHeight="28.0" prefWidth="71.0" text="Rol:" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font size="22.0" />
-               </font>
-            </Label>
-            <JFXButton fx:id="BackButton" focusTraversable="false" layoutX="14.0" layoutY="308.0" mnemonicParsing="false" onMouseClicked="#switchToMain" prefHeight="29.0" prefWidth="58.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Inapoi" textFill="#237575">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
-            </JFXButton>
-            <JFXButton layoutX="-63.0" layoutY="113.0" mnemonicParsing="false" text="Button" />
-            <Label fx:id="registrationMessage" alignment="CENTER" layoutX="170.0" layoutY="234.0" prefHeight="17.0" prefWidth="317.0" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font>
-            </Label>
-            <JFXButton alignment="CENTER" buttonType="RAISED" focusTraversable="false" layoutX="269.0" layoutY="259.0" mnemonicParsing="false" onAction="#handleRegisterAction" prefHeight="36.0" prefWidth="118.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Inregistrare" textFill="#237575">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </JFXButton>
-         </children>
-      </AnchorPane>
-   </center>
-   <top>
-      <AnchorPane BorderPane.alignment="CENTER">
-         <children>
-            <ImageView fitHeight="92.0" fitWidth="265.0" layoutX="127.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Images/LogoMare.PNG" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="closeButton" fitHeight="29.0" fitWidth="22.0" layoutX="497.0" layoutY="4.0" onMouseClicked="#close" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Images/images.png" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
-   </top>
+<BorderPane fx:id="scenePane1" prefHeight="429.0" prefWidth="510.0" style="-fx-background-color: white;"
+            xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+    <center>
+        <AnchorPane prefHeight="334.0" prefWidth="519.0" style="-fx-background-color: #237575;">
+            <children>
+                <Label layoutX="115.0" layoutY="90.0" prefHeight="37.0" prefWidth="109.0" text="Username:"
+                       textFill="WHITE">
+                    <font>
+                        <Font size="22.0"/>
+                    </font>
+                </Label>
+                <Label alignment="CENTER" layoutX="153.0" layoutY="141.0" text="Parola:" textFill="WHITE">
+                    <font>
+                        <Font size="22.0"/>
+                    </font>
+                </Label>
+                <TextField fx:id="usernameField" alignment="CENTER" focusTraversable="false" layoutX="253.0"
+                           layoutY="96.0" promptText="username" style="-fx-background-radius: 50;"/>
+                <PasswordField fx:id="passwordField" alignment="CENTER" focusTraversable="false" layoutX="253.0"
+                               layoutY="144.0" promptText="parola" style="-fx-background-radius: 50;"/>
+                <ChoiceBox fx:id="role" focusTraversable="false" layoutX="252.0" layoutY="196.0" prefWidth="150.0"
+                           style="-fx-background-radius: 50; -fx-background-color: white;"/>
+                <Label alignment="CENTER" contentDisplay="RIGHT" layoutX="162.0" layoutY="193.0" prefHeight="28.0"
+                       prefWidth="71.0" text="Rol:" textAlignment="CENTER" textFill="WHITE">
+                    <font>
+                        <Font size="22.0"/>
+                    </font>
+                </Label>
+                <JFXButton fx:id="BackButton" focusTraversable="false" layoutX="14.0" layoutY="308.0"
+                           mnemonicParsing="false" onMouseClicked="#switchToMain" prefHeight="29.0" prefWidth="58.0"
+                           style="-fx-background-color: white; -fx-background-radius: 10;" text="Inapoi"
+                           textFill="#237575">
+                    <font>
+                        <Font name="System Bold" size="13.0"/>
+                    </font>
+                </JFXButton>
+                <JFXButton layoutX="-63.0" layoutY="113.0" mnemonicParsing="false" text="Button"/>
+                <Label fx:id="registrationMessage" alignment="CENTER" layoutX="170.0" layoutY="234.0" prefHeight="17.0"
+                       prefWidth="317.0" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="12.0"/>
+                    </font>
+                </Label>
+                <JFXButton alignment="CENTER" buttonType="RAISED" focusTraversable="false" layoutX="269.0"
+                           layoutY="259.0" mnemonicParsing="false" onAction="#handleRegisterAction" prefHeight="36.0"
+                           prefWidth="118.0" style="-fx-background-color: white; -fx-background-radius: 10;"
+                           text="Inregistrare" textFill="#237575">
+                    <font>
+                        <Font name="System Bold" size="15.0"/>
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </JFXButton>
+            </children>
+        </AnchorPane>
+    </center>
+    <top>
+        <AnchorPane BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="92.0" fitWidth="265.0" layoutX="127.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Images/LogoMare.PNG"/>
+                    </image>
+                </ImageView>
+                <ImageView fx:id="closeButton" fitHeight="29.0" fitWidth="22.0" layoutX="497.0" layoutY="4.0"
+                           onMouseClicked="#close" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Images/images.png"/>
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </top>
 </BorderPane>

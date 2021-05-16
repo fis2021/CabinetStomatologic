@@ -6,52 +6,69 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane fx:id="scenePane4" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerMain">
-   <center>
-      <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #237575;">
-         <children>
-            <JFXButton fx:id="BackFromDetailsButton" buttonType="RAISED" ellipsisString="" focusTraversable="false" layoutX="16.0" layoutY="361.0" mnemonicParsing="false" onMouseClicked="#goBackFromDetails" prefHeight="23.0" prefWidth="57.0" style="-fx-background-color: white; -fx-background-radius: 10;" stylesheets="@style0.css" text="Inapoi" textFill="#237575">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
-            </JFXButton>
-            <JFXButton fx:id="piButton" buttonType="RAISED" ellipsisString="" focusTraversable="false" layoutX="200.0" layoutY="116.0" mnemonicParsing="false" onMouseClicked="#gopi" prefHeight="38.0" prefWidth="200.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Preturile interventiilor" textFill="#237575">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </JFXButton>
-            <JFXButton fx:id="lmButton" buttonType="RAISED" ellipsisString="" focusTraversable="false" layoutX="113.0" layoutY="235.0" mnemonicParsing="false" onMouseClicked="#golm" style="-fx-background-color: white; -fx-background-radius: 10;" text="Lista medicilor" textFill="#237575">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </JFXButton>
-            <JFXButton fx:id="icButton" buttonType="RAISED" ellipsisString="" focusTraversable="false" layoutX="365.0" layoutY="235.0" mnemonicParsing="false" onMouseClicked="#goic" style="-fx-background-color: white; -fx-background-radius: 10;" text="Istoricul Clinicii" textFill="#237575">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </JFXButton>
-            <Label alignment="CENTER" layoutX="152.0" layoutY="174.0" prefHeight="53.0" prefWidth="297.0" text="Alegeti optiunea dorita!" textFill="WHITE">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
-   </center>
-   <top>
-      <AnchorPane BorderPane.alignment="CENTER">
-         <children>
-            <ImageView fitHeight="83.0" fitWidth="297.0" layoutX="160.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Images/LogoMare.PNG" />
-               </image>
-            </ImageView>
-            <ImageView fx:id="closeButton" fitHeight="29.0" fitWidth="22.0" layoutX="578.0" layoutY="4.0" onMouseClicked="#close1" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@Images/images.png" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
-   </top>
+<BorderPane fx:id="scenePane4" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerMain">
+    <center>
+        <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #237575;">
+            <children>
+                <JFXButton fx:id="BackFromDetailsButton" buttonType="RAISED" ellipsisString="" focusTraversable="false"
+                           layoutX="16.0" layoutY="361.0" mnemonicParsing="false" onMouseClicked="#goBackFromDetails"
+                           prefHeight="23.0" prefWidth="57.0"
+                           style="-fx-background-color: white; -fx-background-radius: 10;" stylesheets="@style0.css"
+                           text="Inapoi" textFill="#237575">
+                    <font>
+                        <Font name="System Bold" size="13.0"/>
+                    </font>
+                </JFXButton>
+                <JFXButton fx:id="piButton" buttonType="RAISED" ellipsisString="" focusTraversable="false"
+                           layoutX="200.0" layoutY="116.0" mnemonicParsing="false" onMouseClicked="#gopi"
+                           prefHeight="38.0" prefWidth="200.0"
+                           style="-fx-background-color: white; -fx-background-radius: 10;"
+                           text="Preturile interventiilor" textFill="#237575">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </JFXButton>
+                <JFXButton fx:id="lmButton" buttonType="RAISED" ellipsisString="" focusTraversable="false"
+                           layoutX="113.0" layoutY="235.0" mnemonicParsing="false" onMouseClicked="#golm"
+                           style="-fx-background-color: white; -fx-background-radius: 10;" text="Lista medicilor"
+                           textFill="#237575">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </JFXButton>
+                <JFXButton fx:id="icButton" buttonType="RAISED" ellipsisString="" focusTraversable="false"
+                           layoutX="365.0" layoutY="235.0" mnemonicParsing="false" onMouseClicked="#goic"
+                           style="-fx-background-color: white; -fx-background-radius: 10;" text="Istoricul Clinicii"
+                           textFill="#237575">
+                    <font>
+                        <Font size="16.0"/>
+                    </font>
+                </JFXButton>
+                <Label alignment="CENTER" layoutX="152.0" layoutY="174.0" prefHeight="53.0" prefWidth="297.0"
+                       text="Alegeti optiunea dorita!" textFill="WHITE">
+                    <font>
+                        <Font size="20.0"/>
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+    </center>
+    <top>
+        <AnchorPane BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="83.0" fitWidth="297.0" layoutX="160.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Images/LogoMare.PNG"/>
+                    </image>
+                </ImageView>
+                <ImageView fx:id="closeButton" fitHeight="29.0" fitWidth="22.0" layoutX="578.0" layoutY="4.0"
+                           onMouseClicked="#close1" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Images/images.png"/>
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </top>
 </BorderPane>

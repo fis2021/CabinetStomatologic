@@ -48,33 +48,15 @@ public class Controller implements Initializable {
     private TextField usernameField;
 
 
-    public static void check(String username, String password) throws NullUsernameException, NullPasswordException,Password5CharactersException
-    {
-        if(username.equals(""))
-        {
-            throw new NullUsernameException();
-        }
-        else if(password.equals(""))
-        {
-            throw new NullPasswordException();
-        }
-        else if(!password.equals("") && password.length()<5)
-        {
-            throw new Password5CharactersException();
-        }
 
-    }
 
 
     @FXML
     public void handleRegisterAction() {
 
         try {
-            check(usernameField.getText(),passwordField.getText());
-            if(!passwordField.getText().equals("") && !usernameField.getText().equals("")) {
                 UserService.addUser(usernameField.getText(), passwordField.getText(), (String) role.getValue());
                 registrationMessage.setText("Contul s-a creat cu succes!");
-            }
         } catch (UsernameAlreadyExistsException e) {
             registrationMessage.setText(e.getMessage());
         }
@@ -89,15 +71,6 @@ public class Controller implements Initializable {
         }
     }
 
-    @FXML
-    JFXButton LOGINButton;
-
-    public void switchToMainPage(MouseEvent event) throws Exception {
-
-        Parent root = FXMLLoader.load(getClass().getResource("MainPage.fxml"));
-        window1 = (Stage)LOGINButton.getScene().getWindow();
-        window1.setScene(new Scene(root));
-    }
 
     @FXML
     private BorderPane scenePane1;

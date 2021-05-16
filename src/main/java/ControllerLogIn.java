@@ -28,56 +28,28 @@ public class ControllerLogIn {
     @FXML
     Label FailedLogInMessage;
 
-    public static void check(String USERNAME, String PASSWORD) throws NullUsernameException, NullPasswordException, LogInException
-    {
-        if(USERNAME.equals(""))
-        {
-            throw new NullUsernameException();
-        }
-        else if(PASSWORD.equals(""))
-        {
-            throw new NullPasswordException();
-        }
-        else if(checkAccountInformation(USERNAME,PASSWORD)==0){
-            throw new LogInException();
-        }
-
-    }
-
-    private static int checkAccountInformation(String username, String password) {
-        for (User user : UserService.userRepository.find()) {
-            if (Objects.equals(username, user.getUsername()) && Objects.equals(password, user.getPassword())) {
-               if(user.getRole().equals("Pacient"))
-               {
-                   return 1;
-               }
-               else {
-                   return 2;
-               }
-            }
-        }
-        return 0;
-    }
 
     public void switchToMainPage(MouseEvent event) throws Exception {
 
         username = LogInUsername.getText();
         password = LogInPassword.getText();
 
-        encryptedPassword=UserService.encodePassword(username,password);
+
         try{
-            check(username,encryptedPassword);
-            if(checkAccountInformation(username,encryptedPassword)==1 )
+            int aux=UserService.checkAccountInformation(username,password);
+            if(aux==1)
             {
                 Parent root = FXMLLoader.load(getClass().getResource("MainPage.fxml"));
                 window1 = (Stage)LOGINButton.getScene().getWindow();
                 window1.setScene(new Scene(root));
             }
-            else if(checkAccountInformation(username,encryptedPassword)==2){
+            else if(aux==2)
+            {
                 Parent root = FXMLLoader.load(getClass().getResource("MainPageMedic.fxml"));
                 window1 = (Stage)LOGINButton.getScene().getWindow();
                 window1.setScene(new Scene(root));
             }
+
         }catch (NullUsernameException e)
         {
             FailedLogInMessage.setText(e.getMessage());
