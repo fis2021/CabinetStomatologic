@@ -16,7 +16,6 @@ class UserServiceTest {
     public static final String DATA = "05.02.2014";
     public static final String NR = "0724567142";
 
-    // RadioButton da1, da2, da3, da4, da5, da6, da7, da8, da9, da10, nu1, nu2, nu3, nu4, nu5, nu6, nu7, nu8, nu9, nu10;
 
     @BeforeAll
     static void beforeAll() {

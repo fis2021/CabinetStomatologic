@@ -13,7 +13,7 @@
     <children>
         <AnchorPane layoutX="238.0" prefHeight="440.0" prefWidth="340.0" style="-fx-background-color: #237575;">
             <children>
-                <JFXButton fx:id="LogInButton" buttonType="RAISED" focusTraversable="false" layoutX="104.0"
+                <JFXButton fx:id="LogInButton" id="LogInButton" buttonType="RAISED" focusTraversable="false" layoutX="104.0"
                            layoutY="350.0" mnemonicParsing="false" onMouseClicked="#switchToLogIn" prefHeight="51.0"
                            prefWidth="140.0" style="-fx-background-color: white; -fx-background-radius: 10;"
                            text="Conectare" textFill="#237575">
@@ -38,7 +38,7 @@
                 </ImageView>
             </children>
         </AnchorPane>
-        <JFXButton fx:id="SignUpButton" blendMode="SRC_ATOP" buttonType="RAISED" focusTraversable="false" layoutX="52.0"
+        <JFXButton fx:id="SignUpButton" id="SignUpButton" blendMode="SRC_ATOP" buttonType="RAISED" focusTraversable="false" layoutX="52.0"
                    layoutY="352.0" mnemonicParsing="false" onMouseClicked="#switchToSignUp" prefHeight="51.0"
                    prefWidth="140.0" style="-fx-background-color: #237575; -fx-background-radius: 10;"
                    text="Inregistrare" textFill="WHITE">
