@@ -11,7 +11,7 @@
     <center>
         <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #237575;">
             <children>
-                <JFXButton fx:id="BackFromDetailsButton" buttonType="RAISED" ellipsisString="" focusTraversable="false"
+                <JFXButton fx:id="BackFromDetailsButton" id="BackFromDetailsButton" buttonType="RAISED" ellipsisString="" focusTraversable="false"
                            layoutX="16.0" layoutY="361.0" mnemonicParsing="false" onMouseClicked="#goBackFromDetails"
                            prefHeight="23.0" prefWidth="57.0"
                            style="-fx-background-color: white; -fx-background-radius: 10;" stylesheets="@style0.css"
@@ -20,7 +20,7 @@
                         <Font name="System Bold" size="13.0"/>
                     </font>
                 </JFXButton>
-                <JFXButton fx:id="piButton" buttonType="RAISED" ellipsisString="" focusTraversable="false"
+                <JFXButton fx:id="piButton" id="piButton" buttonType="RAISED" ellipsisString="" focusTraversable="false"
                            layoutX="200.0" layoutY="116.0" mnemonicParsing="false" onMouseClicked="#gopi"
                            prefHeight="38.0" prefWidth="200.0"
                            style="-fx-background-color: white; -fx-background-radius: 10;"
@@ -29,7 +29,7 @@
                         <Font size="16.0"/>
                     </font>
                 </JFXButton>
-                <JFXButton fx:id="lmButton" buttonType="RAISED" ellipsisString="" focusTraversable="false"
+                <JFXButton fx:id="lmButton" id="lmButton" buttonType="RAISED" ellipsisString="" focusTraversable="false"
                            layoutX="113.0" layoutY="235.0" mnemonicParsing="false" onMouseClicked="#golm"
                            style="-fx-background-color: white; -fx-background-radius: 10;" text="Lista medicilor"
                            textFill="#237575">
@@ -37,7 +37,7 @@
                         <Font size="16.0"/>
                     </font>
                 </JFXButton>
-                <JFXButton fx:id="icButton" buttonType="RAISED" ellipsisString="" focusTraversable="false"
+                <JFXButton fx:id="icButton" id="icButton" buttonType="RAISED" ellipsisString="" focusTraversable="false"
                            layoutX="365.0" layoutY="235.0" mnemonicParsing="false" onMouseClicked="#goic"
                            style="-fx-background-color: white; -fx-background-radius: 10;" text="Istoricul Clinicii"
                            textFill="#237575">

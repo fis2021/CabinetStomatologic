@@ -37,7 +37,7 @@
                         <HBox layoutX="239.0" layoutY="1.0" prefHeight="43.0" prefWidth="525.0"
                               AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
                             <children>
-                                <JFXButton fx:id="vpButton" onMouseClicked="#vp" prefHeight="38.0" prefWidth="136.0"
+                                <JFXButton fx:id="vpButton" id="vpButton" onMouseClicked="#vp" prefHeight="38.0" prefWidth="136.0"
                                            styleClass="menuItem" text="Vezi programari">
                                     <graphic>
                                         <ImageView blendMode="EXCLUSION" fitHeight="21.0" fitWidth="22.0"
@@ -61,7 +61,7 @@
                                 </JFXButton>
                             </children>
                         </HBox>
-                        <Label fx:id="Menu" ellipsisString="" layoutX="14.0" layoutY="36.0" prefHeight="22.0"
+                        <Label fx:id="Menu" id="Menu" ellipsisString="" layoutX="14.0" layoutY="36.0" prefHeight="22.0"
                                prefWidth="83.0" text="MENU" textFill="#b7b7b7" AnchorPane.bottomAnchor="7.0"
                                AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="603.0" AnchorPane.topAnchor="36.0">
                             <graphic>
@@ -101,7 +101,7 @@
                               AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
                               AnchorPane.topAnchor="53.0">
                             <children>
-                                <JFXButton fx:id="vpButton1" alignment="BASELINE_LEFT" onMouseClicked="#vp1"
+                                <JFXButton fx:id="vpButton1" id="vpButton1" alignment="BASELINE_LEFT" onMouseClicked="#vp1"
                                            prefHeight="38.0" prefWidth="176.0" styleClass="sidebarItem"
                                            text="Vezi programari" textFill="WHITE">
                                     <font>

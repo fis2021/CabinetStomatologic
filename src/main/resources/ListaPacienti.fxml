@@ -34,7 +34,7 @@
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="595.0" prefWidth="600.0"
                             style="-fx-background-color: #237575;" BorderPane.alignment="CENTER">
                     <children>
-                        <TableView fx:id="table" focusTraversable="false" layoutX="38.0" layoutY="186.0"
+                        <TableView fx:id="table" id="table" focusTraversable="false" layoutX="38.0" layoutY="186.0"
                                    prefHeight="324.0" prefWidth="523.0"
                                    style="-fx-background-color: white; -fx-background-radius: 5;">
                             <columns>
@@ -47,7 +47,7 @@
                                 <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
                             </columnResizePolicy>
                         </TableView>
-                        <TextField fx:id="name" alignment="CENTER" focusTraversable="false" layoutX="89.0"
+                        <TextField fx:id="name" id="name" alignment="CENTER" focusTraversable="false" layoutX="89.0"
                                    layoutY="66.0" prefHeight="32.0" prefWidth="260.0" promptText="Nume si prenume"
                                    style="-fx-background-radius: 50;"/>
                         <Button fx:id="showFisButton" focusTraversable="false" layoutX="408.0" layoutY="43.0"
@@ -62,7 +62,7 @@
                                 mnemonicParsing="false" onMouseClicked="#delete" prefHeight="30.0" prefWidth="141.0"
                                 style="-fx-background-color: white; -fx-background-radius: 10;" text="Sterge programare"
                                 textFill="#237575"/>
-                        <JFXButton fx:id="backButton" alignment="CENTER" buttonType="RAISED" focusTraversable="false"
+                        <JFXButton fx:id="backButton" id="backButton" alignment="CENTER" buttonType="RAISED" focusTraversable="false"
                                    layoutX="8.0" layoutY="556.0" mnemonicParsing="false" onMouseClicked="#goBack"
                                    prefHeight="25.0" prefWidth="60.0"
                                    style="-fx-background-color: white; -fx-background-radius: 10;" text="Inapoi"

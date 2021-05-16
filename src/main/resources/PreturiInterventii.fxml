@@ -15,7 +15,7 @@
             <children>
                 <ListView fx:id="list" layoutX="131.0" layoutY="81.0" prefHeight="200.0" prefWidth="338.0"
                           style="-fx-background-radius: 10;"/>
-                <JFXButton fx:id="backfrompiButton" alignment="CENTER" buttonType="RAISED" focusTraversable="false"
+                <JFXButton fx:id="backfrompiButton" id="backfrompiButton" alignment="CENTER" buttonType="RAISED" focusTraversable="false"
                            layoutX="14.0" layoutY="321.0" mnemonicParsing="false" onMouseClicked="#goBackfrompi"
                            prefHeight="25.0" prefWidth="60.0"
                            style="-fx-background-color: white; -fx-background-radius: 10;" text="Inapoi"
