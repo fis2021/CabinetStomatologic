@@ -25,6 +25,7 @@ repositories {
 }
 
 dependencies {
+    compile 'com.jfoenix:jfoenix:9.0.10'
     implementation 'com.jfoenix:jfoenix:9.0.10'
     implementation 'org.openjfx:javafx-controls:15.0.1'
     implementation 'org.openjfx:javafx-fxml:15.0.1'

@@ -3,10 +3,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -110,6 +107,23 @@ public class ControllerFisaMedicala {
         Parent root = FXMLLoader.load(getClass().getResource("MainPage.fxml"));
         window1 = (Stage)BackFromMedFis.getScene().getWindow();
         window1.setScene(new Scene(root));
+    }
+
+    @FXML
+    private ScrollPane scenePane;
+
+    Stage stage1;
+    public void close(MouseEvent event) {
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Inchide aplicatia");
+        alert.setHeaderText("Sunteti sigur ca doriti sa parasiti aplicatia?");
+
+        if(alert.showAndWait().get() == ButtonType.OK) {
+
+            stage1 = (Stage) scenePane.getScene().getWindow();
+            stage1.close();
+        }
     }
 
 

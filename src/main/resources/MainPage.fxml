@@ -6,27 +6,34 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="700.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerMain">
+<AnchorPane fx:id="scenePane3" prefHeight="400.0" prefWidth="700.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerMain">
     <children>
-        <BorderPane layoutX="114.0" layoutY="54.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <BorderPane layoutX="114.0" layoutY="54.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <top>
                 <AnchorPane prefHeight="65.0" prefWidth="200.0" style="-fx-background-color: WHITE;" BorderPane.alignment="CENTER">
                     <children>
-                        <Pane layoutX="102.0" layoutY="20.0" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: #B40404;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Pane layoutX="102.0" layoutY="20.0" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: #237575;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <children>
+                                <ImageView fx:id="closeButton" blendMode="MULTIPLY" fitHeight="29.0" fitWidth="22.0" layoutX="678.0" layoutY="3.0" onMouseClicked="#close" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@Images/images.png" />
+                                    </image>
+                                </ImageView>
+                            </children></Pane>
                         <HBox layoutX="239.0" layoutY="1.0" prefHeight="43.0" prefWidth="525.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
                             <children>
-                                <JFXButton fx:id="DetailsButton1" onMouseClicked="#goDetails1" prefHeight="38.0" prefWidth="136.0" styleClass="menuItem" text="Detalii Clinică">
+                                <JFXButton fx:id="DetailsButton1" onMouseClicked="#goDetails1" prefHeight="38.0" prefWidth="136.0" styleClass="menuItem" text="Detalii clinică">
                                     <graphic>
-                                        <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                        <ImageView fitHeight="23.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
                                                 <Image url="@Images/dash1.png" />
                                             </image>
                                         </ImageView>
                                     </graphic>
                                 </JFXButton>
-                                <JFXButton fx:id="medFisButton" onMouseClicked="#goToMedFis" prefHeight="38.0" prefWidth="136.0" styleClass="menuItem" text="FisaMedicala">
+                                <JFXButton fx:id="medFisButton" onMouseClicked="#goToMedFis" prefHeight="38.0" prefWidth="136.0" styleClass="menuItem" text="Fisa medicala">
                                     <graphic>
-                                        <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                        <ImageView fitHeight="23.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
                                                 <Image url="@Images/add1.png" />
                                             </image>
@@ -35,16 +42,16 @@
                                 </JFXButton>
                                 <JFXButton fx:id="progrButton" onMouseClicked="#goProgr" prefHeight="38.0" prefWidth="136.0" styleClass="menuItem" text="Programeaza-te">
                                     <graphic>
-                                        <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                        <ImageView fitHeight="21.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
-                                                <Image url="@Images/report1.png" />
+                                                <Image url="@Images/186464319_5487214534685357_4974065252601621916_n.png" />
                                             </image>
                                         </ImageView>
                                     </graphic>
                                 </JFXButton>
                                 <JFXButton fx:id="programari" onMouseClicked="#goProgramari" prefHeight="38.0" prefWidth="136.0" styleClass="menuItem" text="Vezi programari">
                                     <graphic>
-                                        <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                        <ImageView fitHeight="21.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
                                                 <Image url="@Images/data1.png" />
                                             </image>
@@ -53,7 +60,7 @@
                                 </JFXButton>
                             </children>
                         </HBox>
-                        <Label fx:id="Menu" layoutX="14.0" layoutY="36.0" prefHeight="22.0" prefWidth="92.0" text="MENU" textFill="#b7b7b7" AnchorPane.bottomAnchor="7.007998687500045" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="618.063980710938" AnchorPane.topAnchor="36.0">
+                        <Label fx:id="Menu" ellipsisString="" layoutX="14.0" layoutY="36.0" prefHeight="22.0" prefWidth="80.0" text="MENU" textFill="#a8a8a8" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="606.0" AnchorPane.topAnchor="36.0">
                             <graphic>
                                 <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
@@ -65,7 +72,7 @@
                                 <Font name="System Bold" size="14.0" />
                             </font>
                         </Label>
-                        <Label fx:id="MenuClose" layoutX="14.0" layoutY="36.0" prefHeight="22.0" prefWidth="92.0" text="MENU" textFill="#b7b7b7" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="594.0" AnchorPane.topAnchor="36.0">
+                        <Label fx:id="MenuClose" layoutX="14.0" layoutY="36.0" prefHeight="22.0" prefWidth="92.0" text="MENU" textFill="#8a8888" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="594.0" AnchorPane.topAnchor="36.0">
                             <graphic>
                                 <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
@@ -81,76 +88,90 @@
                 </AnchorPane>
             </top>
             <left>
-                <AnchorPane fx:id="slider" prefHeight="362.0" prefWidth="176.0" style="-fx-background-color: #B40404;" BorderPane.alignment="CENTER">
+                <AnchorPane BorderPane.alignment="CENTER">
                     <children>
-                        <VBox layoutX="14.0" layoutY="35.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="53.0">
+                        <AnchorPane fx:id="slider" prefHeight="392.0" prefWidth="166.0" style="-fx-background-color: #237575;">
                             <children>
-                                <JFXButton fx:id="DetailsButton" alignment="BASELINE_LEFT" onMouseClicked="#goDetails" prefHeight="38.0" prefWidth="176.0" styleClass="sidebarItem" text="Detalii clinică" textFill="WHITE">
+                                <JFXButton fx:id="BackButton" alignment="BASELINE_LEFT" layoutY="345.0" onMouseClicked="#goBack" prefHeight="38.0" prefWidth="176.0" styleClass="sidebarItem" text="Inapoi" textFill="WHITE">
                                     <font>
                                         <Font name="System Bold" size="15.0" />
                                     </font>
                                     <graphic>
-                                        <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                        <ImageView fitHeight="21.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
-                                                <Image url="@Images/dash.png" />
+                                                <Image url="@Images/outline_arrow_back_white_24dp.png" />
                                             </image>
                                         </ImageView>
                                     </graphic>
                                 </JFXButton>
-                                <JFXButton fx:id="MedFisButtonUp" alignment="BASELINE_LEFT" onMouseClicked="#goToMedFisUP" prefHeight="38.0" prefWidth="176.0" styleClass="sidebarItem" text="FisaMedicala" textFill="WHITE">
-                                    <font>
-                                        <Font name="System Bold" size="15.0" />
-                                    </font>
-                                    <graphic>
-                                        <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
-                                            <image>
-                                                <Image url="@Images/add.png" />
-                                            </image>
-                                        </ImageView>
-                                    </graphic>
-                                </JFXButton>
-                                <JFXButton fx:id="progrButton1" alignment="BASELINE_LEFT" onMouseClicked="#goProgr1" prefHeight="38.0" prefWidth="176.0" styleClass="sidebarItem" text="Programeaza-te" textFill="WHITE">
-                                    <font>
-                                        <Font name="System Bold" size="15.0" />
-                                    </font>
-                                    <graphic>
-                                        <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
-                                            <image>
-                                                <Image url="@Images/report.png" />
-                                            </image>
-                                        </ImageView>
-                                    </graphic>
-                                </JFXButton>
-                                <JFXButton fx:id="programari1" alignment="BASELINE_LEFT" onMouseClicked="#goProgramari1" prefHeight="38.0" prefWidth="176.0" styleClass="sidebarItem" text="Vezi programari" textFill="WHITE">
-                                    <font>
-                                        <Font name="System Bold" size="15.0" />
-                                    </font>
-                                    <graphic>
-                                        <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
-                                            <image>
-                                                <Image url="@Images/data.png" />
-                                            </image>
-                                        </ImageView>
-                                    </graphic>
-                                </JFXButton>
-                        <JFXButton fx:id="BackButton" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="124.0" onMouseClicked="#goBack" prefHeight="38.0" prefWidth="176.0" styleClass="sidebarItem" text="GoBack" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="15.0" />
-                           </font>
-                           <graphic>
-                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@Images/data.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </JFXButton>
+                                <VBox layoutX="14.0" layoutY="35.0" prefHeight="292.0" prefWidth="176.0" AnchorPane.bottomAnchor="47.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="53.0">
+                                    <children>
+                                        <JFXButton fx:id="DetailsButton" alignment="BASELINE_LEFT" onMouseClicked="#goDetails" prefHeight="38.0" prefWidth="176.0" styleClass="sidebarItem" text="Detalii clinică" textFill="WHITE">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                            <graphic>
+                                                <ImageView fitHeight="23.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@Images/dash.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </JFXButton>
+                                        <JFXButton fx:id="MedFisButtonUp" alignment="BASELINE_LEFT" onMouseClicked="#goToMedFisUP" prefHeight="38.0" prefWidth="176.0" styleClass="sidebarItem" text="Fisa medicala" textFill="WHITE">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                            <graphic>
+                                                <ImageView fitHeight="23.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@Images/add.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </JFXButton>
+                                        <JFXButton fx:id="progrButton1" alignment="BASELINE_LEFT" onMouseClicked="#goProgr1" prefHeight="38.0" prefWidth="176.0" styleClass="sidebarItem" text="Programeaza-te" textFill="WHITE">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                            <graphic>
+                                                <ImageView fitHeight="21.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@Images/white.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </JFXButton>
+                                        <JFXButton fx:id="programari1" alignment="BASELINE_LEFT" onMouseClicked="#goProgramari1" prefHeight="38.0" prefWidth="176.0" styleClass="sidebarItem" text="Vezi programari" textFill="WHITE">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                            <graphic>
+                                                <ImageView fitHeight="21.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@Images/data.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </JFXButton>
+                                    </children>
+                                </VBox>
                             </children>
-                        </VBox>
-                    </children>
-                </AnchorPane>
+                        </AnchorPane>
+                    </children></AnchorPane>
             </left>
+            <center>
+                <ImageView fitHeight="301.0" fitWidth="415.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                    <image>
+                        <Image url="@Images/LogoMain.PNG" />
+                    </image>
+                </ImageView>
+            </center>
         </BorderPane>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" stylesheets="@style0.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="176.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="66.0" />
+        <Label alignment="CENTER" layoutX="-159.0" layoutY="272.0" prefHeight="180.0" prefWidth="140.0" text="Castiga&#10;zambetul&#10;succesului!" textFill="#237575">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
     </children>
 </AnchorPane>

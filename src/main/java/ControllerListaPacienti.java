@@ -6,10 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -164,9 +161,7 @@ public class ControllerListaPacienti implements Initializable{
 
         if(!name.getText().equals("")) {
 
-            //Parent root = FXMLLoader.load(getClass().getResource("FisaPrecompletata.fxml"));
-            //window1 = (Stage)showFisButton.getScene().getWindow();
-            //window1.setScene(new Scene(root, 600, 400));
+
             FXMLLoader loader = new FXMLLoader(getClass().getResource("FisaPrecompletata.fxml"));
             root = loader.load();
             ControllerFisaPrecompletata controllerFisaPrecompletata = loader.getController();
@@ -206,7 +201,6 @@ public class ControllerListaPacienti implements Initializable{
             String s=p.getNume()+" "+p.getPrenume();
             if(s.equals(name.getText()))
             {
-                System.out.println("A fost gasit!");
                 UserService.userRepository1.remove(p);
                 break;
             }
@@ -219,6 +213,24 @@ public class ControllerListaPacienti implements Initializable{
         window1 = (Stage)deleteButton.getScene().getWindow();
         window1.setScene(new Scene(root));
     }
+
+    @FXML
+    private ScrollPane scenePane;
+
+    Stage stage;
+    public void close(MouseEvent event) {
+
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Inchide aplicatia");
+        alert.setHeaderText("Sunteti sigur ca doriti sa parasiti aplicatia?");
+
+        if(alert.showAndWait().get() == ButtonType.OK) {
+
+            stage = (Stage) scenePane.getScene().getWindow();
+            stage.close();
+        }
+    }
+
 
 
 }

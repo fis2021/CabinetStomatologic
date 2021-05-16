@@ -9,6 +9,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class Main extends Application {
 
@@ -23,6 +24,7 @@ public class Main extends Application {
         UserService.initDatabase1();
         UserService.initDatabase2();
 
+        primaryStage.initStyle(StageStyle.UNDECORATED);
         Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
 
         Scene scene = new Scene(root);
@@ -30,6 +32,7 @@ public class Main extends Application {
         primaryStage.setTitle("Cabinet Stomatologic");
         primaryStage.setScene(scene);
         primaryStage.show();
+
     }
 
     private Stage window1;
@@ -46,6 +49,16 @@ public class Main extends Application {
         window1.setScene(new Scene(root));
     }
 
+    @FXML
+    JFXButton LogInButton;
+
+    public void switchToLogIn(MouseEvent event) throws Exception {
+
+        Parent root = FXMLLoader.load(getClass().getResource("LogIn.fxml"));
+        window1 = (Stage)LogInButton.getScene().getWindow();
+        window1.setScene(new Scene(root));
+    }
+
 
 
     @FXML
@@ -54,11 +67,11 @@ public class Main extends Application {
     Stage stage;
 
 
-    public void close(javafx.event.ActionEvent actionEvent) {
+    public void close(MouseEvent event) {
 
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Close Program");
-        alert.setHeaderText("Are you sure you want to close?");
+        alert.setTitle("Inchide aplicatia");
+        alert.setHeaderText("Sunteti sigur ca doriti sa parasiti aplicatia?");
 
         if(alert.showAndWait().get() == ButtonType.OK) {
 
@@ -70,16 +83,6 @@ public class Main extends Application {
 
 
 
-
-    @FXML
-    JFXButton LogInButton;
-
-    public void switchToLogIn(MouseEvent event) throws Exception {
-
-        Parent root = FXMLLoader.load(getClass().getResource("LogIn.fxml"));
-        window1 = (Stage)LogInButton.getScene().getWindow();
-        window1.setScene(new Scene(root));
-    }
 
 
 

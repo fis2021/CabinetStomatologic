@@ -1,49 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #B40404;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
-   <children>
-      <JFXButton layoutX="275.0" layoutY="278.0" mnemonicParsing="false" onAction="#handleRegisterAction" prefHeight="44.0" prefWidth="149.0" text="Register" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </JFXButton>
-      <Label layoutX="127.0" layoutY="88.0" prefHeight="49.0" prefWidth="159.0" text="Username:" textFill="WHITE">
-         <font>
-            <Font size="25.0" />
-         </font>
-      </Label>
-      <Label layoutX="127.0" layoutY="138.0" text=" Password:" textFill="WHITE">
-         <font>
-            <Font size="25.0" />
-         </font>
-      </Label>
-      <TextField fx:id="usernameField" alignment="CENTER" layoutX="276.0" layoutY="100.0" promptText="username" />
-      <PasswordField fx:id="passwordField" alignment="CENTER" layoutX="276.0" layoutY="148.0" promptText="password" />
-      <ChoiceBox fx:id="role" layoutX="275.0" layoutY="200.0" prefWidth="150.0" />
-      <Label alignment="CENTER" contentDisplay="RIGHT" layoutX="147.0" layoutY="195.0" prefHeight="25.0" prefWidth="120.0" text="   Role:" textAlignment="CENTER" textFill="WHITE">
-         <font>
-            <Font size="25.0" />
-         </font>
-      </Label>
-      <Label alignment="CENTER" layoutX="1.0" prefHeight="60.0" prefWidth="600.0" style="-fx-background-color: black;" text="Cabinet Stomatologic" textFill="WHITE">
-         <font>
-            <Font name="Times New Roman" size="40.0" />
-         </font>
-      </Label>
-      <JFXButton fx:id="BackButton" layoutX="22.0" layoutY="341.0" mnemonicParsing="false" onMouseClicked="#switchToMain" prefHeight="36.0" prefWidth="104.0" text="Back" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="22.0" />
-         </font>
-      </JFXButton>
-      <JFXButton layoutX="-63.0" layoutY="113.0" mnemonicParsing="false" text="Button" />
-      <Label fx:id="registrationMessage" alignment="CENTER" layoutX="199.0" layoutY="250.0" prefHeight="17.0" prefWidth="317.0" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font></Label>
-   </children>
-</AnchorPane>
+<BorderPane fx:id="scenePane1" prefHeight="429.0" prefWidth="510.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <center>
+      <AnchorPane prefHeight="334.0" prefWidth="519.0" style="-fx-background-color: #237575;">
+         <children>
+            <Label layoutX="115.0" layoutY="90.0" prefHeight="37.0" prefWidth="109.0" text="Username:" textFill="WHITE">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="153.0" layoutY="141.0" text="Parola:" textFill="WHITE">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <TextField fx:id="usernameField" alignment="CENTER" focusTraversable="false" layoutX="253.0" layoutY="96.0" promptText="username" style="-fx-background-radius: 50;" />
+            <PasswordField fx:id="passwordField" alignment="CENTER" focusTraversable="false" layoutX="253.0" layoutY="144.0" promptText="parola" style="-fx-background-radius: 50;" />
+            <ChoiceBox fx:id="role" focusTraversable="false" layoutX="252.0" layoutY="196.0" prefWidth="150.0" style="-fx-background-radius: 50; -fx-background-color: white;" />
+            <Label alignment="CENTER" contentDisplay="RIGHT" layoutX="162.0" layoutY="193.0" prefHeight="28.0" prefWidth="71.0" text="Rol:" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="BackButton" focusTraversable="false" layoutX="14.0" layoutY="308.0" mnemonicParsing="false" onMouseClicked="#switchToMain" prefHeight="29.0" prefWidth="58.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Inapoi" textFill="#237575">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="-63.0" layoutY="113.0" mnemonicParsing="false" text="Button" />
+            <Label fx:id="registrationMessage" alignment="CENTER" layoutX="170.0" layoutY="234.0" prefHeight="17.0" prefWidth="317.0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <JFXButton alignment="CENTER" buttonType="RAISED" focusTraversable="false" layoutX="269.0" layoutY="259.0" mnemonicParsing="false" onAction="#handleRegisterAction" prefHeight="36.0" prefWidth="118.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Inregistrare" textFill="#237575">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </center>
+   <top>
+      <AnchorPane BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="92.0" fitWidth="265.0" layoutX="127.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/LogoMare.PNG" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="closeButton" fitHeight="29.0" fitWidth="22.0" layoutX="497.0" layoutY="4.0" onMouseClicked="#close" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/images.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </top>
+</BorderPane>

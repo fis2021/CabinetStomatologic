@@ -36,12 +36,20 @@ public class UserService {
         userRepository1 = database.getRepository(Persoana.class);
     }
 
+    public static List<Persoana> getAllUsers1(){
+        return userRepository1.find().toList();
+    }
+
     public static void initDatabase2() {
         Nitrite database = Nitrite.builder()
                 .filePath(FileSystemService.getPathToFile("fisa-medicala.db").toFile())
                 .openOrCreate("test", "test");
 
         userRepository2 = database.getRepository(FisaMedicala.class);
+    }
+
+    public static List<FisaMedicala> getAllUsers2(){
+        return userRepository2.find().toList();
     }
 
     public static void addUser(String username, String password, String role) throws UsernameAlreadyExistsException {

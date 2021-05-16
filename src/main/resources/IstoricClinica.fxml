@@ -2,20 +2,37 @@
 
 <?import com.jfoenix.controls.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #B40404;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerMain">
-    <children>
-        <JFXButton fx:id="backfromicButton" layoutX="23.0" layoutY="342.0" mnemonicParsing="false" onMouseClicked="#goBackfromic" prefHeight="43.0" prefWidth="98.0" text="Back" textFill="WHITE">
-            <font>
-                <Font name="System Bold" size="19.0" />
-            </font></JFXButton>
-      <Label alignment="CENTER" layoutX="-2.0" layoutY="-3.0" prefHeight="67.0" prefWidth="600.0" style="-fx-background-color: black;" text="Zambetul este un lucru serios!" textFill="WHITE">
-         <font>
-            <Font size="27.0" />
-         </font>
-      </Label>
-      <TextArea layoutX="17.0" layoutY="78.0" prefHeight="251.0" prefWidth="566.0" text="Despre noi&#10;Clinica DRM România, coordonată de Dr. Alin Udeanu și-a asumat o misiune firească, aceea de a&#10; restabili zâmbetul a milioane de români – din țară și din străinătate – utilizând proceduri stomatologice&#10; avansate, înr-un cadru menit să sporească încrederea și respectul pacienților.&#10;&#10;Suntem singura clinică stomatologică din România care a manifestat o responsabilitate pentru&#10; bunăstarea românilor din Italia, prin faptul că am stabilit un parteneriat cu o renumită clinică din Italia&#10; – DRM – Clinica Dr Marcon.&#10;&#10;Acest parteneriat a început în urmă cu câțiva ani cu un program lung de învățare, mentorat și de schimb&#10; de experiență. Obiectivul nostru a fost acela de a oferi românilor oportunitatea de a se trata atât în&#10; România, cât și în Italia, în aceleași condiții financiare, fără a renunța la calitatea serviciilor stomatologice&#10; din afara țării." />
-    </children>
-</AnchorPane>
+<BorderPane fx:id="scenePane6" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerMain">
+    <top>
+        <AnchorPane BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="81.0" fitWidth="282.0" layoutX="134.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Images/LogoMare.PNG" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="closeButton" fitHeight="29.0" fitWidth="22.0" layoutX="516.0" layoutY="4.0" onMouseClicked="#close3" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Images/images.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </top>
+    <bottom>
+        <AnchorPane prefHeight="406.0" prefWidth="541.0" style="-fx-background-color: #237575;" BorderPane.alignment="CENTER">
+            <children>
+                <TextArea focusTraversable="false" layoutX="28.0" layoutY="78.0" prefHeight="229.0" prefWidth="485.0" text="Despre noi&#10;Clinica DRM România, coordonată de Dr. Alin Udeanu și-a asumat o misiune firească, aceea de a&#10; restabili zâmbetul a milioane de români – din țară și din străinătate – utilizând proceduri stomatologice&#10; avansate, înr-un cadru menit să sporească încrederea și respectul pacienților.&#10;&#10;Suntem singura clinică stomatologică din România care a manifestat o responsabilitate pentru&#10; bunăstarea românilor din Italia, prin faptul că am stabilit un parteneriat cu o renumită clinică din Italia&#10; – DRM – Clinica Dr Marcon.&#10;&#10;Acest parteneriat a început în urmă cu câțiva ani cu un program lung de învățare, mentorat și de schimb&#10; de experiență. Obiectivul nostru a fost acela de a oferi românilor oportunitatea de a se trata atât în&#10; România, cât și în Italia, în aceleași condiții financiare, fără a renunța la calitatea serviciilor stomatologice&#10; din afara țării." />
+                <JFXButton fx:id="backfromicButton" alignment="CENTER" buttonType="RAISED" focusTraversable="false" layoutX="14.0" layoutY="365.0" mnemonicParsing="false" onMouseClicked="#goBackfromic" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: white; -fx-background-radius: 10;" text="Inapoi" textFill="#237575">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </JFXButton>
+            </children>
+        </AnchorPane>
+    </bottom>
+</BorderPane>
